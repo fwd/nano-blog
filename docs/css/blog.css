@@ -25,7 +25,7 @@ body {
   background: white;
   color: #555;
   line-height: 1.5;
-  word-break: break-all;
+/*  word-break: break-all;*/
   overflow-x: hidden;
   color: #16181f;
 }
