@@ -3,7 +3,6 @@
 - date: 1-1-2023
 - tags: Crypto
 - price: 0.01
-<!-- - free: true -->
 
 -----
 
