@@ -32,8 +32,8 @@ const site_title = config.site_title
 const nano_address = config.nano_address
 const json_api = config.json_api
 const rss_api = config.rss_api
-const language = config.language || 'en-us'
 const metrics = config.metrics || false
+const language = config.language || 'en-us'
 
 var articles = []
 var exlcude = ['.DS_Store']
