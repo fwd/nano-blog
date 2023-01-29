@@ -8,7 +8,6 @@
  * 
  */
 
-
 const config = require("./config.json")
 const _ = require("lodash")
 const fs = require("fs")
@@ -25,6 +24,7 @@ const title = config.title || 'My Blog'
 const theme = config.theme || 'nano'
 const source = config.source || './source'
 const dest = config.dest || './docs'
+const authors = config.authors || './author'
 const blog_path = config.path
 const domain = config.domain
 const description = config.description
@@ -153,6 +153,16 @@ if (blog_path && !fs.existsSync(dest + '/' + blog_path)) {
 	fs.mkdirSync(dest + '/' + blog_path)
 	fs.writeFileSync(`${dest + '/' + blog_path}/index.html`, ejs.render(index_html, { articles, title, metrics, contact, verified }), { encoding: "utf8" } )
 }
+
+// authors
+if (!fs.existsSync(authors)) fs.mkdirSync(authors)
+
+var authors = articles.filter(a => a.author).map(a => a.author)
+
+for (var author of authors) {
+	console.log( authors )
+}
+
 
 // markdown2html
 var single_html = fs.readFileSync(`./themes/${theme}/single.html`, { encoding: "utf8" })
