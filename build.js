@@ -157,9 +157,9 @@ if (blog_path && !fs.existsSync(dest + '/' + blog_path)) {
 // authors
 if (!fs.existsSync(authors)) fs.mkdirSync(authors)
 
-var authors = articles.filter(a => a.author).map(a => a.author)
+var writters = articles.filter(a => a.author).map(a => a.author)
 
-for (var author of authors) {
+for (var author of writters) {
 	console.log( authors )
 }
 
