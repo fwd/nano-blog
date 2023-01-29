@@ -4,7 +4,7 @@ https://blog.nano.to
 
 ### How To Be A Guest Writer
 
-Clone this repo. Submit a new Github PR with a new ```markdown``` file in the ```/source``` directory.
+[Fork this repo](https://github.com/fwd/nano-blog/fork). Submit a new Github PR with a new ```markdown``` file in the ```/source``` directory.
 
 **Filename:**
 ```
