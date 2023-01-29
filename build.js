@@ -114,7 +114,6 @@ if (rss_api) {
 }
 
 // sitemap
-// like cookies and milk for search engines.
 try {
   if (domain && theme && fs.existsSync(`./themes/${theme}/sitemap.xml`)) {
 	var sitemap = fs.readFileSync(`./themes/${theme}/sitemap.xml`, { encoding: "utf8" })
@@ -136,15 +135,14 @@ try {
   }
 } catch(err) {}
 
-// nano.txt
-// for the year 2032
+// nano.txt (?)
 try {
   if (theme && !fs.existsSync(`./themes/${theme}/nano.txt`)) {
 	fs.copyFile(`./themes/${theme}/nano.txt`, `./${dest}/nano.txt`)
   }
 } catch(err) {}
 
-// domain stuff
+// domain
 if (domain) {
 	fs.writeFileSync(`${dest}/CNAME`, `${domain}`, { encoding: "utf8" } )
 }
@@ -155,7 +153,14 @@ if (blog_path && !fs.existsSync(dest + '/' + blog_path)) {
 	fs.writeFileSync(`${dest + '/' + blog_path}/index.html`, ejs.render(index_html, { articles, title, metrics, contact, verified }), { encoding: "utf8" } )
 }
 
-// authors
+// all articles
+var single_html = fs.readFileSync(`./themes/${theme}/single.html`, { encoding: "utf8" })
+for (var article of articles) {
+	var article_html = ejs.render(single_html, { articles : articles.filter(a => a.slug !== article.slug), article, title, nano_address: article.address || nano_address, metrics, verified, contact })
+	fs.writeFileSync(`${dest}${blog_path ? '/' + blog_path : '' }/${article.slug}.html`, article_html, { encoding: "utf8" } )
+}
+
+// dedicated authors apges
 var authors = articles.filter(a => a.author).map(a => a.author)
 
 for (var author of authors) {
@@ -182,12 +187,4 @@ for (var author of authors) {
 		fs.writeFileSync(`${dest}/@${name}/${article.slug}.html`, article_html, { encoding: "utf8" } )
 	}
 
-}
-
-
-// markdown2html
-var single_html = fs.readFileSync(`./themes/${theme}/single.html`, { encoding: "utf8" })
-for (var article of articles) {
-	var article_html = ejs.render(single_html, { articles : articles.filter(a => a.slug !== article.slug), article, title, nano_address: article.address || nano_address, metrics, verified, contact })
-	fs.writeFileSync(`${dest}${blog_path ? '/' + blog_path : '' }/${article.slug}.html`, article_html, { encoding: "utf8" } )
 }
