@@ -26,7 +26,9 @@
         <header>
             <div class="container">
                 <div><b><%- title %></b></div>
-                <div><a href="/" style="border: 0">Contact</a></div>
+                <% if (contact) { %>
+                <div><a href="mailto:<%- contact %>" style="border: 0">Contact</a></div>
+                <% } %>
             </div>
         </header>
 

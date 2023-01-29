@@ -6,6 +6,7 @@
 	"source": "./source",
 	"dest": "./docs",
 	"path": "",
+	"contact": "support@nano.to",
 	"metrics": true,
 	"json_api": true,
 	"rss_api": true,

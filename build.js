@@ -33,6 +33,7 @@ const nano_address = config.nano_address
 const json_api = config.json_api
 const rss_api = config.rss_api
 const metrics = config.metrics || false
+const contact = config.contact || false
 const language = config.language || 'en-us'
 
 var articles = []
@@ -97,8 +98,8 @@ copyFolderSync(`./themes/${theme}/js`, `${dest}/js`)
 
 // homepage
 var index_html = fs.readFileSync(`./themes/${theme}/index.html`, { encoding: "utf8" })
-fs.writeFileSync(`${dest}/index.html`, ejs.render(index_html, { articles, title, site_title, nano_address, metrics }), { encoding: "utf8" } )
-fs.writeFileSync(`${dest}/404.html`, ejs.render(index_html, { articles, title, site_title, nano_address, metrics }), { encoding: "utf8" } )
+fs.writeFileSync(`${dest}/index.html`, ejs.render(index_html, { articles, title, site_title, nano_address, metrics, contact }), { encoding: "utf8" } )
+fs.writeFileSync(`${dest}/404.html`, ejs.render(index_html, { articles, title, site_title, nano_address, metrics, contact }), { encoding: "utf8" } )
 
 // json_api
 if (json_api) {
@@ -149,12 +150,12 @@ if (domain) {
 // optinal blog path 
 if (blog_path && !fs.existsSync(dest + '/' + blog_path)) {
 	fs.mkdirSync(dest + '/' + blog_path)
-	fs.writeFileSync(`${dest + '/' + blog_path}/index.html`, ejs.render(index_html, { articles, title, nano_address, metrics }), { encoding: "utf8" } )
+	fs.writeFileSync(`${dest + '/' + blog_path}/index.html`, ejs.render(index_html, { articles, title, nano_address, metrics, contact }), { encoding: "utf8" } )
 }
 
 // markdown2html
 var single_html = fs.readFileSync(`./themes/${theme}/single.html`, { encoding: "utf8" })
 for (var article of articles) {
-	var article_html = ejs.render(single_html, { articles : articles.filter(a => a.slug !== article.slug), article, title, nano_address, metrics })
+	var article_html = ejs.render(single_html, { articles : articles.filter(a => a.slug !== article.slug), article, title, nano_address, metrics, contact })
 	fs.writeFileSync(`${dest}${blog_path ? '/' + blog_path : '' }/${article.slug}.html`, article_html, { encoding: "utf8" } )
 }
