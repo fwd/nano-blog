@@ -4,7 +4,9 @@ https://blog.nano.to
 
 ### How To Be A Guest Writer
 
-[Fork this repo](https://github.com/fwd/nano-blog/fork). Create a new ```markdown``` file in the ```/source``` directory, and submit a new Github pull request.
+1. [Fork this repo](https://github.com/fwd/nano-blog/fork). 
+2. Create a new ```markdown``` file in the ```/source``` directory.
+3. Submit a Github merge request.
 
 **Filename:**
 ```
