@@ -2,7 +2,7 @@
 
 https://blog.nano.to
 
-### How To Be A Guest Writer
+### Be A Guest Writer
 
 1. [Fork this repo](https://github.com/fwd/nano-blog/fork). 
 2. Write your story in ```markdown``` within the ```/source``` directory.
