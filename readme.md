@@ -1,30 +1,10 @@
-### Github Hosted Markdown Blog
+### Nano.to Blog
 
-```json
-{
-	"site_title": "Blog - Nano.to",
-	"title": "Nano.to Blog",
-	"domain": "blog.nano.to",
-	"theme": "nano",
-	"source": "./source",
-	"dest": "./docs",
-	"path": "",
-	"contact": "support@nano.to",
-	"verified": true,
-	"metrics": true,
-	"json_api": true,
-	"rss_api": true,
-	"nano_address": "nano_1tip98ou698oj3r79f71fuu5kzzjmj5esxzduirg14q8kdcschfthmwa1f6u"
-}
-```
-
-### Multi-Tenancy
-
-We allow guest writers to write and keep all proceeds. 
+https://blog.nano.to
 
 ### How To Be A Guest Writer
 
-Make a Github PR with a new ```markdown``` file in ```/source``` with the following template:
+Create a new ```markdown``` file in ```/source``` dir.
 
 ```
 - title: My Article title
@@ -33,6 +13,5 @@ Make a Github PR with a new ```markdown``` file in ```/source``` with the follow
 - price: 0.01
 - address: YOUR_NANO_ADDRESS
 -----
-
-Markdown body..
+Your story in Markdown..
 ```
