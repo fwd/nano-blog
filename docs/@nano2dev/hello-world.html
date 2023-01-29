@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nano.to Blog</title>
+        <link rel="icon" type="image/png" href="img/favicon.png">
+        <meta name="author" content="https://twitter.com/nano2dev"/>
+        <link rel="apple-touch-icon" href="img/favicon.png">
+        <meta property="og:title" content="Nano.to Blog">
+        <meta property="og:image" content="img/cover.png">
+        <meta property="twitter:image" content="img/cover.png">
+        <meta name="apple-mobile-web-app-title" content="My Blog">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="https://blog.nano.to/css/highlight.min.css">
+        <link rel="stylesheet" href="https://blog.nano.to/css/blog.css">
+        
+        <script src="https://metrics.bar/js/script.js" id="metrics" async defer></script>
+        
+        <style>
+            * { margin: 0; padding: 0; box-sizing: border-box; } .premium { opacity: 0 }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div><a href="/" style="border: 0">&#8592; Back</a></div>
+                <div>
+                    <b>Nano.to Blog</b>
+                    
+                    <img src="img/verified.png" alt="" style=" max-width: 20px; margin: 0; display: inline-block; vertical-align: text-top; margin-top: 1px; ">
+                    
+                </div>
+            </div>
+        </header>
+        <article>
+            <h1 class="title">Free, non-custodial Checkout UI hosted on Github</h1>
+            <time>
+                
+                 <a href="/@nano2dev" target="_blank" style="border-bottom: 0"><span style=" color: #1f9ce9; font-weight: bold ">@nano2dev</span> <img src="img/verified.png" alt="" style=" max-width: 20px; margin: 0; display: inline-block; vertical-align: text-top; margin-top: 1px; "> </a> · 
+                a month ago  
+                 · <span style=" color: #1f9ce9; font-size: 95%; ">Crypto</span> 
+                 · <span style=" color: #1f9ce9; font-size: 95%; ">Premium</span> 
+            </time>
+            <div class="premium" data-id="705591087">
+                <p>Free, non-custodial Checkout UI hosted on Github. It works by checking <code>pending</code> and <code>history</code> of any given address. Customizable with URL params. Optional, POST API available for secure checkouts.</p>
+<h4>Any Address:</h4>
+<pre><code class="language-python">https://nano.to/:ADDRESS
+</code></pre>
+<p><strong>Nano.to Username:</strong></p>
+<pre><code class="language-python">https://nano.to/@Keeri
+</code></pre>
+<h3>Single Panel</h3>
+<pre><code class="language-python">https://nano.to/@Fosse?amount=50&amp;random=true
+</code></pre>
+<h3>Double Panel</h3>
+<pre><code class="language-python">https://nano.to/@Moon?plans=Tip:0.133,Small:1,Medium:10,Large:20,Gigantic:100
+</code></pre>
+<h2>Customize Colors</h2>
+<pre><code class="language-python">https://nano.to/@Keeri
+?background=$0057b7:$ffd700
+&amp;color=$FFF:$000
+&amp;highlight=white
+&amp;vanity=$0057b7
+&amp;qrcode=white:$0057b7
+&amp;logo=https://nano.to/dist/logo/cyber.png
+</code></pre>
+<h3>Available Options</h3>
+<ul>
+<li><strong>amount</strong> (<em>number</em>) : Single panel with price. No plans.</li>
+<li><strong>plans</strong> (<em>string</em>) : Plans separated by commas. Ex. Tip:30,Small:5</li>
+<li><strong>selected</strong> (<em>string</em>) : Title of Plan to select by default.</li>
+<li><strong>goal</strong> (<em>string</em>) : Show a funding meter based off balance.</li>
+<li><strong>image</strong> (<em>image/url</em>) : Display Image. Image URL.</li>
+<li><strong>random</strong> (<em>boolean</em>) : Add random decimal to amount. Ex + 0.00XXXX</li>
+<li><strong>color</strong> (<em>string</em>) : Text color. Ex red:blue</li>
+<li><strong>background</strong> (<em>string</em>) : Background color. Ex white:gray</li>
+<li><strong>highlight</strong> (<em>string</em>) : Box backgrounds value. Ex blue:red</li>
+<li><strong>qrcode</strong> (<em>string</em>) : Replace QR Code color. Ex white:black</li>
+<li><strong>logo</strong> (<em>image/url</em>) : Replace QR Code logo. Image URL.</li>
+<li><strong>cancel</strong> (<em>string</em>) : Redirect URL when pressed 'Cancel'</li>
+<li><strong>redirect</strong> (<em>string</em>) : Redirect URL on success.</li>
+</ul>
+<p><strong>Coming Soon:</strong></p>
+<ul>
+<li><strong>currency</strong> (string) : ISO Currency Symbol. Ex JPY</li>
+</ul>
+<h3>Checkout Funding UI</h3>
+<p>Easily show a meter of progress for any Nano fundraiser.</p>
+<pre><code class="language-python">https://nano.to/@Basedlemahieu?goal=100:Funding Goal
+</code></pre>
+<h3>Checkout via POST</h3>
+<p><strong>Nano.to Checkout UI</strong> is hosted on Github, and does not require a server.</p>
+<p>However, when you want to create more complex Checkouts, Nano.to has a secure API for this case.</p>
+<p><strong>Base URL:</strong></p>
+<pre><code>https://api.nano.to
+</code></pre>
+<p><strong>POST Example:</strong></p>
+<pre><code class="language-js">const http = require('axios')
+
+http.post('https://api.nano.to', {
+  address: '@moon', // or address
+  webhook_url: 'https://example.com/secret/endpoint',
+  success_url: 'https://example.com/success?hash={{hash}}',
+  metadata: { userId: 'joe-mama', password: &quot;Slava Ukraini&quot; },
+}).then((res) =&gt; {
+  console.log( res.data )
+})
+</code></pre>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><strong>webhook_url</strong> (string) : URL to receive succesful payment metadata.</li>
+<li><strong>metadata</strong> (object) : Object with any kind of JSON data.</li>
+</ul>
+<p><strong>Response:</strong></p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;f745ffa3&quot;,
+  &quot;browser&quot;: &quot;https://nano.to/id_f745ffa3&quot;,
+  &quot;json&quot;: &quot;https://api.nano.to/checkout/f745ffa3&quot;,
+  &quot;check&quot;: &quot;https://api.nano.to/checkout/f745ffa3/check&quot;
+}
+</code></pre>
+<blockquote>
+<p>Perform a GET request on <code>check</code> URL to confirm payment, or redirect user to <code>browser</code> for included UI.</p>
+</blockquote>
+<p><strong>Webhook POST Body:</strong></p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;CHECKOUT_ID&quot;,
+  &quot;block&quot;: {
+    &quot;hash&quot;: &quot;PAYMENT_BLOCK_HASH&quot;,
+    &quot;account&quot;: &quot;SENDER_ADDRESS&quot;,
+    &quot;amount&quot;: &quot;0.0109913&quot;,
+    &quot;amount_raw&quot;: &quot;10991300000000000000000000000&quot;
+  },
+  &quot;plan&quot;: {
+    &quot;title&quot;: &quot;Default&quot;,
+    &quot;value&quot;: &quot;0.0109913&quot;,
+    &quot;value_raw&quot;: &quot;10991300000000000000000000000&quot;
+  },
+  &quot;metadata&quot;: {
+    &quot;userId&quot;: &quot;joe-mama&quot;,
+    &quot;password&quot;: &quot;Slava Ukraini&quot;
+  },
+  &quot;checkout&quot;: &quot;https://api.nano.to/checkout/CHECKOUT_ID&quot;
+}
+</code></pre>
+<h2>Support</h2>
+<ul>
+<li>Email: support@nano.to</li>
+<li>Twitter: <a href="https://twitter.com/nano2dev">@nano2dev</a></li>
+<li>@nano2dev on <a href="https://discord.com/invite/RNAE2R9">Nano's Discord</a></li>
+</ul>
+
+                 
+            </div>
+        </article>
+        <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('lightMode')) {
+            document.documentElement.className += 'dark-mode'
+        }
+        </script>
+        <script src="js/highlight.min.js"></script>
+        
+        <script src="https://nano.to/pay.js"></script>
+        <script>
+        nano.paywall({ 
+            element: '.premium', // required, all with class .premium
+            address: 'nano_1tip98ou698oj3r79f71fuu5kzzjmj5esxzduirg14q8kdcschfthmwa1f6u', // required
+            amount: '0.01', // required
+            // debug: false, // optional
+            
+            button: 'Purchase', // optional
+            success: (block) => {
+                hljs.highlightAll();
+            }
+        })
+        </script>
+        
+    </body>
+</html>

@@ -4,7 +4,6 @@
 - tags: Crypto
 - price: 0.01
 - author: @nano2dev
-- website: twitter.com/nano2dev
 - verified: true
 
 -----

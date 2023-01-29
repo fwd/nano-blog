@@ -24,7 +24,6 @@ const title = config.title || 'My Blog'
 const theme = config.theme || 'nano'
 const source = config.source || './source'
 const dest = config.dest || './docs'
-const authors = config.authors || './author'
 const blog_path = config.path
 const domain = config.domain
 const description = config.description
@@ -155,18 +154,30 @@ if (blog_path && !fs.existsSync(dest + '/' + blog_path)) {
 }
 
 // authors
-if (!fs.existsSync(authors)) fs.mkdirSync(authors)
+var authors = articles.filter(a => a.author).map(a => a.author)
 
-var writters = articles.filter(a => a.author).map(a => a.author)
+for (var author of authors) {
 
-for (var author of writters) {
-	console.log( authors )
-}
+	var name = author.replace('@', '')
 
+	if (!fs.existsSync(`${dest}/@${name}`)) fs.mkdirSync(`${dest}/@${name}`)
+	
+	var author_articles = articles.filter(a => a.author === author)
 
-// markdown2html
-var single_html = fs.readFileSync(`./themes/${theme}/single.html`, { encoding: "utf8" })
-for (var article of articles) {
-	var article_html = ejs.render(single_html, { articles : articles.filter(a => a.slug !== article.slug), article, title, nano_address: article.address || nano_address, metrics, verified, contact })
-	fs.writeFileSync(`${dest}${blog_path ? '/' + blog_path : '' }/${article.slug}.html`, article_html, { encoding: "utf8" } )
+	fs.writeFileSync(`${dest}/@${name}/index.html`, ejs.render(index_html, { articles: author_articles, title, site_title: author + ' - ' + title, metrics, contact: author, verified: author_articles.find(a => a.verified) }), { encoding: "utf8" } )
+	
+	var single_html = fs.readFileSync(`./themes/${theme}/single.html`, { encoding: "utf8" })
+
+	for (var article of author_articles) {
+		var article_html = ejs.render(single_html, { 
+			articles : articles.filter(a => a.slug !== article.slug), 
+			article, title, 
+			nano_address: article.address || nano_address, 
+			metrics, 
+			verified, 
+			contact 
+		})
+		fs.writeFileSync(`${dest}/@${name}/${article.slug}.html`, article_html, { encoding: "utf8" } )
+	}
+
 }
