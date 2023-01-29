@@ -2,7 +2,7 @@
  * 
  * 
  * Woah... You scared me. 
- * Who actually reads the code.. Nerd. 
+ * Who actually reads the code. 
  * Excuse the construction site.
  * 
  * 
@@ -96,8 +96,8 @@ copyFolderSync(`./themes/${theme}/js`, `${dest}/js`)
 
 // homepage
 var index_html = fs.readFileSync(`./themes/${theme}/index.html`, { encoding: "utf8" })
-fs.writeFileSync(`${dest}/index.html`, ejs.render(index_html, { articles, title, site_title, nano_address}), { encoding: "utf8" } )
-fs.writeFileSync(`${dest}/404.html`, ejs.render(index_html, { articles, title, site_title, nano_address}), { encoding: "utf8" } )
+fs.writeFileSync(`${dest}/index.html`, ejs.render(index_html, { articles, title, site_title, nano_address, metrics }), { encoding: "utf8" } )
+fs.writeFileSync(`${dest}/404.html`, ejs.render(index_html, { articles, title, site_title, nano_address, metrics }), { encoding: "utf8" } )
 
 // json_api
 if (json_api) {
@@ -146,15 +146,14 @@ if (domain) {
 }
 
 // optinal blog path 
-// don't do it.... relative path hell
 if (blog_path && !fs.existsSync(dest + '/' + blog_path)) {
 	fs.mkdirSync(dest + '/' + blog_path)
-	fs.writeFileSync(`${dest + '/' + blog_path}/index.html`, ejs.render(index_html, { articles, title, nano_address }), { encoding: "utf8" } )
+	fs.writeFileSync(`${dest + '/' + blog_path}/index.html`, ejs.render(index_html, { articles, title, nano_address, metrics }), { encoding: "utf8" } )
 }
 
 // markdown2html
 var single_html = fs.readFileSync(`./themes/${theme}/single.html`, { encoding: "utf8" })
 for (var article of articles) {
-	var article_html = ejs.render(single_html, { articles : articles.filter(a => a.slug !== article.slug), article, title, nano_address })
+	var article_html = ejs.render(single_html, { articles : articles.filter(a => a.slug !== article.slug), article, title, nano_address, metrics })
 	fs.writeFileSync(`${dest}${blog_path ? '/' + blog_path : '' }/${article.slug}.html`, article_html, { encoding: "utf8" } )
 }
