@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "lodash": "^4.17.21",
+    "markdown-it": "^13.0.1",
+    "moment": "^2.29.4"
+  },
+  "pre-commit": ["build"],
+  "scripts": {
+    "start": "npm run build && echo 'Done. Commit to deploy.'",
+    "build": "node build.js"
+  }
+}
