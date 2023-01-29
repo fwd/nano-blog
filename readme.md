@@ -4,8 +4,14 @@ https://blog.nano.to
 
 ### How To Be A Guest Writer
 
-Create a new ```markdown``` file in ```/source``` dir.
+Clone this repo. Submit a new Github PR with a new ```markdown``` file in the ```/source``` directory.
 
+**Filename:**
+```
+source/my-premium-article-title-in-kebab-case.md
+```
+
+**Contents:**
 ```
 - title: My Premium Article Title
 - date: 01-01-2023
