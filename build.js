@@ -33,6 +33,7 @@ const nano_address = config.nano_address
 const json_api = config.json_api
 const rss_api = config.rss_api
 const language = config.language || 'en-us'
+const metrics = config.metrics || false
 
 var articles = []
 var exlcude = ['.DS_Store']
