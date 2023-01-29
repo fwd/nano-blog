@@ -100,7 +100,7 @@ copyFolderSync(`./themes/${theme}/js`, `${dest}/js`)
 // homepage
 var index_html = fs.readFileSync(`./themes/${theme}/index.html`, { encoding: "utf8" })
 fs.writeFileSync(`${dest}/index.html`, ejs.render(index_html, { articles, title, site_title, metrics, contact, verified }), { encoding: "utf8" } )
-fs.writeFileSync(`${dest}/404.html`, ejs.render(index_html, { articles, title, site_title, metrics, contact, verified }), { encoding: "utf8" } )
+// fs.writeFileSync(`${dest}/404.html`, ejs.render(index_html, { articles, title, site_title, metrics, contact, verified }), { encoding: "utf8" } )
 
 // json_api
 if (json_api) {

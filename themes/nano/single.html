@@ -41,6 +41,8 @@
                       return string.charAt(0).toUpperCase() + string.slice(1);
                     }
                 %>
+                <% if (article.author && !article.website) { %> <span style=" color: #1f9ce9; font-weight: bold "><%- article.author %></span><% if (article.verified) { %> <img src="img/verified.png" alt="" style=" max-width: 20px; margin: 0; display: inline-block; vertical-align: text-top; margin-top: 1px; "> <% } %> · <% } %>
+                <% if (article.author && article.website) { %> <a href="https://<%- article.website %>" target="_blank" style="border-bottom: 0"><span style=" color: #1f9ce9; font-weight: bold "><%- article.author %></span><% if (article.verified) { %> <img src="img/verified.png" alt="" style=" max-width: 20px; margin: 0; display: inline-block; vertical-align: text-top; margin-top: 1px; "> <% } %></a> · <% } %>
                 <%- article.fromNow %>  
                 <% if (article.tags) { %> · <span style=" color: #1f9ce9; font-size: 95%; "><%- capitalizeFirstLetter(article.tags.split(', ')[0]) %></span> <% } %>
                 <% if (article.price && nano_address) { %> · <span style=" color: #1f9ce9; font-size: 95%; ">Premium</span> <% } %>

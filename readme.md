@@ -20,6 +20,8 @@ source/my-premium-article-title-in-kebab-case.md
 - tags: Opinion
 - price: 0.01
 - free: false
+- author: @nano2dev
+- website: twitter.com/nano2dev
 - address: YOUR_NANO_ADDRESS
 -----
 Your story in Markdown..
