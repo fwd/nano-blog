@@ -7,7 +7,7 @@ https://blog.nano.to
 Create a new ```markdown``` file in ```/source``` dir.
 
 ```
-- title: My Article title
+- title: My Premium Article Title
 - date: 01-01-2023
 - tags: Opinion
 - price: 0.01
