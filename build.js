@@ -123,6 +123,8 @@ try {
 		{ url: 'https://' + parsed + '/', timestamp: moment().format('YYYY-MM-DD') }
 	]
 	articles.map(a => pages.push({ url: 'https://' + parsed + `${blog_path ? '/' + blog_path : '' }` + '/' + a.slug + '.html', timestamp: moment(a.date).format('YYYY-MM-DD') }))
+	var authors = articles.filter(a => a.author).map(a => a.author)
+	articles.map(a => pages.push({ url: 'https://' + parsed + `${blog_path ? '/' + blog_path : '' }` + '/' + a.slug + '.html', timestamp: moment(a.date).format('YYYY-MM-DD') }))
 	fs.writeFileSync(`${dest}/sitemap.xml`, ejs.render(sitemap, { pages }), { encoding: "utf8" } )
   }
 } catch(err) {}
@@ -170,7 +172,7 @@ for (var author of authors) {
 
 	for (var article of author_articles) {
 		var article_html = ejs.render(single_html, { 
-			articles : articles.filter(a => a.slug !== article.slug), 
+			articles : author_articles.filter(a => a.slug !== article.slug), 
 			article, title, 
 			nano_address: article.address || nano_address, 
 			metrics, 
@@ -180,4 +182,12 @@ for (var author of authors) {
 		fs.writeFileSync(`${dest}/@${name}/${article.slug}.html`, article_html, { encoding: "utf8" } )
 	}
 
+}
+
+
+// markdown2html
+var single_html = fs.readFileSync(`./themes/${theme}/single.html`, { encoding: "utf8" })
+for (var article of articles) {
+	var article_html = ejs.render(single_html, { articles : articles.filter(a => a.slug !== article.slug), article, title, nano_address: article.address || nano_address, metrics, verified, contact })
+	fs.writeFileSync(`${dest}${blog_path ? '/' + blog_path : '' }/${article.slug}.html`, article_html, { encoding: "utf8" } )
 }

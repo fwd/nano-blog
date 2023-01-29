@@ -26,13 +26,15 @@
         <header>
             <div class="container">
                 <div>
-                    <b><%- title %></b>
+                    <a href="/" style="border-bottom: 0;">
+                        <b><%- title %></b>
+                    </a>
                     <% if (verified) { %>
                     <img src="img/verified.png" alt="" style=" max-width: 20px; margin: 0; display: inline-block; vertical-align: text-top; margin-top: 1px; ">
                     <% } %>
                 </div>
                 <% if (contact) { %>
-                <div><a href="mailto:<%- contact %>" style="border: 0"><%- contact.includes('@') ? contact : 'Contact' %>%></a></div>
+                <div><a href="mailto:<%- contact %>" style="border: 0"><%- contact[0] === '@' ? contact : 'Contact' %>%></a></div>
                 <% } %>
             </div>
         </header>
