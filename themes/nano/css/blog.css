@@ -272,6 +272,7 @@ time {
   font-size: 19px;
   font-style: italic;
   opacity: 0.8;
+  word-break: break-word;
 }
 
 .row {
