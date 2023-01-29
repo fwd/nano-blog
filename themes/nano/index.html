@@ -25,7 +25,12 @@
 
         <header>
             <div class="container">
-                <div><b><%- title %></b></div>
+                <div>
+                    <b><%- title %></b>
+                    <% if (verified) { %>
+                    <img src="img/verified.png" alt="" style=" max-width: 20px; margin: 0; display: inline-block; vertical-align: text-top; margin-top: 1px; ">
+                    <% } %>
+                </div>
                 <% if (contact) { %>
                 <div><a href="mailto:<%- contact %>" style="border: 0">Contact</a></div>
                 <% } %>
@@ -69,7 +74,7 @@
                                 </a>
                                 <div class="card-content">
                                     <!-- <a href="/<%- article.slug %>.html" role="button"> -->
-                                        <p class="kicker"><%- article.tags ? article.tags.split(', ')[0] : '' %> <% if (article.price && nano_address) { %> · <span style=" color: #3498db; ">Premium</span> <% } %> </p>
+                                        <p class="kicker"><%- article.tags ? article.tags.split(', ')[0] : '' %> <% if (article.price) { %> · <span style=" color: #3498db; ">Premium</span> <% } %> </p>
                                         <a href="/<%- article.slug %>.html">
                                         <h2>
                                             <%- article.title %>

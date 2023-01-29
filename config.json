@@ -7,6 +7,7 @@
 	"dest": "./docs",
 	"path": "",
 	"contact": "support@nano.to",
+	"verified": true,
 	"metrics": true,
 	"json_api": true,
 	"rss_api": true,
