@@ -79,6 +79,7 @@
             <% if (article.free) { %>
             free: true, // // optional, allow free access
             <% } %>
+            text: 'Read for',
             button: 'Purchase', // optional
             success: (block) => {
                 hljs.highlightAll();

@@ -336,7 +336,7 @@ h6 {
   position: relative;
 }
 .home .card h2 {
-    font-size: 30px;
+    font-size: 26px;
     margin: 0;
     line-height: 1.1;
     font-weight: 100;
@@ -455,6 +455,10 @@ p code {
       margin: 0 3px;
     border-radius: 2px;
     padding: 3px 8px;
+}
+
+.dark-mode .dark-invert {
+  filter: invert(1);
 }
 
 .dark-mode p code {
