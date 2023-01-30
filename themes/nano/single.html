@@ -44,7 +44,7 @@
                     }
                 %>
                 <% if (article.author) { %> <a href="<%- article.website ? ('https://' + article.website) : ('/' + article.author) %>" target="<%- article.website ? '_blank' : '_self' %>" style="border-bottom: 0"><span style=" color: #1f9ce9; font-weight: bold "><%- article.author %></span></a> · <% } %>
-                <%- article.fromNow %>  
+                <%- article.date %>  
                 <% if (article.tags) { %> · <span style=" color: #1f9ce9; font-size: 95%; "><%- capitalizeFirstLetter(article.tags.split(', ')[0]) %></span> <% } %>
                
             </time>
