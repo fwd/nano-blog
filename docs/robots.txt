@@ -4,4 +4,4 @@ Disallow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://<%- domain %>/sitemap.xml
+Sitemap: https://blog.nano.to/sitemap.xml

@@ -130,8 +130,9 @@ try {
 
 // robots.txt
 try {
-  if (theme && !fs.existsSync(`./themes/${theme}/robots.txt`)) {
-	fs.copyFile(`./themes/${theme}/robots.txt`, `./${dest}/robots.txt`)
+  if (theme && fs.existsSync(`./themes/${theme}/robots.txt`)) {
+  	var robots_txt = fs.readFileSync(`./themes/${theme}/robots.txt`, { encoding: "utf8" })
+  	fs.writeFileSync(`${dest}/robots.txt`, ejs.render(robots_txt, { domain }), { encoding: "utf8" } )
   }
 } catch(err) {}
 
