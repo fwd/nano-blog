@@ -157,7 +157,7 @@ if (blog_path && !fs.existsSync(dest + '/' + blog_path)) {
 // all articles
 var single_html = fs.readFileSync(`./themes/${theme}/single.html`, { encoding: "utf8" })
 for (var article of articles) {
-	var article_html = ejs.render(single_html, { articles : articles.filter(a => a.slug !== article.slug), article, title, nano_address: article.address || nano_address, metrics, verified, contact })
+	var article_html = ejs.render(single_html, { articles : articles.filter(a => a.slug !== article.slug), article, domain, title, nano_address: article.address || nano_address, metrics, verified, contact })
 	fs.writeFileSync(`${dest}${blog_path ? '/' + blog_path : '' }/${article.slug}.html`, article_html, { encoding: "utf8" } )
 }
 
@@ -181,6 +181,7 @@ for (var author of authors) {
 			articles : author_articles.filter(a => a.slug !== article.slug), 
 			article, title, 
 			nano_address: article.address || nano_address, 
+			domain, 
 			metrics, 
 			verified, 
 			contact 
