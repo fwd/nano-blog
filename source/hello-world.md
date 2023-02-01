@@ -1,5 +1,5 @@
 
-- title: Free, non-custodial Checkout UI hosted on Github
+- title: Create a Blog With Nano Monetization in Minutes
 - date: 1-1-2023
 - tags: Crypto
 - price: 0.01

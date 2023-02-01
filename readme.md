@@ -4,7 +4,7 @@ Live Demo: https://blog.nano.to
 
 ### Start a Blog
 
-1. [Fork this repo](https://github.com/fwd/nano-blog/fork). 
+1. [Fork this repo](https://github.com/fwd/nano-blog/generate). 
 2. Write your stories in ```markdown``` within the ```/source``` directory.
 3. Publish repo on [Cloudflare Pages](https://developers.cloudflare.com/pages/).
 
