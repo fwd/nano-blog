@@ -1,7 +1,0 @@
-User-agent: Googlebot
-Disallow: /
-
-User-agent: *
-Allow: /
-
-Sitemap: https://blog.nano.to/sitemap.xml
