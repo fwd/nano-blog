@@ -150,13 +150,13 @@ if (domain) {
 // optinal blog path 
 if (blog_path && !fs.existsSync(dest + '/' + blog_path)) {
 	fs.mkdirSync(dest + '/' + blog_path)
-	fs.writeFileSync(`${dest + '/' + blog_path}/index.html`, ejs.render(index_html, { articles, title, metrics, contact, verified }), { encoding: "utf8" } )
+	fs.writeFileSync(`${dest + '/' + blog_path}/index.html`, ejs.render(index_html, { articles, title, metrics, github, verified }), { encoding: "utf8" } )
 }
 
 // all articles
 var single_html = fs.readFileSync(`./themes/${theme}/single.html`, { encoding: "utf8" })
 for (var article of articles) {
-	var article_html = ejs.render(single_html, { articles : articles.filter(a => a.slug !== article.slug), article, domain, title, nano_address: article.address || nano_address, metrics, verified, contact })
+	var article_html = ejs.render(single_html, { articles : articles.filter(a => a.slug !== article.slug), article, domain, title, nano_address: article.address || nano_address, metrics, verified, github })
 	fs.writeFileSync(`${dest}${blog_path ? '/' + blog_path : '' }/${article.slug}.html`, article_html, { encoding: "utf8" } )
 }
 
@@ -171,7 +171,7 @@ for (var author of authors) {
 	
 	var author_articles = articles.filter(a => a.author === author)
 
-	fs.writeFileSync(`${dest}/@${name}/index.html`, ejs.render(index_html, { articles: author_articles, title, site_title: author + ' - ' + title, metrics, contact: author, verified: author_articles.find(a => a.verified) }), { encoding: "utf8" } )
+	fs.writeFileSync(`${dest}/@${name}/index.html`, ejs.render(index_html, { articles: author_articles, title, site_title: author + ' - ' + title, metrics, github: author, verified: author_articles.find(a => a.verified) }), { encoding: "utf8" } )
 	
 	var single_html = fs.readFileSync(`./themes/${theme}/single.html`, { encoding: "utf8" })
 
@@ -183,7 +183,7 @@ for (var author of authors) {
 			domain, 
 			metrics, 
 			verified, 
-			contact 
+			github 
 		})
 		fs.writeFileSync(`${dest}/@${name}/${article.slug}.html`, article_html, { encoding: "utf8" } )
 	}
