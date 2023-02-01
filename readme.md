@@ -6,7 +6,7 @@ https://blog.nano.to
 
 1. [Fork this repo](https://github.com/fwd/nano-blog/fork). 
 2. Write your stories in ```markdown``` within the ```/source``` directory.
-3. Publish repo on Github Pages or [Cloudflare Pages](https://developers.cloudflare.com/pages/).
+3. Publish repo on [Cloudflare Pages](https://developers.cloudflare.com/pages/).
 
 **Markdown:**
 
