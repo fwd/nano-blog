@@ -1,6 +1,6 @@
 ### Nano Blog Template
 
-https://blog.nano.to
+Live Demo: https://blog.nano.to 
 
 ### Start a Blog
 
