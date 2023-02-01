@@ -27,10 +27,10 @@
                     <img src="img/verified.png" alt="" style=" max-width: 20px; margin: 0; display: inline-block; vertical-align: text-top; margin-top: 1px; ">
                     <% } %>
                 </div>
-                <% if (contact) { %>
+                <% if (github) { %>
                 <div>
-                    <a href="https://github.com/fwd/nano-blog#be-a-guest-writer" target="_blank" style="border: 0">
-                        <img class="dark-invert" src="https://blog.nano.to/img/github.svg" alt="" style=" max-width: 30px; margin: 0; display: inline-block; vertical-align: text-top; margin-top: 1px; ">
+                    <a href="<%- github %>" target="_blank" style="border: 0">
+                        <img class="dark-invert" src="../img/github.svg" alt="" style=" max-width: 30px; margin: 0; display: inline-block; vertical-align: text-top; margin-top: 1px; ">
                     </a>
                 </div>
                 <% } %>
@@ -41,13 +41,6 @@
 
             <%
 
-                // function chunkedArray(array, parts) {
-                //     let result = [];
-                //     for (let i = parts; i > 0; i--) {
-                //         result.push(array.splice(0, Math.ceil(array.length / i)));
-                //     }
-                //     return result;
-                // }
                 function chunkedArray(array, size) {
                   const chunkedArray = []
                   for (var i = 0; i < array.length; i += size) {
@@ -57,8 +50,6 @@
                 }
 
                 var chunked = chunkedArray(articles, 3)
-
-                // console.log( chunked )
 
             %>
 
@@ -73,7 +64,6 @@
                                     </div>
                                 </a>
                                 <div class="card-content">
-                                    <!-- <a href="/<%- article.slug %>.html" role="button"> -->
                                         <p class="kicker"><%- article.tags ? article.tags.split(', ')[0] : '' %> <% if (article.price) { %> · <span style=" color: #3498db; ">Premium</span> <% } %> </p>
                                         <a href="/<%- article.slug %>.html">
                                         <h2>

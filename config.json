@@ -6,6 +6,7 @@
 	"source": "./source",
 	"dest": "./docs",
 	"path": "",
+	"github": "https://github.com/fwd/nano-blog",
 	"contact": "support@nano.to",
 	"verified": true,
 	"metrics": true,

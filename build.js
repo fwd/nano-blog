@@ -32,8 +32,8 @@ const nano_address = config.nano_address
 const json_api = config.json_api
 const rss_api = config.rss_api
 const metrics = config.metrics || false
-const contact = config.contact || false
 const language = config.language || 'en-us'
+const github = config.github
 const verified = config.verified // now it's your choice.
 
 var articles = []
@@ -98,8 +98,7 @@ copyFolderSync(`./themes/${theme}/js`, `${dest}/js`)
 
 // homepage
 var index_html = fs.readFileSync(`./themes/${theme}/index.html`, { encoding: "utf8" })
-fs.writeFileSync(`${dest}/index.html`, ejs.render(index_html, { articles, title, site_title, metrics, contact, verified }), { encoding: "utf8" } )
-// fs.writeFileSync(`${dest}/404.html`, ejs.render(index_html, { articles, title, site_title, metrics, contact, verified }), { encoding: "utf8" } )
+fs.writeFileSync(`${dest}/index.html`, ejs.render(index_html, { articles, title, site_title, metrics, github, verified }), { encoding: "utf8" } )
 
 // json_api
 if (json_api) {
