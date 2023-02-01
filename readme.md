@@ -1,27 +1,29 @@
-### Nano.to Blog
+### Nano Blog Template
 
 https://blog.nano.to
 
-### Write Stories
+### Start a Blog
 
 1. [Fork this repo](https://github.com/fwd/nano-blog/fork). 
-2. Write your story in ```markdown``` within the ```/source``` directory.
-3. Submit a Github merge request.
+2. Write your stories in ```markdown``` within the ```/source``` directory.
+3. Publish repo on Github Pages or [Cloudflare Pages](https://developers.cloudflare.com/pages/).
 
-**Filename:**
+**Markdown:**
+
 ```
 source/my-premium-article-title-in-kebab-case.md
 ```
 
-**Contents:**
+**Template:**
+
 ```
 - title: My Premium Article Title
 - date: 01-01-2023
 - tags: Opinion
 - price: 0.01
-- free: false
-- author: @nano2dev
-- website: twitter.com/nano2dev
+- free: true
+- author: @your_twitter
+- website: twitter.com/your_twitter
 - address: YOUR_NANO_ADDRESS
 -----
 Your story in Markdown..

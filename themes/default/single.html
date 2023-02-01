@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%- title %></title>
+        <link rel="icon" type="image/png" href="img/favicon.png">
+        <meta name="author" content="https://twitter.com/nano2dev"/>
+        <link rel="apple-touch-icon" href="img/favicon.png">
+        <meta property="og:title" content="Nano.to Blog">
+        <meta property="og:image" content="img/cover.png">
+        <meta property="twitter:image" content="img/cover.png">
+        <meta name="apple-mobile-web-app-title" content="My Blog">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="../css/highlight.min.css">
+        <link rel="stylesheet" href="../css/blog.css">
+        <style>
+            * { margin: 0; padding: 0; box-sizing: border-box; } .premium { opacity: 0 }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div><a href="/" style="border: 0">&#8592; Back</a></div>
+                <div>
+                    <a href="/" style="border-bottom: 0;">
+                        <b><%- title %></b>
+                    </a>
+                    <% if (verified) { %>
+                    <img src="img/verified.png" alt="" style=" max-width: 20px; margin: 0; display: inline-block; vertical-align: text-top; margin-top: 1px; ">
+                    <% } %>
+                </div>
+            </div>
+        </header>
+        <article>
+            <h1 class="title"><%- article.title %></h1>
+            <time>
+                <%
+                    function capitalizeFirstLetter(string) {
+                      return string.charAt(0).toUpperCase() + string.slice(1);
+                    }
+                %>
+                <% if (article.author) { %> <a href="<%- article.website ? ('https://' + article.website) : ('/' + article.author) %>" target="<%- article.website ? '_blank' : '_self' %>" style="border-bottom: 0"><span style=" color: #1f9ce9; font-weight: bold "><%- article.author %></span></a> · <% } %>
+                <%- article.date %>  
+                <% if (false && article.tags) { %> · <span style=" font-size: 95%; font-weight: bold"><%- capitalizeFirstLetter(article.tags.split(', ')[0]) %></span> <% } %>
+               
+            </time>
+            <div class="<%- article.price ? 'premium' : '' %>" data-id="<%- article.id %>">
+                <%- article.html %>
+                <% if (articles.length > 1) { %> 
+                <div style="margin-top: 40px;">
+                    <h2>Further Reading</h2>
+                    <ul>
+                        <% articles.slice(0, 5).map(article => { %>
+                        <li style=" margin-bottom: 3px; opacity: 0.9; font-size: 17px; "><a href="/<%- article.slug %>.html"><%- article.title %></a></li>
+                        <% }) %>
+                    </ul>
+                </div>
+                <% } %> 
+            </div>
+        </article>
+        <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('lightMode')) {
+            document.documentElement.className += 'dark-mode'
+        }
+        </script>
+        <script src="../js/highlight.min.js"></script>
+        <% if (article.price && nano_address) { %>
+        <script src="../js/NanoPay.js"></script>
+        <script>
+        nano.paywall({ 
+            element: '.premium', // required, all with class .premium
+            address: '<%- nano_address %>', // required
+            amount: '<%- article.price %>', // required
+            // debug: false, // optional
+            <% if (article.free) { %>
+            free: true, // // optional, allow free access
+            <% } %>
+            text: 'Read for',
+            button: 'Purchase', // optional
+            success: (block) => {
+                hljs.highlightAll();
+            }
+        })
+        </script>
+        <% } else { %>
+        <script>hljs.highlightAll();</script>
+        <% } %>
+    </body>
+</html>

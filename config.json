@@ -2,7 +2,7 @@
 	"site_title": "Blog - Nano.to",
 	"title": "Nano.to Blog",
 	"domain": "blog.nano.to",
-	"theme": "nano",
+	"theme": "blog.nano.to",
 	"source": "./source",
 	"dest": "./docs",
 	"path": "",

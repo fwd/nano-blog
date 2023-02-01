@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title><%- site_title %></title>
+        <link rel="icon" type="image/png" href="img/favicon.png">
+        <meta name="author" content="https://twitter.com/nano2dev"/>
+        <link rel="apple-touch-icon" href="img/favicon.png">
+        <meta property="og:title" content="Nano.to Blog">
+        <meta property="og:image" content="img/cover.png">
+        <meta property="twitter:image" content="img/cover.png">
+        <meta name="apple-mobile-web-app-title" content="My Blog">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="../css/highlight.min.css">
+        <link rel="stylesheet" href="../css/blog.css">
+    </head>
+    <body>
+
+        <header>
+            <div class="container">
+                <div>
+                    <a href="/" style="border-bottom: 0;">
+                        <b><%- title %></b>
+                    </a>
+                    <% if (verified) { %>
+                    <img src="img/verified.png" alt="" style=" max-width: 20px; margin: 0; display: inline-block; vertical-align: text-top; margin-top: 1px; ">
+                    <% } %>
+                </div>
+                <% if (contact) { %>
+                <div>
+                    <a href="https://github.com/fwd/nano-blog#be-a-guest-writer" target="_blank" style="border: 0">
+                        <img class="dark-invert" src="https://blog.nano.to/img/github.svg" alt="" style=" max-width: 30px; margin: 0; display: inline-block; vertical-align: text-top; margin-top: 1px; ">
+                    </a>
+                </div>
+                <% } %>
+            </div>
+        </header>
+
+        <div class="home">
+
+            <%
+
+                // function chunkedArray(array, parts) {
+                //     let result = [];
+                //     for (let i = parts; i > 0; i--) {
+                //         result.push(array.splice(0, Math.ceil(array.length / i)));
+                //     }
+                //     return result;
+                // }
+                function chunkedArray(array, size) {
+                  const chunkedArray = []
+                  for (var i = 0; i < array.length; i += size) {
+                   chunkedArray.push(array.slice(i, i + size))
+                  }
+                  return chunkedArray
+                }
+
+                var chunked = chunkedArray(articles, 3)
+
+                // console.log( chunked )
+
+            %>
+
+            <% chunked.map(chunk => { %>
+            <div class="row">
+                <% chunk.map(article => { %>
+                    <div class="col">
+                            <div class="card" tabindex="0">
+                                <a href="/<%- article.slug %>.html">
+                                    <div class="card-image">
+                                        <img alt="" src="<%- article.image || 'https://assets.codepen.io/772926/card-img-one.png' %>">
+                                    </div>
+                                </a>
+                                <div class="card-content">
+                                    <!-- <a href="/<%- article.slug %>.html" role="button"> -->
+                                        <p class="kicker"><%- article.tags ? article.tags.split(', ')[0] : '' %> <% if (article.price) { %> · <span style=" color: #3498db; ">Premium</span> <% } %> </p>
+                                        <a href="/<%- article.slug %>.html">
+                                        <h2>
+                                            <%- article.title %>
+                                        </h2>
+                                        </a>
+                                        <time style="margin: 0;font-size: 16px;"><%- article.fromNow %></time>
+                                        <% if (article.preview) { %>
+                                        <p>
+                                            <%- article.preview %>
+                                        </p>
+                                        <% } %>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="/<%- article.slug %>.html">
+                                        <span>
+                                            Read More
+                                        </span>
+                                        <svg class="icon" viewbox="0 0 16 16">
+                                            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1">
+                                                <line x1="0.5" x2="15.5" y1="8.5" y2="8.5">
+                                                </line>
+                                                <polyline points="10.5,3.5 15.5,8.5 10.5,13.5 ">
+                                                </polyline>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+            <% }) %>
+
+        </div>
+        <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('lightMode')) {
+            document.documentElement.className += 'dark-mode'
+        }
+        </script>
+    </body>
+</html>
