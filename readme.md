@@ -1,6 +1,22 @@
-### Nano Blog Template
+![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-Live Demo: https://blog.nano.to 
+<h1 align="center">Nano Blog Template</h1>
+<h3 align="center">For hosting on Cloudflare Pages</h3>
+
+![line](https://github.com/fwd/n2/raw/master/.github/line.png)
+
+
+![line](https://github.com/fwd/nano-blog/raw/master/.github/banner.png)
+![line](https://github.com/fwd/nano-blog/raw/master/.github/paywall.png)
+
+
+![line](https://github.com/fwd/n2/raw/master/.github/line.png)
+
+### Live Demo
+
+https://blog.nano.to 
+
+![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
 ### Start a Blog
 
