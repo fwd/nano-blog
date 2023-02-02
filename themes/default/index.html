@@ -14,6 +14,7 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <link rel="stylesheet" href="../css/highlight.min.css">
         <link rel="stylesheet" href="../css/blog.css">
+        <% if (metrics) { %><script src="https://metrics.bar/js/script.js" id="metrics" async defer></script><% } %>
     </head>
     <body>
 
@@ -27,13 +28,25 @@
                     <img src="img/verified.png" alt="" style=" max-width: 20px; margin: 0; display: inline-block; vertical-align: text-top; margin-top: 1px; ">
                     <% } %>
                 </div>
-                <% if (github) { %>
-                <div>
-                    <a href="<%- github %>" target="_blank" style="border: 0">
-                        <img class="dark-invert" src="../img/github.svg" alt="" style=" max-width: 25px; margin: 0; display: inline-block; vertical-align: text-top; margin-top: 1px; ">
-                    </a>
+                <div class="menu-items">
+                    <% if (github) { %>
+                    <div>
+                        <a href="<%- github %>" style="border: 0" target="_blank">
+                            <img alt="" class="dark-invert" src="../img/github.svg" style=" max-width: 25px; margin: 0; display: inline-block; vertical-align: text-top; margin-top: 1px; ">
+                            </img>
+                        </a>
+                    </div>
+                    <% } %>
+                    <% if (website) { %>
+                    <div>
+                        <a href="<%- github %>" style="border: 0" target="_blank">
+                            <img alt="" class="dark-invert" src="https://icons.duckduckgo.com/ip3/<%- github %>.ico" style=" max-width: 25px; margin: 0; display: inline-block; vertical-align: text-top; margin-top: 1px; ">
+                            </img>
+                        </a>
+                    </div>
+                    <% } %>
                 </div>
-                <% } %>
+
             </div>
         </header>
 

@@ -471,3 +471,15 @@ p code {
 article {
   margin-bottom: 50px;
 }
+
+.menu-items {
+  display: flex;
+}
+
+.menu-items > div {
+  margin-left: 15px;
+}
+
+.nano-locked {
+  margin-top: 10px;
+}
