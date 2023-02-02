@@ -40,7 +40,6 @@
                 <% if (article.author) { %> <a href="<%- article.website ? ('https://' + article.website) : ('/' + article.author) %>" target="<%- article.website ? '_blank' : '_self' %>" style="border-bottom: 0"><span style=" color: #1f9ce9; font-weight: bold "><%- article.author %></span></a> · <% } %>
                 <%- article.date %>  
                 <% if (false && article.tags) { %> · <span style=" font-size: 95%; font-weight: bold"><%- capitalizeFirstLetter(article.tags.split(', ')[0]) %></span> <% } %>
-               
             </time>
             <div class="<%- article.price ? 'premium' : '' %>" data-id="<%- article.id %>">
                 <%- article.html %>

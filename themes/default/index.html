@@ -30,7 +30,7 @@
                 <% if (github) { %>
                 <div>
                     <a href="<%- github %>" target="_blank" style="border: 0">
-                        <img class="dark-invert" src="../img/github.svg" alt="" style=" max-width: 30px; margin: 0; display: inline-block; vertical-align: text-top; margin-top: 1px; ">
+                        <img class="dark-invert" src="../img/github.svg" alt="" style=" max-width: 25px; margin: 0; display: inline-block; vertical-align: text-top; margin-top: 1px; ">
                     </a>
                 </div>
                 <% } %>
@@ -57,7 +57,7 @@
             <div class="row">
                 <% chunk.map(article => { %>
                     <div class="col">
-                            <div class="card" tabindex="0">
+                            <div class="card">
                                 <a href="/<%- article.slug %>.html">
                                     <div class="card-image">
                                         <img alt="" src="<%- article.image || 'https://assets.codepen.io/772926/card-img-one.png' %>">
