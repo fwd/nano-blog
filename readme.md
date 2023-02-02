@@ -1,7 +1,7 @@
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
 <h1 align="center">Nano Blog Template</h1>
-<h3 align="center">Hosted on Cloudflare Pages</h3>
+<h3 align="center">for hosted on [Cloudflare Pages](https://developers.cloudflare.com/pages/)</h3>
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
