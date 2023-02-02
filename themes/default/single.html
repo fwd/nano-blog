@@ -15,7 +15,6 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <link rel="stylesheet" href="../css/highlight.min.css">
         <link rel="stylesheet" href="../css/blog.css">
-        
         <meta property="og:title" content="<%- title %>" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://<%- domain %>" />
@@ -55,7 +54,7 @@
                     <h2>Further Reading</h2>
                     <ul>
                         <% articles.slice(0, 5).map(article => { %>
-                        <li style=" margin-bottom: 3px; opacity: 0.9; font-size: 17px; "><a href="/<%- article.slug %>.html"><%- article.title %></a></li>
+                        <li style=" margin-bottom: 3px; opacity: 0.9; "><a href="/<%- article.slug %>.html"><%- article.title %></a></li>
                         <% }) %>
                     </ul>
                 </div>
