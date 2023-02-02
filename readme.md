@@ -21,11 +21,12 @@ https://blog.nano.to
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-### Start a Blog
+### Start Your Own Blog
 
-1. [Fork this repo](https://github.com/fwd/nano-blog/generate). 
-2. Write your stories in ```markdown``` within the ```/source``` directory.
-3. Publish repo on [Cloudflare Pages](https://developers.cloudflare.com/pages/).
+1. [Fork this Template](https://github.com/fwd/nano-blog/generate). 
+2. Write your articles in ```markdown``` within the ```/source``` directory.
+3. Edit ```/config.json```.
+4. Publish repo on [Cloudflare Pages](https://developers.cloudflare.com/pages/).
 
 **Markdown:**
 
