@@ -9,6 +9,7 @@
 ![line](https://github.com/fwd/nano-blog/raw/master/.github/banner.png)
 ![line](https://github.com/fwd/nano-blog/raw/master/.github/payscreen.png)
 ![line](https://github.com/fwd/nano-blog/raw/master/.github/paywall.png)
+![line](https://github.com/fwd/nano-blog/raw/master/.github/success.png)
 ![line](https://github.com/fwd/nano-blog/raw/master/.github/article.png)
 
 
