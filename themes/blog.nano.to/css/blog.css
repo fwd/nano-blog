@@ -273,7 +273,7 @@ button:hover {
 }
 
 time {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   display: block;
   margin-top: 15px;
   font-size: 19px;
@@ -336,7 +336,7 @@ h6 {
 }
 
 .home .card h2 {
-    font-size: 25px;
+    font-size: 31px;
     margin: 0;
     line-height: 1.1;
     font-weight: 100;
