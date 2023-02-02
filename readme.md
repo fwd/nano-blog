@@ -7,8 +7,9 @@
 
 
 ![line](https://github.com/fwd/nano-blog/raw/master/.github/banner.png)
-![line](https://github.com/fwd/nano-blog/raw/master/.github/article.png)
+![line](https://github.com/fwd/nano-blog/raw/master/.github/payscreen.png)
 ![line](https://github.com/fwd/nano-blog/raw/master/.github/paywall.png)
+![line](https://github.com/fwd/nano-blog/raw/master/.github/article.png)
 
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
