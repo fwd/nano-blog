@@ -5,7 +5,6 @@
 - price: 0.01
 - free: true
 - author: @nano2dev
-- verified: true
 
 -----
 

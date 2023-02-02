@@ -171,7 +171,7 @@ for (var author of authors) {
 	
 	var author_articles = articles.filter(a => a.author === author)
 
-	fs.writeFileSync(`${dest}/@${name}/index.html`, ejs.render(index_html, { articles: author_articles, title, site_title: author + ' - ' + title, metrics, github: author, verified: author_articles.find(a => a.verified) }), { encoding: "utf8" } )
+	fs.writeFileSync(`${dest}/@${name}/index.html`, ejs.render(index_html, { articles: author_articles, title: author, site_title: author + ' - ' + title, metrics, github: author, verified: author_articles.find(a => a.verified) }), { encoding: "utf8" } )
 	
 	var single_html = fs.readFileSync(`./themes/${theme}/single.html`, { encoding: "utf8" })
 
