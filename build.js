@@ -106,6 +106,10 @@ fs.writeFileSync(`${dest}/index.html`, ejs.render(index_html, { articles: articl
 
 // json_api
 if (json_api) {
+	var json_articles = JSON.parse(JSON.stringify(articles)).map(a => {
+		if (a.price) delete a.html
+		return a
+	})
 	fs.writeFileSync(`${dest}/api.json`, JSON.stringify(articles.filter(a => !a.hidden), null, 4), { encoding: "utf8" } )
 }
 
