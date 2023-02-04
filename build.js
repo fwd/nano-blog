@@ -99,18 +99,18 @@ copyFolderSync(`./themes/${theme}/js`, `${dest}/js`)
 
 // homepage
 var index_html = fs.readFileSync(`./themes/${theme}/index.html`, { encoding: "utf8" })
-fs.writeFileSync(`${dest}/index.html`, ejs.render(index_html, { articles, title, site_title, metrics, github, website, verified }), { encoding: "utf8" } )
+fs.writeFileSync(`${dest}/index.html`, ejs.render(index_html, { articles: articles.filter(a => !a.hidden), title, site_title, metrics, github, website, verified }), { encoding: "utf8" } )
 
 // json_api
 if (json_api) {
-	fs.writeFileSync(`${dest}/api.json`, JSON.stringify(articles, null, 4), { encoding: "utf8" } )
+	fs.writeFileSync(`${dest}/api.json`, JSON.stringify(articles.filter(a => !a.hidden), null, 4), { encoding: "utf8" } )
 }
 
 // rss_api
 if (rss_api) {
 	var rss_template = fs.readFileSync(`./themes/${theme}/rss.xml`, { encoding: "utf8" })
 	// fs.writeFileSync(`${dest}/rss.xml`, JSON.stringify(articles, null, 4), { encoding: "utf8" } )
-	fs.writeFileSync(`${dest}/rss.xml`, ejs.render(rss_template, { articles, title, domain, description, language }), { encoding: "utf8" } )
+	fs.writeFileSync(`${dest}/rss.xml`, ejs.render(rss_template, { articles: articles.filter(a => !a.hidden), title, domain, description, language }), { encoding: "utf8" } )
 }
 
 // sitemap
@@ -121,9 +121,9 @@ try {
 	var pages = [
 		{ url: 'https://' + parsed + '/', timestamp: moment().format('YYYY-MM-DD') }
 	]
-	articles.map(a => pages.push({ url: 'https://' + parsed + `${blog_path ? '/' + blog_path : '' }` + '/' + a.slug + '.html', timestamp: moment(a.date).format('YYYY-MM-DD') }))
-	var authors = articles.filter(a => a.author).map(a => a.author)
-	articles.map(a => pages.push({ url: 'https://' + parsed + `${blog_path ? '/' + blog_path : '' }` + '/' + a.slug + '.html', timestamp: moment(a.date).format('YYYY-MM-DD') }))
+	articles.filter(a => !a.hidden).map(a => pages.push({ url: 'https://' + parsed + `${blog_path ? '/' + blog_path : '' }` + '/' + a.slug + '.html', timestamp: moment(a.date).format('YYYY-MM-DD') }))
+	var authors = articles.filter(a => !a.hidden).filter(a => a.author).map(a => a.author)
+	articles.filter(a => !a.hidden).map(a => pages.push({ url: 'https://' + parsed + `${blog_path ? '/' + blog_path : '' }` + '/' + a.slug + '.html', timestamp: moment(a.date).format('YYYY-MM-DD') }))
 	fs.writeFileSync(`${dest}/sitemap.xml`, ejs.render(sitemap, { pages }), { encoding: "utf8" } )
   }
 } catch(err) {}
@@ -151,7 +151,7 @@ if (domain) {
 // optinal blog path 
 if (blog_path && !fs.existsSync(dest + '/' + blog_path)) {
 	fs.mkdirSync(dest + '/' + blog_path)
-	fs.writeFileSync(`${dest + '/' + blog_path}/index.html`, ejs.render(index_html, { articles, title, metrics, github, website, verified }), { encoding: "utf8" } )
+	fs.writeFileSync(`${dest + '/' + blog_path}/index.html`, ejs.render(index_html, { articles: articles.filter(a => !a.hidden), title, metrics, github, website, verified }), { encoding: "utf8" } )
 }
 
 // all articles
@@ -162,7 +162,7 @@ for (var article of articles) {
 }
 
 // dedicated authors apges
-var authors = articles.filter(a => a.author).map(a => a.author)
+var authors = articles.filter(a => !a.hidden).filter(a => a.author).map(a => a.author)
 
 for (var author of authors) {
 
@@ -170,7 +170,7 @@ for (var author of authors) {
 
 	if (!fs.existsSync(`${dest}/@${name}`)) fs.mkdirSync(`${dest}/@${name}`)
 	
-	var author_articles = articles.filter(a => a.author === author)
+	var author_articles = articles.filter(a => !a.hidden).filter(a => a.author === author)
 
 	fs.writeFileSync(`${dest}/@${name}/index.html`, ejs.render(index_html, { articles: author_articles, title: author, site_title: author + ' - ' + title, metrics, website, github: author, verified: author_articles.find(a => a.verified) }), { encoding: "utf8" } )
 	
