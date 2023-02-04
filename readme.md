@@ -48,3 +48,7 @@ source/my-premium-article-title-in-kebab-case.md
 -----
 Your story in Markdown..
 ```
+
+## ❯ Stargazers
+
+[![Stargazers over time](https://starchart.cc/fwd/nano-blog.svg)](https://starchart.cc/fwd/nano-blog)
