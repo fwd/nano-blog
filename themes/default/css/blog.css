@@ -78,7 +78,7 @@ article h1 {
 }
 
 .title {
-  margin-top: 10px;
+  margin-top: 15px;
   word-break: break-word;
 }
 
@@ -90,12 +90,12 @@ article h1 {
 
 article h2, 
 article h3 {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 400;
   border-bottom: 1px solid #00000014;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
   margin-bottom: 30px;
-  margin-top: 40px;
+  margin-top: 0;
 }
 
 .dark-mode article h2, 
@@ -273,13 +273,13 @@ button:hover {
 }
 
 time {
-  margin-bottom: 15px;
-  display: block;
-  margin-top: 15px;
-  font-size: 19px;
-  font-style: italic;
-  opacity: 0.8;
-  word-break: break-word;
+    margin-bottom: 30px;
+    display: block;
+    margin-top: 4px;
+    font-size: 19px;
+    font-style: italic;
+    opacity: 0.8;
+    word-break: break-word;
 }
 
 .row {
@@ -474,10 +474,11 @@ article {
 
 .menu-items {
   display: flex;
+  align-items: center;
 }
 
 .menu-items > div {
-  margin-left: 15px;
+  margin-left: 20px;
 }
 
 .nano-locked {
