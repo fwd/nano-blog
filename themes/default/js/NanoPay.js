@@ -113,7 +113,11 @@ let code=`<div class="nano-locked" style="font-family:'Arial';text-align:center;
         ${ config.text?config.text+' '+config.amount+' NANO':'Unlock for '+config.amount+' NANO'}
     </div>
     <div onclick="window.nano.unlock('${config.element}', '${config.amount}', '${config.address}', '${config.title}', '${config.color}')" style="cursor: pointer; padding: 7px 25px; border-radius: 4px; margin: 15px 0 10px 0; display: flex; align-items: center; justify-content: center; font-size: 18px; background: #FFF; color: ${config.color||'#000'}">
-        <img style="max-width: 24px;width: auto;min-width: auto;margin: 0 8px 0 0!important;float: none;" src="https://dev.nano.to/img/xno.svg" alt="">
+		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<circle cx="540" cy="540" r="540" fill="#209CE9"/>
+		<path d="M792.911 881H740.396L541.099 570.561L338.761 881H286.68L513.452 529.3L306.882 206.222H360.42L541.95 490.393L727.322 206.222H777.555L568.762 528.379L792.911 881Z" fill="white"/>
+		<path d="M336.487 508.737H744.807V547.116H336.487V508.737ZM336.487 623.872H744.824V662.251H336.47L336.487 623.872Z" fill="white"/>
+		</svg>
         ${ config.button||'Purchase'}
     </div>
 `
