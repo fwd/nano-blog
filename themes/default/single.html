@@ -63,6 +63,16 @@
         }
         </script>
         <script src="../js/highlight.min.js"></script>
+        <% if (article.goal) { %>
+        <script src="https://goal.nano.to/latest.js"></script>
+        <script>
+        nano.goal({ 
+            element: '.goal', // required, all with class .premium
+            address: '<%- article.address ? article.address : nano_address %>', // required
+            amount: '<%- article.goal %>', // required
+        })
+        </script>
+        <% } %>
         <% if (article.price && nano_address) { %>
         <script src="https://wall.nano.to/latest.js"></script>
         <script>
