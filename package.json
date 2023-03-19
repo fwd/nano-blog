@@ -6,5 +6,7 @@
     "moment": "^2.29.4"
   },
   "scripts": {
-    "build": "node build.js"  }
+    "start": "npm run build && cd docs && php -S localhost:8080",
+    "build": "node build.js" 
+  }
 }

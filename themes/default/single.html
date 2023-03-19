@@ -74,7 +74,8 @@
         </script>
         <% } %>
         <% if (article.price && nano_address) { %>
-        <script src="https://wall.nano.to/latest.js"></script>
+        <script src="../js/nano-wall.js"></script>
+        <!-- <script src="https://wall.nano.to/latest.js"></script> -->
         <script>
         nano.paywall({ 
             element: '.premium', // required, all with class .premium
@@ -84,7 +85,7 @@
             <% if (article.free) { %>
             free: true, // // optional, allow free access
             <% } %>
-            text: 'Read for',
+            text: 'Read',
             button: 'Purchase', // optional
             success: (block) => {
                 hljs.highlightAll();

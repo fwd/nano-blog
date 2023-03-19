@@ -1,4 +1,4 @@
-* { margin: 0; padding: 0; box-sizing: border-box; } .premium { opacity: 0 }
+* { margin: 0; padding: 0; box-sizing: border-box; } 
 
 @import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700';
 
@@ -275,7 +275,7 @@ button:hover {
 time {
     margin-bottom: 30px;
     display: block;
-    margin-top: 10px;
+    margin-top: 20px;
     font-size: 19px;
     font-style: italic;
     opacity: 0.8;

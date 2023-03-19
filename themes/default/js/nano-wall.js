@@ -14,20 +14,19 @@ var NanocurrencyWeb;(()=>{var e={4431:function(e,t,r){var n;!function(i){"use st
 
 	window.nano.rpc = {
 
-		   // looking for sugar nodes
-	       endpoint: 'https://rcp.nano.to',
+	       endpoint: 'https://rpc.nano.to',
 
-			post(endpoint, data) {
-				return new Promise((resolve) => {
-				    var xhr = new XMLHttpRequest();
-				    xhr.open("POST", endpoint, true);
-				    xhr.setRequestHeader('Content-Type', 'application/json');
-				    xhr.send(JSON.stringify(data));
-				    xhr.onload = function() {
-				      resolve(JSON.parse(this.responseText))
-				    }
-				})
-			},
+		post(endpoint, data) {
+			return new Promise((resolve) => {
+			    var xhr = new XMLHttpRequest();
+			    xhr.open("POST", endpoint, true);
+			    xhr.setRequestHeader('Content-Type', 'application/json');
+			    xhr.send(JSON.stringify(data));
+			    xhr.onload = function() {
+			      resolve(JSON.parse(this.responseText))
+			    }
+			})
+		},
 
 	       pending(address, count) {
 	         return new Promise((resolve) => {
@@ -295,7 +294,7 @@ var NanocurrencyWeb;(()=>{var e={4431:function(e,t,r){var n;!function(i){"use st
 
             all[i].innerHTML = ''
             
-            let code = `<div class="nano-locked" style="padding:30px; font-family:'Arial';text-align:center;position: absolute;background:${config.background || 'rgb(0 0 0 / 90%)'};width: 100%;height: 100%;top: 0;left: 0;bottom: 0;right: 0;font-size: 24px;min-height: 180px;display: flex;align-items: center;flex-direction: column;justify-content: center; color: ${config.color || '#FFF'}">
+            let code = `<div class="nano-locked" style="font-family:'Arial';text-align:center;position: absolute;background: rgb(31 156 233);width: 100%;height: 100%;top: 0;left: 0;bottom: 0;right: 0;font-size: 24px;min-height: 180px;display: flex;align-items: center;flex-direction: column;justify-content: center;color: #FFF;padding: 130px 0;border-radius: 20px;">
     <div>
         ${ config.text ? config.text + ' ' + config.amount + ' NANO' : 'Unlock for ' + config.amount + ' NANO' }
     </div>
