@@ -53,38 +53,19 @@
             <p> <%- article.html %></p>
         </article>
         <section class="nextclicks typetura">
-             <h2 class="section-label">Related Stories</h2>
- <a class="nextclick-article typetura">
-    <h4 class="eyebrow">City Guides</h4>
-    <img
-      src="https://assets.codepen.io/467/2020-05-17+-+22-13-52_00059.jpg"
-      alt=" "
-    />
-    <h3 class="primary-headline typetura">
-      When Everyday is a Staycation, How to Get Away While You’re at Home
-    </h3>
-  </a>
- <a class="nextclick-article typetura">
-    <h4 class="eyebrow">Travel</h4>
-    <img
-      src="https://assets.codepen.io/467/2020-05-02+-+00-57-32_5.jpg"
-      alt=" "
-    />
-    <h3 class="primary-headline typetura">
-      A Step-by-Step Guide to Picnicking PPE
-    </h3>
-  </a>
- <a class="nextclick-article typetura">
-    <h4 class="eyebrow">Home + Design</h4>
-    <img
-      src="https://assets.codepen.io/467/2020-03-10+-+03-47-34_1.jpg"
-      alt=" "
-    />
-    <h3 class="primary-headline typetura">
-      Provence in the Livingroom, a Day of Food and Customs to Transport You
-      to the South of France
-    </h3>
-  </a>
+             <h2 class="section-label">Further Reading</h2>
+            <% articles.map(article => { %>
+            <a class="nextclick-article typetura" href="/<%- article.slug %>.html">
+                <h4 class="eyebrow"> <%- article.tags ? article.tags.split(', ')[0] : '' %> </h4>
+                <img
+                  src="<%- article.image || 'https://assets.codepen.io/772926/card-img-one.png' %>"
+                  alt="<%- article.title %>"
+                />
+                <h3 class="primary-headline typetura">
+                  <%- article.title %>
+                </h3>
+            </a>
+            <% }) %>
     </section>
 
     <footer>
