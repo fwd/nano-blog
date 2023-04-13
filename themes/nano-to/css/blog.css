@@ -63,7 +63,7 @@ https://docs.typetura.com/
   font-family: var(--font-headline);
   line-height: 1;
     cursor: pointer;
-    font-size: 48px;
+    font-size: 34px;
 }
 
 .nextclick-article .primary-headline {
@@ -77,6 +77,10 @@ https://docs.typetura.com/
 
 .night .nextclick-article .primary-headline {
   color: #FFF;
+}
+
+h1, h2, h3 {
+  margin: 30px 0;
 }
 
 @keyframes primary-headline {
@@ -397,6 +401,7 @@ nav {
   padding: 0;
   font-size: 1.2rem;
   font-stretch: 60%;
+      flex-wrap: wrap;
 }
 
 p, code, ul, li, input, small, blockquote, h4, b {

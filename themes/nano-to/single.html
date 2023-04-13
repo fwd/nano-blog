@@ -10,7 +10,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <link rel="stylesheet" href="../../css/highlight.min.css">
-        <link rel="stylesheet" href="../../css/blog.css">
+        <link rel="stylesheet" href="../css/blog.css?v=1">
         <meta property="og:title" content="<%- title %>" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://<%- domain %>" />
@@ -37,8 +37,7 @@
             <img class="header-img" src="<%- article.image || 'https://assets.codepen.io/772926/card-img-one.png' %>"
             alt=" " />
             <div class="header-group">
-                 <h3 class="label"><%- article.tags ? article.tags.split(', ')[0] : '' %></h3>
-
+                 <h3 class="label"><a href="/tags/<%- article.tags ? article.tags.split(', ')[0].toLowerCase() : '' %>"><%- article.tags ? article.tags.split(', ')[0] : '' %></a></h3>
                  <h1 class="primary-headline typetura">
       <%- article.title %>
     </h1>
@@ -56,7 +55,8 @@
              <h2 class="section-label">Further Reading</h2>
             <% articles.map(article => { %>
             <a class="nextclick-article typetura" href="/<%- article.slug %>.html">
-                <h4 class="eyebrow"> <%- article.tags ? article.tags.split(', ')[0] : '' %> </h4>
+                <!-- <h3 class="label"><</h3> -->
+                <h4 class="eyebrow"><%- article.tags ? article.tags.split(', ')[0] : '' %></h4>
                 <img
                   src="<%- article.image || 'https://assets.codepen.io/772926/card-img-one.png' %>"
                   alt="<%- article.title %>"
@@ -69,7 +69,7 @@
     </section>
 
     <footer>
-            <a href="/"><div class="logo"><%- title %></div></a>
+            <a href="https://nano.to"><div class="logo"><%- title %></div></a>
             <ul class="links">
               <li><a href="/tag/crypto">Crypto</a></li>
               <li><a href="/tag/software">Software</a></li>
