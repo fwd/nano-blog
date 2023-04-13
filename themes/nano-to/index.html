@@ -33,6 +33,7 @@
             <img class="header-img" src="https://assets.codepen.io/467/2020-08-26+-+09-30-18_00007+copy.jpg"
             alt=" " />
             <div class="header-group">
+                <a class="nextclick-article typetura" style="text-align: left;" href="/<%- articles[0] ? articles[0].slug : 'index' %>.html">
                  <h3 class="label"><%- articles[0] && articles[0].tags ? articles[0].tags.split(', ')[0] : '' %></h3>
 
                  <h1 class="primary-headline typetura">
@@ -42,6 +43,7 @@
                  <h3 class="byline"><%- articles[0] ?  articles[0].author : '' %></h3>
 
                 <h4 class="dateline"><%- articles[0] ?  articles[0].fromNow : '' %> <% if (articles[0] && articles[0].price) { %> · <span style=" color: #3498db; ">Premium</span> <% } %></h4>
+             </a>
 
             </div>
         </div>
@@ -72,7 +74,7 @@
               <li><a href="/tag/travel">Travel</a></li>
               <li><a href="/tag/education">Education</a></li>
             </ul>
-   <small>Nano.to is a name service for the Nano currency, hosted on <a href="https://github.com/fwd/nano-to#nano-name-service" target="_blank">Github</a>.</small>
+   <small>Hosted on <a href="https://github.com/fwd/nano-to#nano-name-service" style="border-bottom: 1px solid;" target="_blank">Github</a>.</small>
         </footer>
         <div class="tt-configuration">
              <h2>Headings</h2>
