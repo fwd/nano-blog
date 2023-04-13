@@ -120,9 +120,70 @@ if (rss_api) {
 	fs.writeFileSync(`${dest}/rss.xml`, ejs.render(rss_template, { articles: articles.filter(a => !a.hidden), cover, favicon, title, domain, description, language }), { encoding: "utf8" } )
 }
 
+// dedicated category apges
+var tags = []
+
+articles.filter(a => !a.hidden).filter(a => a.tags).map(a => a.tags.split(', ').map(b => tags.push(b)))
+
+for (var tag of _.uniq(tags)) {
+
+	// tag = tag ?  tag.toLowerCase() : false
+
+	if (!tag) continue
+
+	if (!fs.existsSync(`${dest}/tag`)) fs.mkdirSync(`${dest}/tag`)
+	if (!fs.existsSync(`${dest}/tag/${tag.toLowerCase()}`)) fs.mkdirSync(`${dest}/tag/${tag.toLowerCase()}`)
+	
+	var tag_articles = articles.filter(a => !a.hidden && a.tags.includes(tag))
+
+	fs.writeFileSync(`${dest}/tag/${tag.toLowerCase()}/index.html`, ejs.render(index_html, { 
+		articles: tag_articles, 
+		cover, 
+		favicon, 
+		title: tag, 
+		site_title: 
+		tag + ' - ' + title, 
+		metrics, 
+		website, 
+		iconSize, 
+		github: tag, 
+		verified: tag_articles.find(a => a.verified) }), 
+	{ encoding: "utf8" } )
+	
+	var single_html = fs.readFileSync(`./themes/${theme}/single.html`, { encoding: "utf8" })
+
+	tags = []
+
+	for (var article of tag_articles) {
+
+		var article_html = ejs.render(single_html, { 
+			articles : tag_articles.filter(a => a.slug !== article.slug), 
+			article, 
+			site_title, 
+			title, 
+			cover, 
+			favicon, 
+			nano_address: article.address || nano_address, 
+			domain, 
+			metrics, 
+			verified, 
+			github,
+			website, 
+			iconSize
+		})
+
+		fs.writeFileSync(`${dest}/tag/${tag.toLowerCase()}/${article.slug}.html`, article_html, { encoding: "utf8" } )
+
+		article.articles = tag_articles.filter(a => a.slug !== article.slug)
+		
+		tags.push(article)
+
+	}
+
+}
+
 // sitemap
 try {
-  if (domain && theme && fs.existsSync(`./themes/${theme}/sitemap.xml`)) {
 	var sitemap = fs.readFileSync(`./themes/${theme}/sitemap.xml`, { encoding: "utf8" })
 	var parsed = domain.replace('https://', '').split('/').join('').replace('http://', '')
 	var pages = [
@@ -131,9 +192,20 @@ try {
 	articles.filter(a => !a.hidden).map(a => pages.push({ url: 'https://' + parsed + `${blog_path ? '/' + blog_path : '' }` + '/' + a.slug + '.html', timestamp: moment(a.date).format('YYYY-MM-DD') }))
 	var authors = articles.filter(a => !a.hidden).filter(a => a.author).map(a => a.author)
 	articles.filter(a => !a.hidden).map(a => pages.push({ url: 'https://' + parsed + `${blog_path ? '/' + blog_path : '' }` + '/' + a.slug + '.html', timestamp: moment(a.date).format('YYYY-MM-DD') }))
+	var tags = []
+	articles.filter(a => !a.hidden).filter(a => a.tags).map(a => a.tags.split(', ').map(b => tags.push({ name: b, articles: articles.filter(c => c.tags.includes(b)) })))
+	tags.map(_tag => {
+		pages.push({ url: 'https://' + parsed + `${blog_path ? '/' + blog_path : '' }` + '/tag/' + _tag.name.toLowerCase() + '/index.html', timestamp: moment(_tag.articles[0] ? _tag.articles[0].date : '').format('YYYY-MM-DD') })
+	// console.log("tag", _tag)
+		_tag.articles.map(article => {
+			pages.push({ url: 'https://' + parsed + `${blog_path ? '/' + blog_path : '' }` + '/tag/' + article.slug + '.html', timestamp: moment(article.date).format('YYYY-MM-DD') })
+		})
+	})
 	fs.writeFileSync(`${dest}/sitemap.xml`, ejs.render(sitemap, { pages }), { encoding: "utf8" } )
-  }
-} catch(err) {}
+  // }
+} catch(err) {
+	console.error(err)
+}
 
 // robots.txt
 try {

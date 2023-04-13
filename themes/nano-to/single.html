@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <title><%- title %></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="<%- favicon %>">
+        <meta name="apple-mobile-web-app-title" content="<%- site_title %>">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="../../css/highlight.min.css">
+        <link rel="stylesheet" href="../../css/blog.css">
+        <meta property="og:title" content="<%- title %>" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://<%- domain %>" />
+        <meta property="og:image" content="<%- article.image || '../img/card-img-one.png' %>" />
+        <meta property="twitter:title" content="<%- title %>">
+        <meta property="twitter:image" content="<%- article.image || cover || '../img/card-img-one.png' %>">
+        <% if (metrics) { %><script src="https://metrics.bar/js/script.js" id="metrics" async defer></script><% } %>
+        <script>if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.className += ' night'</script>
+    </head>
+    
+    <body>
+        <!-- partial:index.partial.html -->
+        <div class="header typetura">
+            <nav>
+                <a href="/"><div class="logo">NANO.TO</div></a>
+                <ul class="links">
+                  <li><a href="/tag/crypto">Crypto</a></li>
+                  <li><a href="/tag/software">Software</a></li>
+                  <li><a href="/tag/hardware">Hardware</a></li>
+                  <li><a href="/tag/travel">Travel</a></li>
+                  <li><a href="/tag/education">Education</a></li>
+                </ul>
+            </nav>
+            <img class="header-img" src="<%- article.image || 'https://assets.codepen.io/772926/card-img-one.png' %>"
+            alt=" " />
+            <div class="header-group">
+                 <h3 class="label"><%- article.tags ? article.tags.split(', ')[0] : '' %></h3>
+
+                 <h1 class="primary-headline typetura">
+      <%- article.title %>
+    </h1>
+
+                 <h3 class="byline">@nano2dev</h3>
+
+                 <h4 class="dateline"><%- article.fromNow %> <% if (article.price) { %> · <span style=" color: #3498db; ">Premium</span> <% } %></h4>
+
+            </div>
+        </div>
+        <article class="<%- article.price ? 'premium' : '' %> article" >
+            <p> <%- article.html %></p>
+        </article>
+        <section class="nextclicks typetura">
+             <h2 class="section-label">Related Stories</h2>
+ <a class="nextclick-article typetura">
+    <h4 class="eyebrow">City Guides</h4>
+    <img
+      src="https://assets.codepen.io/467/2020-05-17+-+22-13-52_00059.jpg"
+      alt=" "
+    />
+    <h3 class="primary-headline typetura">
+      When Everyday is a Staycation, How to Get Away While You’re at Home
+    </h3>
+  </a>
+ <a class="nextclick-article typetura">
+    <h4 class="eyebrow">Travel</h4>
+    <img
+      src="https://assets.codepen.io/467/2020-05-02+-+00-57-32_5.jpg"
+      alt=" "
+    />
+    <h3 class="primary-headline typetura">
+      A Step-by-Step Guide to Picnicking PPE
+    </h3>
+  </a>
+ <a class="nextclick-article typetura">
+    <h4 class="eyebrow">Home + Design</h4>
+    <img
+      src="https://assets.codepen.io/467/2020-03-10+-+03-47-34_1.jpg"
+      alt=" "
+    />
+    <h3 class="primary-headline typetura">
+      Provence in the Livingroom, a Day of Food and Customs to Transport You
+      to the South of France
+    </h3>
+  </a>
+    </section>
+
+    <footer>
+            <a href="/"><div class="logo"><%- title %></div></a>
+            <ul class="links">
+              <li><a href="/tag/crypto">Crypto</a></li>
+              <li><a href="/tag/software">Software</a></li>
+              <li><a href="/tag/hardware">Hardware</a></li>
+              <li><a href="/tag/travel">Travel</a></li>
+              <li><a href="/tag/education">Education</a></li>
+            </ul>
+   <small> Nano.to is Username & Checkout service <br> for the Nano currency, hosted on <a href="https://github.com/fwd/nano-to#nano-name-service" target="_blank">Github</a>.</small>
+        </footer>
+        <div class="tt-configuration">
+             <h2>Headings</h2>
+
+            <button class="tt-close" onclick="ttClose()">close</button>
+            <div class="tt-configuration-inner">
+                <div>
+                     <h3>Font Family</h3>
+
+                    <label>
+                        <input id="fontFamily" type="text" value="roslindale-variable" oninput="writeCurve(p1, p2)"
+                        />
+                    </label>
+                     <h3>Max Size</h3>
+
+                    <label>
+                        <input id="maxSize" type="number" value="120" step="1" oninput="writeCurve(p1, p2)"
+                        />px</label>
+                     <h3>Area</h3>
+
+                    <label>
+                        <input id="area" type="number" value="1400" step="10" oninput="writeCurve(p1, p2)"
+                        />px</label>
+                </div>
+                <svg viewBox="-10 -10 120 120" xmlns="http://www.w3.org/2000/svg" id="easing"
+                class="tt-easing">
+                    <rect width="100" height="100" fill="#ffffff88" stroke="#eeeeee" />
+                    <rect id="tt-marker" width="1" height="100" x="80" fill="#348ceb88" />
+                    <text id="tt-currentpx" x="20" y="-4px">20px</text>
+                    <line id="tt-line-start" x1="0" y1="100" x2="20" y2="30" stroke="#00000033"
+                    stroke-linecap="round" />
+                    <line id="tt-line-end" x1="100" y1="0" x2="80" y2="20" stroke="#00000033"
+                    stroke-linecap="round" />
+                    <path id="tt-path" d="M0 100 C 20 30 80 20 100 0" stroke="#348ceb" fill="none"
+                    stroke-linecap="round" />
+                    <circle class="tt-ease-handle" id="ease-start" cx="20" cy="30" r="3" fill="#fff"
+                    stroke="#999" />
+                    <circle class="tt-ease-handle" id="ease-end" cx="80" cy="20" r="3" fill="#fff"
+                    stroke="#999" />
+                </svg>
+            </div>
+        </div>
+        <script src="../js/highlight.min.js"></script>
+        <% if (article.goal) { %>
+        <script src="../js/nano-wall.js"></script>
+        <script>
+        nano.goal({ 
+            element: '.goal', // required, all with class .premium
+            address: '<%- article.address ? article.address : nano_address %>', // required
+            amount: '<%- article.goal %>', // required
+        })
+        </script>
+        <% } %>
+        <% if (article.price && nano_address) { %>
+        <script src="../js/nano-wall.js"></script>
+        <!-- <script src="https://wall.nano.to/latest.js"></script> -->
+        <script>
+        nano.paywall({ 
+            title: 'Unlock',
+            element: '.premium', // required, all with class .premium
+            address: '<%- nano_address %>', // required
+            amount: '<%- article.price %>', // required
+            // debug: false, // optional
+            <% if (article.free) { %>
+            free: true, // // optional, allow free access
+            <% } %>
+            text: 'Read',
+            button: 'Purchase', // optional
+            success: (block) => {
+                hljs.highlightAll();
+            }
+        })
+        </script>
+        <% } else { %>
+        <script>hljs.highlightAll();</script>
+        <% } %>
+    </body>
+
+</html>

@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <title><%- site_title %></title>
+        <meta name="apple-mobile-web-app-title" content="<%- site_title %>">
+        <link rel="icon" type="image/png" href="<%- favicon %>">
+        <meta property="og:title" content="<%- site_title %>">
+        <meta property="og:image" content="<%- cover ? cover : '../img/cover.png' %>">
+        <meta property="twitter:image" content="<%- cover ? cover : '../img/cover.png' %>">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="../../../css/blog.css">
+        <% if (metrics) { %><script src="https://metrics.bar/js/script.js" id="metrics" async defer></script><% } %>
+        <script>if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.className += ' night'</script>
+    </head>
+    
+    <body>
+        <!-- partial:index.partial.html -->
+        <div class="header typetura">
+            <nav>
+                <a href="/"><div class="logo">NANO.TO</div></a>
+                <ul class="links">
+                  <li><a href="/tag/crypto">Crypto</a></li>
+                  <li><a href="/tag/software">Software</a></li>
+                  <li><a href="/tag/hardware">Hardware</a></li>
+                  <li><a href="/tag/travel">Travel</a></li>
+                  <li><a href="/tag/education">Education</a></li>
+                </ul>
+            </nav>
+            <img class="header-img" src="https://assets.codepen.io/467/2020-08-26+-+09-30-18_00007+copy.jpg"
+            alt=" " />
+            <div class="header-group">
+                 <h3 class="label"><%- articles[0] && articles[0].tags ? articles[0].tags.split(', ')[0] : '' %></h3>
+
+                 <h1 class="primary-headline typetura">
+      <%- articles[0] ? articles[0].title : '' %>
+    </h1>
+
+                 <h3 class="byline">@nano2dev</h3>
+
+                <h4 class="dateline"><%- articles[0] ?  articles[0].fromNow : '' %> <% if (articles[0] && articles[0].price) { %> · <span style=" color: #3498db; ">Premium</span> <% } %></h4>
+
+            </div>
+        </div>
+
+            <br>
+        <section class="nextclicks typetura">
+            <!-- <h2 class="section-label">More Stories</h2> -->
+            <% articles.map(article => { %>
+            <a class="nextclick-article typetura" href="/<%- article.slug %>.html">
+                <h4 class="eyebrow"> <%- article.tags ? article.tags.split(', ')[0] : '' %> </h4>
+                <img
+                  src="<%- article.image || 'https://assets.codepen.io/772926/card-img-one.png' %>"
+                  alt="<%- article.title %>"
+                />
+                <h3 class="primary-headline typetura">
+                  <%- article.title %>
+                </h3>
+            </a>
+            <% }) %>
+        </section>
+
+        <footer>
+            <div class="logo"><%- title %></div>
+            <ul class="links">
+              <li><a href="/tag/crypto">Crypto</a></li>
+              <li><a href="/tag/software">Software</a></li>
+              <li><a href="/tag/hardware">Hardware</a></li>
+              <li><a href="/tag/travel">Travel</a></li>
+              <li><a href="/tag/education">Education</a></li>
+            </ul>
+   <small> Nano.to is Username & Checkout service <br> for the Nano currency, hosted on <a href="https://github.com/fwd/nano-to#nano-name-service" target="_blank">Github</a>.</small>
+        </footer>
+        <div class="tt-configuration">
+             <h2>Headings</h2>
+
+            <button class="tt-close" onclick="ttClose()">close</button>
+            <div class="tt-configuration-inner">
+                <div>
+                     <h3>Font Family</h3>
+
+                    <label>
+                        <input id="fontFamily" type="text" value="roslindale-variable" oninput="writeCurve(p1, p2)"
+                        />
+                    </label>
+                     <h3>Max Size</h3>
+
+                    <label>
+                        <input id="maxSize" type="number" value="120" step="1" oninput="writeCurve(p1, p2)"
+                        />px</label>
+                     <h3>Area</h3>
+
+                    <label>
+                        <input id="area" type="number" value="1400" step="10" oninput="writeCurve(p1, p2)"
+                        />px</label>
+                </div>
+                <svg viewBox="-10 -10 120 120" xmlns="http://www.w3.org/2000/svg" id="easing"
+                class="tt-easing">
+                    <rect width="100" height="100" fill="#ffffff88" stroke="#eeeeee" />
+                    <rect id="tt-marker" width="1" height="100" x="80" fill="#348ceb88" />
+                    <text id="tt-currentpx" x="20" y="-4px">20px</text>
+                    <line id="tt-line-start" x1="0" y1="100" x2="20" y2="30" stroke="#00000033"
+                    stroke-linecap="round" />
+                    <line id="tt-line-end" x1="100" y1="0" x2="80" y2="20" stroke="#00000033"
+                    stroke-linecap="round" />
+                    <path id="tt-path" d="M0 100 C 20 30 80 20 100 0" stroke="#348ceb" fill="none"
+                    stroke-linecap="round" />
+                    <circle class="tt-ease-handle" id="ease-start" cx="20" cy="30" r="3" fill="#fff"
+                    stroke="#999" />
+                    <circle class="tt-ease-handle" id="ease-end" cx="80" cy="20" r="3" fill="#fff"
+                    stroke="#999" />
+                </svg>
+            </div>
+        </div>
+        
+    </body>
+
+</html>
