@@ -404,8 +404,12 @@ p, code, ul, li, input, small, blockquote, h4, b {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"
 }
 
-p, li {
+p {
   font-size: 22px;
+}
+
+li {
+  font-size: 18px;
 }
 
 p code {
@@ -576,7 +580,6 @@ footer small {
 }
 
 .header-group .primary-headline {
-
   margin-bottom: 0;
 }
 
@@ -713,3 +716,8 @@ footer small {
   margin-top: 30px !important;
 }
 
+@media (max-width: 600px) {
+  .primary-headline {
+    font-size: 32px !important;
+  }
+}
