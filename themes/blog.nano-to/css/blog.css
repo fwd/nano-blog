@@ -474,6 +474,7 @@ pre code.hljs {
 .links li a {
   text-decoration: none;
   border-bottom: 0;
+  letter-spacing: 0.2px;
 }
 .links li {
   padding: 0 0.5rem;
