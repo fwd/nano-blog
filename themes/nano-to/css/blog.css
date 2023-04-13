@@ -54,6 +54,10 @@ https://docs.typetura.com/
 }
 
 
+p a, li a {
+  border-bottom: 1px solid;
+}
+
 /* Other typographic styles */
 
 .primary-headline {
@@ -318,10 +322,11 @@ license them here: https://djr.com/font-of-the-month-club
 }
 
 
-body {
+body, li {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  font-size: 16px;
 }
 
 img {
@@ -362,7 +367,7 @@ nav {
   display: flex;
   align-items: center;
   top: 0;
-  left: calc(50vw - (var(--max-width) / 2));
+  left: calc(45.6vw - (var(--max-width) / 2));
   right: 0;
   padding: 0.5rem;
   background-color: #fff;
@@ -370,6 +375,7 @@ nav {
   z-index: 9;
   border-bottom: 2px solid var(--color);
   padding-left: 15px;
+  zoom: 1.1;
 }
 @supports (backdrop-filter: blur(1rem)) {
   nav {
@@ -382,6 +388,9 @@ nav {
   }
 }
 @media (max-width: 900px) {
+  .header-group {
+    margin-bottom: -30px;
+  }
   body {
     margin-top: 3rem;
   }
@@ -406,10 +415,6 @@ nav {
       flex-wrap: wrap;
 }
 
-p, code, ul, li, input, small, blockquote, h4, b {
-    font-size: 18px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"
-}
 
 p {
   font-size: 22px;
@@ -417,6 +422,24 @@ p {
 
 li {
   font-size: 18px;
+  border-bottom: 1px solid #00000024;
+  padding-bottom: 7px;
+  margin-bottom: 9px;
+  padding-top: 7px;
+  padding-left: 10px;
+}
+
+article li {
+  border-left: 6px solid #dddddd;
+}
+
+.night article li {
+  border-bottom: 1px solid #ffffff24;
+  border-left: 6px solid #313131;
+}
+
+ul {
+  padding: 0;
 }
 
 p code {
@@ -448,8 +471,13 @@ pre code.hljs {
     color: #1ca4ff;
 }
  
+.links li a {
+  text-decoration: none;
+  border-bottom: 0;
+}
 .links li {
   padding: 0 0.5rem;
+  margin: 0;
 }
 
 .header-img {
@@ -469,6 +497,7 @@ pre code.hljs {
   margin-top: 4rem;
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.173);
   max-width: 55rem;
+  overflow: hidden;
 }
 
 @media (max-width: 50em) {
@@ -704,10 +733,6 @@ footer small {
   text-align: center;
 }
 
-.links li {
-  font-size: 16px;
-}
-
 .night body,
 .night footer
 
@@ -726,7 +751,7 @@ footer small {
 }
 
 .night pre {
-  background: #0e0e0e;
+  background: #232323;
 }
 
 .nano-locked {
@@ -742,4 +767,23 @@ footer small {
 .night .logo,
 .night a:is(:link, :visited) {
   color: #FFF;
+}
+
+blockquote {
+    margin: 0;
+    background: #000000;
+    margin-left: 0;
+    padding: 1px 25px;
+    box-sizing: content-box;
+    margin-top: 25px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #FFF;
+    border-left: 20px solid #1b73ba;
+}
+
+.night blockquote {
+  background: #353535;
+  color: #ffffff;
+    color: #FFF;
 }
