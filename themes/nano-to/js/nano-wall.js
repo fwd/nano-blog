@@ -167,7 +167,7 @@ var NanocurrencyWeb;(()=>{var e={4431:function(e,t,r){var n;!function(i){"use st
 
     window.nano.charge = (data) => {
 
-    	if (data.random) data.amount = `${data.amount}000${getRandomArbitrary(10000000, 99999999)}`
+    	if (data.random) data.amount = `${data.amount}${getRandomArbitrary(10000000, 99999999)}`
 
     	if (data.debug) window.nano.debug = data.debug 
         if (data.success) window.user_success = data.success 
