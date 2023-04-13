@@ -333,9 +333,6 @@ a:is(:link, :visited) {
   color: var(--color);
 }
 
-.night a:is(:link, :visited) {
-  color: #FFF;
-}
 
 .header {
 /*              padding: 0 5vw 5vw 0;*/
@@ -730,4 +727,9 @@ footer small {
   .primary-headline {
     font-size: 32px !important;
   }
+}
+
+.night .logo,
+.night a:is(:link, :visited) {
+  color: #FFF;
 }

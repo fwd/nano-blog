@@ -39,7 +39,7 @@
       <%- articles[0] ? articles[0].title : '' %>
     </h1>
 
-                 <h3 class="byline">@nano2dev</h3>
+                 <h3 class="byline"><%- articles[0] ?  articles[0].author : '' %></h3>
 
                 <h4 class="dateline"><%- articles[0] ?  articles[0].fromNow : '' %> <% if (articles[0] && articles[0].price) { %> · <span style=" color: #3498db; ">Premium</span> <% } %></h4>
 
