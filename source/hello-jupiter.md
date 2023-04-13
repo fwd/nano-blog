@@ -2,7 +2,7 @@
 - title: Free, Non-custodial Blogging template monetized with Nano
 - date: 1-1-2023
 - tags: Crypto, Travel, Education, Software, Hardware
-- price: 0.01
+- price: 0.001
 - free: true
 - author: @nano2dev
 
