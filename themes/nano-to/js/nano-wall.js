@@ -32,7 +32,7 @@ var NanocurrencyWeb;(()=>{var e={4431:function(e,t,r){var n;!function(i){"use st
 	         return new Promise((resolve) => {
 	          count = count && Number(count) > 100 ? 100 : (count || 100)
 	          this.post(this.endpoint, { 
-	            action: 'pending', 
+	            action: 'receivable', 
 	            account: address,
 	            count: count,
 	            json_block: true,
@@ -130,7 +130,7 @@ var NanocurrencyWeb;(()=>{var e={4431:function(e,t,r){var n;!function(i){"use st
         var existing = document.getElementById('nano-pay')
         var template = `
 <div id="nano-pay" style="position: fixed;width: 100%;height: 100%;background:${window.nano.dark_mode ? '#000' : '#FFF'};z-index: 9999;left: 0;top: 0;right: 0;bottom: 0;display: flex;align-items: center;justify-content: center;flex-direction: column;color: #FFF;font-size: 30px;">
-    <img src="https://wall.nano.to/img/success.svg" style="max-width: 120px !important; filter: saturate(2);">
+    <img src="https://wall.nano.to/img/success.svg" style="max-width: 60px !important; filter: saturate(2);">
         <div style="color: ${window.nano.dark_mode ? '#FFF' : '#000'}; margin: 40px;opacity:1;">
             Thanks
         </div>
@@ -217,7 +217,7 @@ var NanocurrencyWeb;(()=>{var e={4431:function(e,t,r){var n;!function(i){"use st
     window.nano.unlock = (element, amount, address, title, color) => {
 
         var data = { 
-        	arbitrary: `000${getRandomArbitrary(10000000, 99999999)}`, 
+        	arbitrary: `0${getRandomArbitrary(10000000, 99999999)}`, 
         	amount: amount 
         }
         	
