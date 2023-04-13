@@ -140,7 +140,7 @@ for (var tag of _.uniq(tags)) {
 		articles: tag_articles, 
 		cover, 
 		favicon, 
-		title: tag, 
+		title: config.title, 
 		site_title: 
 		tag + ' - ' + title, 
 		metrics, 
