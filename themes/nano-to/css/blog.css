@@ -438,6 +438,15 @@ pre code.hljs {
     font-family: monospace;
     font-size: 18px
 }
+
+.night pre code.hljs {
+  display: block;
+    overflow-x: auto;
+    padding: 0;
+    font-family: monospace;
+    font-size: 18px;
+    color: #1ca4ff;
+}
  
 .links li {
   padding: 0 0.5rem;
@@ -717,7 +726,7 @@ footer small {
 }
 
 .night pre {
-  filter: invert(1);
+  background: #0e0e0e;
 }
 
 .nano-locked {
