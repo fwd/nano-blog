@@ -3,7 +3,7 @@
 	"title": "Nano.to",
 	"domain": "blog.nano.to",
 	"theme": "blog.nano-to",
-	"source": "./source",
+	"source": "./articles",
 	"dest": "./docs",
 	"path": "",
 	"github": "",

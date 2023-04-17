@@ -71,12 +71,12 @@ p a, li a {
 }
 
 .nextclick-article .primary-headline {
-  font-size: 25px;
+  font-size: 45px;
   text-align: left;
   letter-spacing: 0.1px;
   margin-top: 20px;
   color: #000;
-  line-height: 32px;
+  line-height: 50px;
 }
 
 .night .nextclick-article .primary-headline {
@@ -179,13 +179,17 @@ h1, h2, h3 {
 }
 
 .byline::before {
-content: "";
-    width: 68rem;
-    height: 2px;
-    background: hsl(0deg 0% 0% / 8%);
-    position: absolute;
-    bottom: -19px;
-    opacity: 0.3;
+  content: "";
+  width: 68rem;
+  height: 2px;
+  background: hsl(0deg 0% 0% / 8%);
+  position: absolute;
+  bottom: -19px;
+  opacity: 0.3;
+}
+
+.night .byline::before {
+  background: hsl(0deg 0% 100% / 8%);
 }
 
 .byline {
@@ -388,6 +392,9 @@ nav {
   }
 }
 @media (max-width: 900px) {
+  .nextclick-article .primary-headline {
+    font-size: 25px;
+  }
   .header-group {
     margin-bottom: -30px;
   }
