@@ -189,17 +189,14 @@ try {
 	var pages = [
 		{ url: 'https://' + parsed + '/', timestamp: moment().format('YYYY-MM-DD') }
 	]
-	articles.filter(a => !a.hidden).map(a => pages.push({ url: 'https://' + parsed + `${blog_path ? '/' + blog_path : '' }` + '/' + a.slug + '.html', timestamp: moment(a.date).format('YYYY-MM-DD') }))
+	articles.filter(a => !a.hidden).map(a => pages.push({ url: 'https://' + parsed + `${blog_path ? '/' + blog_path : '' }` + '/' + a.slug, timestamp: moment(a.date).format('YYYY-MM-DD') }))
 	var authors = articles.filter(a => !a.hidden).filter(a => a.author).map(a => a.author)
-	articles.filter(a => !a.hidden).map(a => pages.push({ url: 'https://' + parsed + `${blog_path ? '/' + blog_path : '' }` + '/' + a.slug + '.html', timestamp: moment(a.date).format('YYYY-MM-DD') }))
+	articles.filter(a => !a.hidden).map(a => pages.push({ url: 'https://' + parsed + `${blog_path ? '/' + blog_path : '' }` + '/' + a.slug, timestamp: moment(a.date).format('YYYY-MM-DD') }))
 	var tags = []
 	articles.filter(a => !a.hidden).filter(a => a.tags).map(a => a.tags.split(', ').map(b => tags.push({ name: b, articles: articles.filter(c => c.tags.includes(b)) })))
 	tags.map(_tag => {
-		pages.push({ url: 'https://' + parsed + `${blog_path ? '/' + blog_path : '' }` + '/tag/' + _tag.name.toLowerCase() + '/index.html', timestamp: moment(_tag.articles[0] ? _tag.articles[0].date : '').format('YYYY-MM-DD') })
-	// console.log("tag", _tag)
-		_tag.articles.map(article => {
-			pages.push({ url: 'https://' + parsed + `${blog_path ? '/' + blog_path : '' }` + '/tag/' + article.slug + '.html', timestamp: moment(article.date).format('YYYY-MM-DD') })
-		})
+		var url = 'https://' + parsed + `${blog_path ? '/' + blog_path : '' }` + '/tag/' + _tag.name.toLowerCase()
+		if (!pages.find(a => a.url === url)) pages.push({ url, timestamp: moment(_tag.articles[0] ? _tag.articles[0].date : '').format('YYYY-MM-DD') })
 	})
 	fs.writeFileSync(`${dest}/sitemap.xml`, ejs.render(sitemap, { pages }), { encoding: "utf8" } )
   // }

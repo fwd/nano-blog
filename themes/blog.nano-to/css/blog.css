@@ -592,6 +592,7 @@ article + .nextclicks {
   text-align: center;
   border: 0;
   overflow: hidden;
+  margin-bottom: 30px;
 }
 
 .eyebrow {
