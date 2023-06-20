@@ -10,7 +10,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <link rel="stylesheet" href="../../css/highlight.min.css">
-        <link rel="stylesheet" href="../css/blog.css?v=2">
+        <link rel="stylesheet" href="../css/blog.css?v=5.5">
         <meta property="og:title" content="<%- title %>" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://<%- domain %>" />
@@ -31,13 +31,13 @@
                   <li><a href="/tag/software">Software</a></li>
                   <li><a href="/tag/hardware">Hardware</a></li>
                   <li><a href="/tag/travel">Travel</a></li>
-                  <li><a href="/tag/chatgpt">ChatGPT</a></li>
-                  <!-- <li><a href="/tag/education">Education</a></li> -->
+                  <!-- <li><a href="/tag/chatgpt">ChatGPT</a></li> -->
+                  <li><a href="/tag/education">Education</a></li>
                 </ul>
             </nav>
             <img class="header-img" src="<%- article.image || 'https://assets.codepen.io/772926/card-img-one.png' %>"
             alt=" " />
-            <div class="header-group">
+            <div class="header-group headline">
                  <h3 class="label"><a href="/tags/<%- article.tags ? article.tags.split(', ')[0].toLowerCase() : '' %>"><%- article.tags ? article.tags.split(', ')[0] : '' %></a></h3>
                  <h1 class="primary-headline typetura">
       <%- article.title %>

@@ -74,7 +74,7 @@ p a, li a {
   font-size: 45px;
   text-align: left;
   letter-spacing: 0.1px;
-  margin-top: 20px;
+  margin-top: 10px;
   color: #000;
   line-height: 50px;
 }
@@ -176,6 +176,7 @@ h1, h2, h3 {
   color: var(--color);
   line-height: 1;
   font-stretch: 125%;
+  margin-bottom: 0;
 }
 
 .byline::before {
@@ -198,26 +199,27 @@ h1, h2, h3 {
     font-size: 14px;
     font-weight: 350;
     letter-spacing: 0.1em;
-    padding-top: 0.7rem;
+/*    padding-top: 0.7rem;*/
     position: relative;
-    margin: 1rem 0 0;
+    margin-bottom: 13px;
     line-height: 1;
     font-stretch: 100%;
+    margin-top: 10px;
 }
 
 .dateline {
-font-family: var(--font-text);
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 300;
-    letter-spacing: 0.1em;
-    opacity: 0.67;
-    padding-top: 0.7rem;
-    position: relative;
-    margin: 0 0 2rem;
-    line-height: 1;
-    font-stretch: 90%;
-    margin-top: 26px;
+  font-family: var(--font-text);
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  opacity: 0.67;
+  padding-top: 0.7rem;
+  position: relative;
+  margin: 0;
+  line-height: 1;
+  font-stretch: 90%;
+  margin-top: 26px;
 }
 
 figcaption,
@@ -250,6 +252,8 @@ a {
 
 
 /* This technique doesn’t need to be limited to typogrphy. You can also interpolate any animatable element style. */
+
+
 
 @media (min-width: 35em) {
   .float-left {
@@ -453,7 +457,13 @@ ul {
 }
 
 p code {
+  background: #e4e4e4;
+  padding: 1px 5px;
+  border-radius: 5px;
+}
 
+.night p code {
+  background: #393939;
 }
 
 pre {
@@ -478,7 +488,7 @@ pre code.hljs {
     padding: 0;
     font-family: monospace;
     font-size: 18px;
-    color: #1ca4ff;
+/*    color: #1ca4ff;*/
 }
  
 .links li a {
@@ -504,7 +514,7 @@ pre code.hljs {
   grid-row-start: 3;
   grid-row-end: 4;
   background: #fff;
-  padding: 1rem 2rem 0;
+  padding: 1rem;
   margin-top: 4rem;
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.173);
   max-width: 55rem;
@@ -559,11 +569,6 @@ figure {
   padding: 0;
 }
 
-.nextclicks {
-  margin: 3rem auto 0;
-  width: calc(100% - 4rem);
-  max-width: 1200px;
-}
 .nextclicks img {
   height: calc(0.67px * var(--tt-bind));
   object-fit: cover;
@@ -594,12 +599,16 @@ article + .nextclicks {
   }
 }
 
+.nextclicks .nextclick-article {
+  margin-bottom: 30px;
+
+}
+
 .nextclick-article {
   display: block;
   text-align: center;
   border: 0;
   overflow: hidden;
-  margin-bottom: 30px;
 }
 
 .eyebrow {
@@ -773,6 +782,7 @@ footer small {
 @media (max-width: 600px) {
   .primary-headline {
     font-size: 32px !important;
+    line-height: 42px !important;
   }
 }
 
@@ -801,8 +811,33 @@ blockquote {
 }
 
 .fromNow {
-      text-align: left;
-    display: block;
-    margin-top: -20px;
-    opacity: 0.5;
+  text-align: left;
+  display: block;
+  margin-top: -25px;
+  opacity: 0.5;
+}
+
+.nextclicks {
+  margin: 1rem;
+  width: calc(100% - 2.1rem);
+  max-width: 1200px;
+}
+
+@media (min-width: 1280px) {
+
+  .nextclicks {
+    margin: 3rem auto 0;
+    width: calc(100% - 4rem);
+    max-width: 1200px;
+  }
+    
+
+  .header-group {
+    padding: 1rem 2rem 0;
+  }
+
+  .header-group.headline {
+    padding-bottom: 40px;
+  }
+
 }
