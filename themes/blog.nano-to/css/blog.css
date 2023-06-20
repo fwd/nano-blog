@@ -533,6 +533,10 @@ pre code.hljs {
   }
 }
 
+.night .header-group {
+  background: #000;
+}
+
 @supports (backdrop-filter: blur(1rem)) {
   .header-group {
     background: rgba(255, 255, 255, 0.735);
@@ -754,10 +758,6 @@ footer small {
 /*  filter: invert(1);*/
 }
 
-.night .header-group {
-  background: #000;
-}
-
 .night img {
 /*  filter: invert(1);*/
 }
@@ -777,8 +777,8 @@ footer small {
 }
 
 .night .logo,
-.night a:is(:link, :visited) {
-  color: #FFF;
+.night p a:is(:link, :visited) {
+/*  color: #FFF;*/
 }
 
 blockquote {
