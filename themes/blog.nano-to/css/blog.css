@@ -381,6 +381,9 @@ nav {
   padding-left: 15px;
   zoom: 1.1;
 }
+.night nav {
+  background-color: #000;
+}
 @supports (backdrop-filter: blur(1rem)) {
   nav {
     background-color: rgba(255, 255, 255, 0.735);
@@ -752,7 +755,7 @@ footer small {
 }
 
 .night .header-group {
-/*  background: #212121;*/
+  background: #000;
 }
 
 .night img {
