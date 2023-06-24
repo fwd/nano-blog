@@ -61,7 +61,7 @@ Your story in Markdown..
 
 # Build Your Own Theme
 
-This project is designed for Theming. Duplicate an existing Theme and modify as you like.
+This project is designed for Theming. Duplicate an existing Theme, modify to hearts content, and finally configure in config.json.
 
 ## ❯ Stargazers
 
