@@ -28,13 +28,23 @@ https://blog.nano.to
 3. Edit ```/config.json```.
 4. Publish repo on [Cloudflare Pages](https://developers.cloudflare.com/pages/).
 
-**Markdown:**
+**Development:**
+```
+npm run start
+```
+
+**Build:**
+```
+npm run build
+```
+
+**Write Markdown Like So:**
 
 ```
 source/my-premium-article-title-in-kebab-case.md
 ```
 
-**Template:**
+> Filename determines SEO url. Title is configured inside the file, like so:
 
 ```
 - title: My Premium Article Title
