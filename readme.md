@@ -59,6 +59,10 @@ source/my-premium-article-title-in-kebab-case.md
 Your story in Markdown..
 ```
 
+# Build Your Own Theme
+
+This project is designed for Theming. Duplicate an existing Theme and modify as you like.
+
 ## ❯ Stargazers
 
 [![Stargazers over time](https://starchart.cc/fwd/nano-blog.svg)](https://starchart.cc/fwd/nano-blog)
