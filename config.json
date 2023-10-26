@@ -9,6 +9,7 @@
 	"github": "",
 	"website": "nano.to",
 	"contact": "support@nano.to",
+	"navigation": ["Crypto","Software","Hardware","Education"],
 	"metrics": true,
 	"json_api": true,
 	"rss_api": true,

@@ -27,12 +27,9 @@
             <nav>
                 <a href="/"><div class="logo"><%- title %></div></a>
                 <ul class="links">
-                  <li><a href="/tag/crypto">Crypto</a></li>
-                  <li><a href="/tag/software">Software</a></li>
-                  <li><a href="/tag/hardware">Hardware</a></li>
-                  <li><a href="/tag/travel">Travel</a></li>
-                  <!-- <li><a href="/tag/chatgpt">ChatGPT</a></li> -->
-                  <li><a href="/tag/education">Education</a></li>
+                  <% nav.map(i => { %>
+                  <li><a href="/tag/<%- i.toLowerCase().replace(' ', '-') %>"><%- i %></a></li>
+                  <% }) %>
                 </ul>
             </nav>
             <img class="header-img" src="<%- article.image || 'https://assets.codepen.io/772926/card-img-one.png' %>"

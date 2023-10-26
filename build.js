@@ -22,6 +22,7 @@ moment.suppressDeprecationWarnings = true;
 // enviroment settings
 const title = config.title || 'My Blog'
 const theme = config.theme || 'nano'
+const nav = config.nav || config.navigation || []
 const source = config.source || './source'
 const dest = config.dest || './docs'
 const blog_path = config.path
@@ -102,7 +103,7 @@ copyFolderSync(`./themes/${theme}/js`, `${dest}/js`)
 
 // homepage
 var index_html = fs.readFileSync(`./themes/${theme}/index.html`, { encoding: "utf8" })
-fs.writeFileSync(`${dest}/index.html`, ejs.render(index_html, { articles: articles.filter(a => !a.hidden), cover, favicon, title, site_title, metrics, github, website, iconSize, verified }), { encoding: "utf8" } )
+fs.writeFileSync(`${dest}/index.html`, ejs.render(index_html, { nav, articles: articles.filter(a => !a.hidden), cover, favicon, title, site_title, metrics, github, website, iconSize, verified }), { encoding: "utf8" } )
 
 // json_api
 if (json_api) {
@@ -117,7 +118,7 @@ if (json_api) {
 if (rss_api) {
 	var rss_template = fs.readFileSync(`./themes/${theme}/rss.xml`, { encoding: "utf8" })
 	// fs.writeFileSync(`${dest}/rss.xml`, JSON.stringify(articles, null, 4), { encoding: "utf8" } )
-	fs.writeFileSync(`${dest}/rss.xml`, ejs.render(rss_template, { articles: articles.filter(a => !a.hidden), cover, favicon, title, domain, description, language }), { encoding: "utf8" } )
+	fs.writeFileSync(`${dest}/rss.xml`, ejs.render(rss_template, { nav, articles: articles.filter(a => !a.hidden), cover, favicon, title, domain, description, language }), { encoding: "utf8" } )
 }
 
 // dedicated category apges
@@ -137,6 +138,7 @@ for (var tag of _.uniq(tags)) {
 	var tag_articles = articles.filter(a => !a.hidden && a.tags.includes(tag))
 
 	fs.writeFileSync(`${dest}/tag/${tag.toLowerCase()}/index.html`, ejs.render(index_html, { 
+		nav,
 		articles: tag_articles, 
 		cover, 
 		favicon, 
@@ -157,6 +159,7 @@ for (var tag of _.uniq(tags)) {
 	for (var article of tag_articles) {
 
 		var article_html = ejs.render(single_html, { 
+			nav,
 			articles : tag_articles.filter(a => a.slug !== article.slug), 
 			article, 
 			site_title, 
@@ -227,13 +230,13 @@ if (domain) {
 // optinal blog path 
 if (blog_path && !fs.existsSync(dest + '/' + blog_path)) {
 	fs.mkdirSync(dest + '/' + blog_path)
-	fs.writeFileSync(`${dest + '/' + blog_path}/index.html`, ejs.render(index_html, { articles: articles.filter(a => !a.hidden), cover, favicon, title, metrics, github, website, iconSize, verified }), { encoding: "utf8" } )
+	fs.writeFileSync(`${dest + '/' + blog_path}/index.html`, ejs.render(index_html, { nav, articles: articles.filter(a => !a.hidden), cover, favicon, title, metrics, github, website, iconSize, verified }), { encoding: "utf8" } )
 }
 
 // all articles
 var single_html = fs.readFileSync(`./themes/${theme}/single.html`, { encoding: "utf8" })
 for (var article of articles) {
-	var article_html = ejs.render(single_html, { site_title, articles : articles.filter(a => a.slug !== article.slug), article, domain, cover, favicon, title, nano_address: article.address || nano_address, metrics, verified, github, website, iconSize })
+	var article_html = ejs.render(single_html, { nav, site_title, articles : articles.filter(a => a.slug !== article.slug), article, domain, cover, favicon, title, nano_address: article.address || nano_address, metrics, verified, github, website, iconSize })
 	fs.writeFileSync(`${dest}${blog_path ? '/' + blog_path : '' }/${article.slug}.html`, article_html, { encoding: "utf8" } )
 }
 
@@ -248,12 +251,13 @@ for (var author of authors) {
 	
 	var author_articles = articles.filter(a => !a.hidden).filter(a => a.author === author)
 
-	fs.writeFileSync(`${dest}/@${name}/index.html`, ejs.render(index_html, { articles: author_articles, cover, favicon, title: author, site_title: author + ' - ' + title, metrics, website, iconSize, github: author, verified: author_articles.find(a => a.verified) }), { encoding: "utf8" } )
+	fs.writeFileSync(`${dest}/@${name}/index.html`, ejs.render(index_html, { nav, articles: author_articles, cover, favicon, title: author, site_title: author + ' - ' + title, metrics, website, iconSize, github: author, verified: author_articles.find(a => a.verified) }), { encoding: "utf8" } )
 	
 	var single_html = fs.readFileSync(`./themes/${theme}/single.html`, { encoding: "utf8" })
 
 	for (var article of author_articles) {
 		var article_html = ejs.render(single_html, { 
+			nav,
 			articles : author_articles.filter(a => a.slug !== article.slug), 
 			article, 
 			site_title, 

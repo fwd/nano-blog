@@ -1,7 +1,7 @@
 
 - title: Create a Blog With Nano Monetization in Minutes
 - date: 1-1-2023
-- tags: Crypto
+- tags: Hardware
 - price: 0.001
 - free: true
 - author: @nano2dev
