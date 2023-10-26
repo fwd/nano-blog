@@ -467,6 +467,11 @@ p code {
   background: #e4e4e4;
   padding: 1px 5px;
   border-radius: 5px;
+
+/*background: #393939;*/
+    font-family: monospace;
+    font-size: 17px;
+
 }
 
 .night p code {
