@@ -76,7 +76,13 @@ p a, li a {
   letter-spacing: 0.1px;
   margin-top: 10px;
   color: #000;
-  line-height: 50px;
+}
+
+@media (max-width: 1024px) {
+  .nextclick-article .primary-headline {
+  line-height: 35px;
+/*    line-height: auto;*/
+  }
 }
 
 .night .nextclick-article .primary-headline {
@@ -177,6 +183,7 @@ h1, h2, h3 {
   line-height: 1;
   font-stretch: 125%;
   margin-bottom: 0;
+  margin-top: 6px;
 }
 
 .byline::before {
@@ -494,7 +501,10 @@ pre code.hljs {
 .links li a {
   text-decoration: none;
   border-bottom: 0;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.5px;
+  font-size: 19px;
+  color: #FFF;
+  margin: 0 10px;
 }
 .links li {
   padding: 0 0.5rem;
@@ -515,7 +525,7 @@ pre code.hljs {
   grid-row-end: 4;
   background: #fff;
   padding: 1rem;
-  margin-top: 4rem;
+  margin-top: -5rem;
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.173);
   max-width: 55rem;
   overflow: hidden;
@@ -575,7 +585,7 @@ figure {
   border-radius: 7px;
 }
 article + .nextclicks {
-  margin-top: 4vh;
+  margin-top: 2vh;
 }
 @media (min-width: 40em) {
   .nextclicks {
@@ -651,7 +661,7 @@ footer small {
 }
 
 .header-group .primary-headline {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 0;
 }
 
@@ -815,7 +825,7 @@ blockquote {
   text-align: left;
   display: block;
   margin-top: -25px;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 .nextclicks {
@@ -838,7 +848,7 @@ blockquote {
   }
 
   .header-group.headline {
-    padding-bottom: 40px;
+    padding-bottom: 30px;
   }
 
 }
