@@ -56,6 +56,9 @@ p a, li a {
 }
 
 @media (max-width: 1024px) {
+  .article {
+    padding-top: 40px;
+  }
   .nextclick-article .primary-headline {
   line-height: 35px;
 /*    line-height: auto;*/
