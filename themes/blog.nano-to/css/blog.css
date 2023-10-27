@@ -508,8 +508,11 @@ pre code.hljs {
   border-bottom: 0;
   letter-spacing: 0.5px;
   font-size: 19px;
-  color: #FFF;
+  color: #000;
   margin: 0 10px;
+}
+.night .links li a {
+  color: #FFF;  
 }
 .links li {
   padding: 0 0.5rem;
