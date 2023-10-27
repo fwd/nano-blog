@@ -54,7 +54,7 @@
                   <% }) %>
                 </ul>
             </nav>
-            <img class="header-img" src="<%- articles[0] ?  articles[0].image ||  articles[0].cover  : 'https://assets.codepen.io/467/2020-08-26+-+09-30-18_00007+copy.jpg' %>"
+            <img class="header-img" src="<%- articles[0] && ( articles[0].image ||  articles[0].cover) ?  articles[0].image ||  articles[0].cover  : 'https://assets.codepen.io/467/2020-08-26+-+09-30-18_00007+copy.jpg' %>"
             alt=" " />
             <div class="header-group headline">
                 <a class="nextclick-article typetura" style="text-align: left;" href="/<%- articles[0] ? articles[0].slug : 'index' %>.html">
@@ -93,10 +93,13 @@
         <footer>
             <a href="https://nano.to"><div class="logo"><%- title %></div></a>
             <ul class="links">
-              <% nav.map(i => { %>
-              <li><a href="/tag/<%- i.toLowerCase().replace(' ', '-') %>"><%- i %></a></li>
-              <% }) %>
+              <li><a href="/tag/crypto">Crypto</a></li>
+              <li><a href="/tag/software">Software</a></li>
+              <li><a href="/tag/hardware">Hardware</a></li>
+              <li><a href="/tag/travel">Travel</a></li>
+              <li><a href="/tag/education">Education</a></li>
             </ul>
+ <!-- <small>Nano Name Service hosted on <a href="https://github.com/fwd/nano-blog" style="border-bottom: 1px solid;" target="_blank">Github</a>. -->
         </footer>
     
     </body>
