@@ -72,9 +72,12 @@
 
             </div>
         </div>
+
         <article class="<%- article.price ? 'premium' : '' %> article" >
             <p> <%- article.html %></p>
         </article>
+
+        <% if (articles.length) { %>
         <section class="nextclicks typetura">
              <h2 class="section-label">Further Reading</h2>
             <% articles.map(article => { %>
@@ -90,18 +93,20 @@
                 </h3>
             </a>
             <% }) %>
-    </section>
+        </section>
+        <% } %>
 
-    <footer>
+        <footer>
             <a href="https://nano.to"><div class="logo"><%- title %></div></a>
             <ul class="links">
               <% nav.map(i => { %>
                 <li><a href="/tag/<%- i.toLowerCase().replace(' ', '-') %>"><%- i %></a></li>
               <% }) %>
             </ul>
-   <!-- <small>Nano Name Service hosted on <a href="https://github.com/fwd/nano-blog" style="border-bottom: 1px solid;" target="_blank">Github</a>.</small> -->
         </footer>
+
         <script src="../js/highlight.min.js"></script>
+        
         <% if (article.goal) { %>
         <script src="../js/nano-wall.js"></script>
         <script>
