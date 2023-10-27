@@ -355,7 +355,7 @@ a:is(:link, :visited) {
 }
 
 nav {
-  position: fixed;
+  position: absolute;
   display: flex;
   align-items: center;
   top: 0;
