@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<title><%- site_title %></title>
+        <meta name="apple-mobile-web-app-title" content="<%- site_title %>">
+        <link rel="icon" type="image/png" href="<%- favicon %>">
+        <meta property="og:title" content="<%- site_title %>">
+        <meta property="og:image" content="<%- cover ? cover : '../img/cover.png' %>">
+        <meta property="twitter:image" content="<%- cover ? cover : '../img/cover.png' %>">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="../css/highlight.min.css">
+        <style>
+            :root { --color: <%- color || '#3498db' %>; }
+        </style>
+        <link rel="stylesheet" href="../css/blog.css?v=1">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div>
+                    <a href="/" style="border-bottom: 0;">
+                        <b><%- title %></b>
+                    </a>
+                    <% if (verified) { %>
+                    <img src="img/verified.png" alt="" style=" max-width: 20px; margin: 0; display: inline-block; vertical-align: text-top; margin-top: 1px; ">
+                    <% } %>
+                </div>
+                <div class="menu-items">
+                    <% if (github) { %>
+                    <div>
+                        <a href="https://github.com/<%- github %>" style="border: 0" target="_blank">
+                            <img alt="" class="dark-invert" src="../img/github.svg" style=" max-width: 25px; margin: 0; display: inline-block; vertical-align: text-top; margin-top: 1px; ">
+                            </img>
+                        </a>
+                    </div>
+                    <% } %>
+                    <% if (website) { %>
+                    <div>
+                        <a href="https://<%- website %>" style="border: 0" target="_blank">
+                            <img alt="" class="dark-invert" src="https://icons.duckduckgo.com/ip3/<%- website %>.ico" style=" max-width: <%- iconSize ? iconSize : '25px' %>; margin: 0; display: inline-block; vertical-align: text-top; margin-top: 1px; ">
+                            </img>
+                        </a>
+                    </div>
+                    <% } %>
+                </div>
+
+            </div>
+        </header>
+
+        <div class="home">
+
+            <%
+
+                function chunkedArray(array, size) {
+                  const chunkedArray = []
+                  for (var i = 0; i < array.length; i += size) {
+                   chunkedArray.push(array.slice(i, i + size))
+                  }
+                  return chunkedArray
+                }
+
+                var chunked = chunkedArray(articles, 3)
+
+            %>
+
+            <% chunked.map(chunk => { %>
+            <div class="row">
+                <% chunk.map(article => { %>
+                    <div class="col">
+                            <div class="card">
+                                <a href="/<%- article.slug %>.html">
+                                    <div class="card-image">
+                                        <img alt="" src="<%- article.image || 'https://assets.codepen.io/772926/card-img-one.png' %>">
+                                    </div>
+                                </a>
+                                <div class="card-content">
+                                        <p class="kicker"><a href="/tags/<%- article.tags ? article.tags.split(', ')[0].toLowerCase() : '' %>"><%- article.tags ? article.tags.split(', ')[0] : '' %></a><% if (article.price) { %> · <span style=" color: #3498db; ">Premium</span> <% } %> </p>
+                                        <a href="/<%- article.slug %>.html">
+                                        <h2>
+                                            <%- article.title %>
+                                        </h2>
+                                        </a>
+                                        <time style="margin: 0;font-size: 16px;"><%- article.fromNow %></time>
+                                        <% if (article.preview) { %>
+                                        <p>
+                                            <%- article.preview %>
+                                        </p>
+                                        <% } %>
+                                </div>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+            <% }) %>
+        </div>
+        <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('lightMode')) {
+            document.documentElement.className += 'dark-mode'
+        }
+        </script>
+    </body>
+</html>
