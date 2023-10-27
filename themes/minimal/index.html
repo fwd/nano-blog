@@ -83,7 +83,9 @@
                                             <%- article.title %>
                                         </h2>
                                         </a>
-                                        <time style="margin: 0;font-size: 16px;"><%- article.fromNow %></time>
+                                        <time style="margin: 0;font-size: 16px;">
+                                            <span style="color: initial;font-style: normal;"><%- article.author %></span> · <%- article.fromNow %> 
+                                        </time>
                                         <% if (article.preview) { %>
                                         <p>
                                             <%- article.preview %>
