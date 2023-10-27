@@ -58,7 +58,7 @@
                   <% }) %>
                 </ul>
             </nav>
-            <img class="header-img" src="<%- article.image || 'https://assets.codepen.io/772926/card-img-one.png' %>"
+            <img class="header-img" src="<%- article.image || article.cover || 'https://assets.codepen.io/772926/card-img-one.png' %>"
             alt=" " />
             <div class="header-group headline">
                  <h3 class="label"><a href="/tags/<%- article.tags ? article.tags.split(', ')[0].toLowerCase() : '' %>"><%- article.tags ? article.tags.split(', ')[0] : '' %></a></h3>

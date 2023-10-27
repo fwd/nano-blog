@@ -54,7 +54,7 @@
                   <% }) %>
                 </ul>
             </nav>
-            <img class="header-img" src="https://assets.codepen.io/467/2020-08-26+-+09-30-18_00007+copy.jpg"
+            <img class="header-img" src="<%- articles[0] ?  articles[0].image ||  articles[0].cover  : 'https://assets.codepen.io/467/2020-08-26+-+09-30-18_00007+copy.jpg' %>"
             alt=" " />
             <div class="header-group headline">
                 <a class="nextclick-article typetura" style="text-align: left;" href="/<%- articles[0] ? articles[0].slug : 'index' %>.html">
