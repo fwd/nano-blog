@@ -93,13 +93,10 @@
         <footer>
             <a href="https://nano.to"><div class="logo"><%- title %></div></a>
             <ul class="links">
-              <li><a href="/tag/crypto">Crypto</a></li>
-              <li><a href="/tag/software">Software</a></li>
-              <li><a href="/tag/hardware">Hardware</a></li>
-              <li><a href="/tag/travel">Travel</a></li>
-              <li><a href="/tag/education">Education</a></li>
+              <% nav.map(i => { %>
+              <li><a href="/tag/<%- i.toLowerCase().replace(' ', '-') %>"><%- i %></a></li>
+              <% }) %>
             </ul>
- <!-- <small>Nano Name Service hosted on <a href="https://github.com/fwd/nano-blog" style="border-bottom: 1px solid;" target="_blank">Github</a>. -->
         </footer>
     
     </body>
