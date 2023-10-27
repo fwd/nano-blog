@@ -56,6 +56,9 @@ p a, li a {
 }
 
 @media (max-width: 1024px) {
+  .header-img {
+    margin-top: 60px;
+  }
   .article {
     padding-top: 40px !important;
   }
