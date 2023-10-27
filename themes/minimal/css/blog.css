@@ -485,3 +485,7 @@ article {
 .menu-items > div {
   margin-left: 20px;
 }
+
+#nano-locked {
+  margin-top: 30px !important;
+}
