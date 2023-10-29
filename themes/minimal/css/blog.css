@@ -302,7 +302,7 @@ h6 {
 }
 
 .card {
-/*  margin-top: 1.5rem;*/
+  margin-top: 1.5rem;
   border-radius: 6px;
   overflow: hidden;
   cursor: pointer;
@@ -487,6 +487,9 @@ article {
 
 
 @media (max-width: 768px) {
+  .card {
+    margin-top: 0;
+  }
   .title {
     margin-top: 0px;
   }
