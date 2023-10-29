@@ -78,7 +78,7 @@
                                 </a>
                                 <div class="card-content">
                                         <p class="kicker"><a href="/tags/<%- article.tags ? article.tags.split(', ')[0].toLowerCase() : '' %>"><%- article.tags ? article.tags.split(', ')[0] : '' %></a><% if (article.price) { %><% } %> 
-                                             · <span style=" color: #3498db; "><span style="font-style: normal;"><%- article.author %></span></span>
+                                             · <span style=" color: var(--color); "><span style="font-style: normal;"><%- article.author %></span></span>
                                         </p>
                                         <!-- <p class="kicker"><a href="/tags/<%- article.tags ? article.tags.split(', ')[0].toLowerCase() : '' %>"><%- article.tags ? article.tags.split(', ')[0] : '' %></a><% if (article.price) { %> · <span style=" color: #3498db; ">Premium</span> <% } %> </p> -->
                                         <a href="/<%- article.slug %>.html">
@@ -102,7 +102,11 @@
             <% }) %>
         </div>
         <footer>
-            <a href="/"><div class="logo"><%- title %></div></a>
+            <% if (footer) { %>
+                <%- footer %>
+            <% } else { %>
+            <a href="../"><div class="logo"><%- title %></div></a>
+            <% } %>
         </footer>
         <script>
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('lightMode')) {

@@ -7,6 +7,8 @@
 	"dest": "./docs",
 	"path": "",
 	"github": "",
+	"color": "red",
+	"footer": "<a href='google.com'>Google.com</a>",
 	"website": "nano.to",
 	"contact": "support@nano.to",
 	"navigation": ["Crypto","Software","Hardware","Education"],
