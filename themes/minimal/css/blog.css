@@ -82,11 +82,6 @@ article h1 {
   word-break: break-word;
 }
 
-@media (max-width: 768px) {
-  article h1 {
-    font-size: 36px;
-  }
-}
 
 article h2, 
 article h3 {
@@ -292,15 +287,6 @@ time {
   margin: 10px 0;
 }
 
-@media (max-width: 960px) {
-  .row {
-    display: block;
-  }
-  .row .col {
-    width: 100%;
-    margin: 0 0 10px 0;
-  }
-}
 
 h1,
 h2,
@@ -322,7 +308,7 @@ h6 {
   cursor: pointer;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   transition: box-shadow 0.3s ease-in-out;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   background: #FFF;
 }
 
@@ -436,7 +422,7 @@ border-bottom: 0;
 }
 
 .home {
-    padding: 30px;
+    padding: 10px 30px;
     max-width: 1280px;
     margin: 0 auto;
 }
@@ -456,20 +442,29 @@ pre code.hljs {
   font-size: 16px;
 }
 
-p code {
-      margin: 0 3px;
-    border-radius: 2px;
-    padding: 3px 8px;
+.dark-mode pre code.hljs {
+  font-size: 16px;
+  color: #2bc1ff;
 }
 
-.dark-mode .dark-invert {
-  filter: invert(1);
+.dark-mode .hljs-number {
+  color: #2b9bff
+}
+
+.dark-mode .hljs-attr {
+  color: #f2f2f2;
+}
+
+p code {
+margin: 0 1px;
+    border-radius: 7px;
+    padding: 3px 9px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    font-family: monospace;
 }
 
 .dark-mode p code {
-  margin: 0 3px;
-  border-radius: 2px;
-  padding: 4px 10px;
   background: #434343;
 }
 
@@ -488,4 +483,55 @@ article {
 
 .nano-locked {
   margin-top: 10px !important;
+}
+
+
+@media (max-width: 768px) {
+  .title {
+    margin-top: 0px;
+  }
+  time {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  article h1 {
+    font-size: 36px;
+  }
+}
+
+
+footer {
+    text-align: center;
+    border-top: 2px solid var(--color);
+    margin-top: 15px;
+/*    margin-bottom: 30px;*/
+    padding: 30px 0;
+/*    padding: 2rem 0 20vh;*/
+}
+footer .links {
+  opacity: 0.5;
+  font-size: 95%;
+  padding: 0;
+  margin: 2rem auto;
+  justify-content: center;
+}
+footer small {
+  display: block;
+  max-width: var(--max-width);
+  font-size: 0.75rem;
+  line-height: 1.25;
+  margin: 0 auto;
+  padding: 1em 2rem;
+}
+
+@media (max-width: 960px) {
+
+
+  .row {
+    display: block;
+  }
+  .row .col {
+    width: 100%;
+    margin: 0 0 10px 0;
+  }
 }
