@@ -34,7 +34,7 @@
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/4.png)
 
 **Add Github Account**
-![line](https://github.com/fwd/nano-blog/raw/master/guide/5.png)
+![line](https://github.com/fwd/nano-blog/raw/master/guide/5-new.png)
 
 **Select Fork of Nano/Blog**
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/6.png)
