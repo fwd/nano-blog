@@ -51,7 +51,7 @@
 **Optional: Setup Custom Domain**
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/9.png)
 
-## Step 2. Edit Your Blog
+# Step 2. Edit Your Blog
 
 Now that Cloudflare is setup. It auto deploys. Meaning any changes done on Github are deployed. 
 
@@ -77,9 +77,11 @@ Now that Cloudflare is setup. It auto deploys. Meaning any changes done on Githu
 Your story in Markdown..
 ```
 
-# Build Your Own Theme
+## Build Your Own Theme
 
 This project is designed for Theming. Duplicate ```/themes/minimal``` and change ```config.json```.
+
+### Powered by [Nano/Wall.JS](https://github.com/fwd/nano-wall)
 
 ## ❯ Stargazers
 
