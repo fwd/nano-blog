@@ -50,8 +50,8 @@
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/7.png)
 
 **Configure Blog**
-- **Build Command:** node build
-- **Build Output:** docs
+- **Build command:** node build
+- **Build output:** docs
 
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/8.png)
 
