@@ -49,7 +49,7 @@
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/8.png)
 
 **Optional: Setup Custom Domain**
-![line](https://github.com/fwd/nano-blog/raw/master/guide/7.png)
+![line](https://github.com/fwd/nano-blog/raw/master/guide/9.png)
 
 ## Step 2. Edit Your Blog
 
