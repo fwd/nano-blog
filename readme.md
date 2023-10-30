@@ -48,16 +48,17 @@ This whole point is Free!
 - **Select Repo and Begin Setup**
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/7.png)
 
-- **Configure Blog**
+#### **Configure Blog**
 - **Build Command:** node build
 - **Build Output:** docs
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/8.png)
 
-- **Optional: Setup Custom Domain**
+#### **Optional: Setup Custom Domain**
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/7.png)
 
-1. [Fork this Template](https://github.com/fwd/nano-blog/generate).
+## Add Posts
 
+1. [Fork this Template](https://github.com/fwd/nano-blog/generate).
 3. Write your articles in ```markdown``` within the ```/source``` directory.
 4. Edit ```/config.json```.
 5. Publish repo on [Cloudflare Pages](https://developers.cloudflare.com/pages/).
