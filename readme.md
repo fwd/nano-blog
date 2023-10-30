@@ -16,6 +16,8 @@
 - Bring your own Nano Address
 - No domain purchased required
 
+![line](https://github.com/fwd/n2/raw/master/.github/line.png)
+
 ## Step 0. [Fork this Repo](https://github.com/new?template_name=nano-blog&template_owner=fwd)
 
 ## Step 1. Setup Cloudflare Pages
