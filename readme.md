@@ -22,24 +22,31 @@
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/0.png)
 
 **Go to Workers & Pages**
+
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/1.png)
 
 **Create New Application**
+
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/2-new.png)
 
 **Go to Pages**
+
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/3.png)
 
 **Connect to Git**
+
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/4.png)
 
 **Add Github Account**
+
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/5-new.png)
 
 **Select Fork of Nano/Blog**
+
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/6.png)
 
 **Select Repo and Begin Setup**
+
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/7.png)
 
 **Configure Blog**
