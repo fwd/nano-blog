@@ -21,13 +21,13 @@
 **Sign Up for [Cloudflare](https://dash.cloudflare.com/sign-up)**
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/0.png)
 
-**Go to Workers page**
+**Go to Workers & Pages**
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/1.png)
 
 **Create New Application**
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/2-new.png)
 
-**Go to Workers & Pages**
+**Go to Pages**
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/3.png)
 
 **Connect to Git**
