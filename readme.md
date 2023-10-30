@@ -26,8 +26,7 @@ This whole point is Free!
 
 ## 1. Setup Cloudflare
 
-- Sign Up for [Cloudflare](https://dash.cloudflare.com/sign-up)
-
+### Sign Up for [Cloudflare](https://dash.cloudflare.com/sign-up)
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/0.png)
 
 1. [Fork this Template](https://github.com/fwd/nano-blog/generate).
