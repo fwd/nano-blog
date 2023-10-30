@@ -45,6 +45,7 @@
 **Configure Blog**
 - **Build Command:** node build
 - **Build Output:** docs
+
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/8.png)
 
 **Optional: Setup Custom Domain**
