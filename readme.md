@@ -20,7 +20,7 @@
 
 ## Step 1. [Fork This Template](https://github.com/new?template_name=nano-blog&template_owner=fwd)
 
-Yes, your Repo can be private!
+Your Repo can be private, and named anything you like.
 
 ## Step 2. Setup Cloudflare Pages
 
