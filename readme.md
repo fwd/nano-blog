@@ -1,7 +1,7 @@
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-<h1 align="center">Crypto Blog Template</h1>
-<h3 align="center">Markdown + HTML + Nano</h3>
+<h1 align="center">Nano Blog</h1>
+<h3 align="center">Self-Hosted Crypto Monetized Blog</h3>
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
