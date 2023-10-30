@@ -41,7 +41,7 @@
 
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/5-new.png)
 
-**Select [Fork of Nano/Blog](https://github.com/new?template_name=nano-blog)**
+**Select Fork Nano/Blog**
 
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/6.png)
 
