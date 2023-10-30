@@ -79,7 +79,7 @@ Your story in Markdown..
 
 # Build Your Own Theme
 
-This project is designed for Theming. Duplicate ```/themes/minimal``` and have fun.
+This project is designed for Theming. Duplicate ```/themes/minimal``` and change ```config.json```.
 
 ## ❯ Stargazers
 
