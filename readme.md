@@ -24,9 +24,9 @@ Requirements:
 
 This whole point is Free!
 
-## Setting up Cloudflare
+## 1. Setup Cloudflare
 
-1. Sign Up for [Cloudflare](https://dash.cloudflare.com/sign-up)
+- Sign Up for [Cloudflare](https://dash.cloudflare.com/sign-up)
 
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/0.png)
 
