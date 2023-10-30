@@ -56,31 +56,25 @@ This whole point is Free!
 **Optional: Setup Custom Domain**
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/7.png)
 
-## Add Posts
+## Step 2. Write Blog
 
-1. [Fork this Template](https://github.com/fwd/nano-blog/generate).
-3. Write your articles in ```markdown``` within the ```/source``` directory.
-4. Edit ```/config.json```.
-5. Publish repo on [Cloudflare Pages](https://developers.cloudflare.com/pages/).
+Now that Cloudflare is setup. It auto deploys. Meaning any changes done on Github are deployed. 
 
-**Development:**
-```
-npm run start
-```
+**Option 1:** Write blog posts via Github website. 
 
-**Build:**
-```
-npm run build
-```
+**Press the '<' key in your Keyboard while looking at your Nano/Blog fork, to open Visual Studio in the browser.**
 
-**Write Markdown Like So:**
+**Option 2:** Clone your Fork and modify code.
+
+In Any case, ```/source``` is where add new posts. 
+
+**Filenames:**
 
 ```
 source/my-premium-article-title-in-kebab-case.md
 ```
 
-> Filename determines SEO url. Title is configured inside the file, like so:
-
+**Inside is Markdown:**
 ```
 - title: My Premium Article Title
 - date: 01-01-2023
