@@ -60,7 +60,9 @@ Now that Cloudflare is setup. It auto deploys. Meaning any changes done on Githu
 - **File Structure:** ```source/my-premium-article-title-in-kebab-case.md```
 - **Put Images In:** ```/images```
 
-**File Template:**
+**Pro Tip: Press the '<' key on your Keyboard on Githubto open Visual Studio in the browser.**
+
+**Markdown Structure:**
 ```
 - title: My Premium Article Title
 - date: 01-01-2023
@@ -73,8 +75,6 @@ Now that Cloudflare is setup. It auto deploys. Meaning any changes done on Githu
 -----
 Your story in Markdown..
 ```
-
-**Press the '<' key on your Keyboard on Githubto open Visual Studio in the browser.**
 
 # Build Your Own Theme
 
