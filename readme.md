@@ -25,7 +25,7 @@
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/1.png)
 
 **Create New Application**
-![line](https://github.com/fwd/nano-blog/raw/master/guide/2.png)
+![line](https://github.com/fwd/nano-blog/raw/master/guide/2-new.png)
 
 **Go to Workers & Pages**
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/3.png)
