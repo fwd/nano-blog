@@ -41,7 +41,7 @@
 
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/5-new.png)
 
-**Select Fork of Nano/Blog**
+**Select [Fork of Nano/Blog](https://github.com/new?template_name=nano-blog)**
 
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/6.png)
 
@@ -63,7 +63,7 @@
 Now that Cloudflare is setup. It auto deploys. Meaning any changes done on Github are deployed. 
 
 - **Configure:** ```/config.json```
-- **Edit:** ```/source/*```
+- **Write:** ```/source/*```
 - **Language:** ```Markdown```
 - **File Structure:** ```source/my-premium-article-title-in-kebab-case.md```
 - **Put Images In:** ```/images```
