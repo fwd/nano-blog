@@ -18,9 +18,9 @@
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-## Step 0. [Fork This Template](https://github.com/new?template_name=nano-blog&template_owner=fwd)
+## Step 1. [Fork This Template](https://github.com/new?template_name=nano-blog&template_owner=fwd)
 
-## Step 1. Setup Cloudflare Pages
+## Step 2. Setup Cloudflare Pages
 
 **Sign Up for [Cloudflare](https://dash.cloudflare.com/sign-up)**
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/0.png)
@@ -62,7 +62,7 @@
 **Optional: Setup Custom Domain**
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/9.png)
 
-# Step 2. Edit Your Blog
+# Step 3. Edit Your Blog
 
 Now that Cloudflare is setup. It auto deploys. Meaning any changes done on Github are deployed. 
 
