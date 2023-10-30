@@ -29,7 +29,7 @@ Your Repo can be private, and named anything you like.
 
 **Go to Workers & Pages**
 
-![line](https://github.com/fwd/nano-blog/raw/master/guide/1.png)
+![line](https://github.com/fwd/nano-blog/raw/master/guide/1-new.png)
 
 **Create New Application**
 
