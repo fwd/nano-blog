@@ -55,8 +55,9 @@
 
 Now that Cloudflare is setup. It auto deploys. Meaning any changes done on Github are deployed. 
 
-- **Language:** ```Markdown```
+- **Configure:** ```/config.json```
 - **Edit:** ```/source/*```
+- **Language:** ```Markdown```
 - **File Structure:** ```source/my-premium-article-title-in-kebab-case.md```
 - **Put Images In:** ```/images```
 
