@@ -8,25 +8,17 @@
 
 ![line](https://github.com/fwd/nano-blog/raw/master/.github/banner.png)
 ![line](https://github.com/fwd/nano-blog/raw/master/.github/payscreen.png)
-![line](https://github.com/fwd/nano-blog/raw/master/.github/paywall.png)
-![line](https://github.com/fwd/nano-blog/raw/master/.github/success.png)
-![line](https://github.com/fwd/nano-blog/raw/master/.github/article.png)
 
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-### Live Demo
+### Setup Your Own
 
-https://blog.nano.to 
+1. [Fork this Template](https://github.com/fwd/nano-blog/generate).
 
-![line](https://github.com/fwd/n2/raw/master/.github/line.png)
-
-### Start Your Own Blog
-
-1. [Fork this Template](https://github.com/fwd/nano-blog/generate). 
-2. Write your articles in ```markdown``` within the ```/source``` directory.
-3. Edit ```/config.json```.
-4. Publish repo on [Cloudflare Pages](https://developers.cloudflare.com/pages/).
+3. Write your articles in ```markdown``` within the ```/source``` directory.
+4. Edit ```/config.json```.
+5. Publish repo on [Cloudflare Pages](https://developers.cloudflare.com/pages/).
 
 **Development:**
 ```
