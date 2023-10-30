@@ -47,7 +47,7 @@ Your Repo can be private, and named anything you like.
 
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/5-new.png)
 
-**Select Fork Nano/Blog**
+**Select Nano/Blog fork**
 
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/6.png)
 
