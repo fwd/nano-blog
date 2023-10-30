@@ -5,22 +5,16 @@
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-
 ![line](https://github.com/fwd/nano-blog/raw/master/.github/banner.png)
 ![line](https://github.com/fwd/nano-blog/raw/master/.github/payscreen.png)
 
-
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-### Setup Your Own
+## Start Your Own Blog
 
-Requirements: 
-
-- Cloudflare Pages
-- Nano Address
-- Free domain from Cloudflare
-
-This whole point is Free!
+- Free hosting and deployment by Cloudflare Pages
+- Bring your own Nano Address
+- No domain purchased required
 
 ## Step 1. Setup Cloudflare Pages
 
