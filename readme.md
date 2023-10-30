@@ -51,25 +51,16 @@
 **Optional: Setup Custom Domain**
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/7.png)
 
-## Step 2. Write Blog
+## Step 2. Edit Your Blog
 
 Now that Cloudflare is setup. It auto deploys. Meaning any changes done on Github are deployed. 
 
-**Option 1:** Write blog posts via Github website. 
+**Edit:** ```/source```
+**Language:** ```Markdown```
+**File Structure:** ```source/my-premium-article-title-in-kebab-case.md```
+**Put Images In:** ```/images```
 
-**Press the '<' key in your Keyboard while looking at your Nano/Blog fork, to open Visual Studio in the browser.**
-
-**Option 2:** Clone your Fork and modify code.
-
-In Any case, ```/source``` is where add new posts. 
-
-**Filenames:**
-
-```
-source/my-premium-article-title-in-kebab-case.md
-```
-
-**Inside is Markdown:**
+**File Template:**
 ```
 - title: My Premium Article Title
 - date: 01-01-2023
@@ -82,6 +73,8 @@ source/my-premium-article-title-in-kebab-case.md
 -----
 Your story in Markdown..
 ```
+
+**Press the '<' key on your Keyboard on Githubto open Visual Studio in the browser.**
 
 # Build Your Own Theme
 

@@ -102,6 +102,7 @@ function copyFolderSync(from, to) {
 copyFolderSync(`./themes/${theme}/css`, `${dest}/css`)
 copyFolderSync(`./themes/${theme}/img`, `${dest}/img`)
 copyFolderSync(`./themes/${theme}/js`, `${dest}/js`)
+copyFolderSync(`./images`, `${dest}/images`)
 
 // homepage
 var index_html = fs.readFileSync(`./themes/${theme}/index.html`, { encoding: "utf8" })
