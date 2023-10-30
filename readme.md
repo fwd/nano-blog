@@ -60,7 +60,7 @@ Now that Cloudflare is setup. It auto deploys. Meaning any changes done on Githu
 - **File Structure:** ```source/my-premium-article-title-in-kebab-case.md```
 - **Put Images In:** ```/images```
 
-**Pro Tip: Press the '<' key on your Keyboard on Githubto open Visual Studio in the browser.**
+**Pro Tip: Press the '<' key while on Github to open Visual Studio in the browser.**
 
 **Markdown Structure:**
 ```
