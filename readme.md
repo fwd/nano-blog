@@ -14,6 +14,18 @@
 
 ### Setup Your Own
 
+Requirements: 
+
+
+- Github Account
+- Cloudflare account
+- Nano Address
+- No domain purchase required (Free domain from Cloudflare)
+
+This whole point is Free!
+
+## Setting up Cloudflare
+
 1. [Fork this Template](https://github.com/fwd/nano-blog/generate).
 
 3. Write your articles in ```markdown``` within the ```/source``` directory.
