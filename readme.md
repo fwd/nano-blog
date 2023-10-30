@@ -22,38 +22,38 @@ Requirements:
 
 This whole point is Free!
 
-## 1. Setup Cloudflare Pages
+## Step 1. Setup Cloudflare Pages
 
-- **Sign Up for [Cloudflare](https://dash.cloudflare.com/sign-up)**
+**Sign Up for [Cloudflare](https://dash.cloudflare.com/sign-up)**
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/0.png)
 
-- **Go to Workers page**
+**Go to Workers page**
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/1.png)
 
-- **Create New Application**
+**Create New Application**
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/2.png)
 
-- **Go to Pages**
+**Go to Pages**
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/3.png)
 
-- **Connect to Git**
+**Connect to Git**
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/4.png)
 
-- **Add Github Account**
+**Add Github Account**
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/5.png)
 
-- **Select Fork of Nano/Blog**
+**Select Fork of Nano/Blog**
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/6.png)
 
-- **Select Repo and Begin Setup**
+**Select Repo and Begin Setup**
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/7.png)
 
-#### **Configure Blog**
+**Configure Blog**
 - **Build Command:** node build
 - **Build Output:** docs
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/8.png)
 
-#### **Optional: Setup Custom Domain**
+**Optional: Setup Custom Domain**
 ![line](https://github.com/fwd/nano-blog/raw/master/guide/7.png)
 
 ## Add Posts
