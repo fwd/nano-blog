@@ -10,9 +10,11 @@
     "nodemon": "^3.0.1"
   },
   "scripts": {
-    "dev": "concurrently \"npm run serve\" \"npm run watch\"",
+    "dev": "npm run watch",
+    "offline": "npm run watch",
+    "watch": "concurrently \"npm run serve\" \"npm run nodemon\"",
     "serve": "npm run build && cd docs && php -S localhost:8080",
-    "watch": "nodemon --watch articles/ --watch themes/ --watch images/ --exec 'node build.js' -e md,html,png,jpg,jpeg,gif,css,js",
+    "nodemon": "nodemon --watch articles/ --watch themes/ --watch images/ --exec 'node build.js' -e md,html,png,jpg,jpeg,gif,css,js",
     "build": "node build.js"
   }
 }

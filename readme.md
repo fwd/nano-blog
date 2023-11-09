@@ -90,6 +90,20 @@ Now that Cloudflare is setup. It auto deploys. Meaning any changes done on Githu
 Your story in Markdown..
 ```
 
+## Offline Writing
+
+```
+git clone git@github.com:[name]/[your-nano-blog-fork].git
+npm install
+npm run watch
+```
+
+![line](https://github.com/fwd/nano-blog/raw/master/guide/watch.png)
+
+Local Version: http://localhost:8080
+
+> When changes in ```./articles/*.md```, ```./images``` and ```./themes``` it auto builds.
+
 ## Build Your Own Theme
 
 This project is designed for Theming. Duplicate ```/themes/minimal``` and change ```config.json```.
