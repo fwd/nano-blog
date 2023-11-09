@@ -1,13 +1,3 @@
-/**
- * 
- * 
- * Woah... You scared me. 
- * Who actually reads the code. 
- * Excuse the construction site.
- * 
- * 
- */
-
 const config = require("./config.json")
 const _ = require("lodash")
 const fs = require("fs")

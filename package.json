@@ -14,7 +14,7 @@
     "offline": "npm run watch",
     "watch": "concurrently \"npm run serve\" \"npm run nodemon\"",
     "serve": "npm run build && cd docs && php -S localhost:8080",
-    "nodemon": "nodemon --watch articles/ --watch themes/ --watch images/ --exec 'node build.js' -e md,html,png,jpg,jpeg,gif,css,js",
+    "nodemon": "nodemon --watch config.json --watch articles/ --watch themes/ --watch images/ --exec 'node build.js' -e md,html,png,jpg,jpeg,gif,css,js",
     "build": "node build.js"
   }
 }

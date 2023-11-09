@@ -47,6 +47,9 @@
                 <% if (false && article.tags) { %> · <span style=" font-size: 95%; font-weight: bold"><%- capitalizeFirstLetter(article.tags.split(', ')[0]) %></span> <% } %>
             </time>
             <div class="<%- article.price ? 'premium' : '' %>" data-id="<%- article.id %>">
+                <% if (article.image !== false) { %>
+                <img class="hero-img" src="<%- article.image || '../img/card-img-one.png' %>" alt="">
+                <% } %>
                 <%- article.html %>
                 <% if (articles.length > 1) { %> 
                 <div style="margin-top: 40px;">

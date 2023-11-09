@@ -538,3 +538,8 @@ footer small {
     margin: 0 0 10px 0;
   }
 }
+
+.hero-img {
+  margin: 30px 0;
+    border-radius: 10px;
+}
