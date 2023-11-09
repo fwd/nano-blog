@@ -5,8 +5,14 @@
     "markdown-it": "^13.0.1",
     "moment": "^2.29.4"
   },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.1"
+  },
   "scripts": {
-    "start": "npm run build && cd docs && php -S localhost:8080",
-    "build": "node build.js" 
+    "dev": "concurrently \"npm run serve\" \"npm run watch\"",
+    "serve": "npm run build && cd docs && php -S localhost:8080",
+    "watch": "nodemon --watch articles/ --watch themes/ --watch images/ --exec 'node build.js' -e md,html,png,jpg,jpeg,gif,css,js",
+    "build": "node build.js"
   }
 }
