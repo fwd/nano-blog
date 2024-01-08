@@ -41,7 +41,7 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
+    padding: 30px 30px 0 30px;
     max-width: 1240px;
     margin: 0 auto;
 }
@@ -59,7 +59,8 @@ p {
 }
 
 p, ul, ol, h1, h2, h3 {
-  letter-spacing: 0.2px;
+  letter-spacing: 0.5px;
+  font-size: 20px;
 }
 
 h1, h2, h3 {
@@ -172,14 +173,13 @@ img {
 
 code {
   background: #16181f;
-  color: #FFF;
   padding: 0.2em 0.4em;
   font-family: "Consolas", "Monaco", monospace;
-  font-size: 0.9rem;
+  font-size: 18px;
 }
 
 pre {
-  padding: 20px 15px;
+  padding: 20px;
   margin: 1.75rem 0;
   background: #1f1f1f;
   overflow: scroll;
@@ -191,7 +191,6 @@ pre {
 
 pre code {
   padding: 0;
-  color: #ccc;
   background: none;
 }
 
@@ -542,4 +541,13 @@ footer small {
 .hero-img {
   margin: 30px 0;
     border-radius: 10px;
+}
+
+#title a {
+    border: 0;
+    text-decoration: none;
+}
+#title h2 {
+  font-size: 23px;
+  margin: 0;
 }

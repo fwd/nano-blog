@@ -90,13 +90,13 @@
         <script src="https://wall.nano.to/latest.js"></script>
         <!-- <script src="https://wall.nano.to/latest.js"></script> -->
         <script>
-        nano.paywall({ 
+        nano.sell({ 
             element: '.premium', // required, all with class .premium
             address: '<%- nano_address %>', // required
             amount: '<%- article.price %>', // required
             // debug: false, // optional
             <% if (article.free) { %>
-            free: true, // // optional, allow free access
+            free: false, // // optional, allow free access
             <% } %>
             text: 'Read',
             button: 'Purchase', // optional
