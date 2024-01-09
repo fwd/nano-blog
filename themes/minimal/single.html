@@ -48,7 +48,7 @@
             </time>
             <div class="<%- article.price ? 'premium' : '' %>" data-id="<%- article.id %>">
                 <% if (article.image !== false) { %>
-                <img class="hero-img" src="<%- article.image || '../img/card-img-one.png' %>" alt="">
+                <img class="hero-img" src="<%- article.path ? ('../../' + article.image || '../img/card-img-one.png'): (article.image || '../img/card-img-one.png') %>" alt="">
                 <% } %>
                 <%- article.html %>
                 <% if (articles.length > 1) { %> 
@@ -56,7 +56,7 @@
                     <h2>Further Reading</h2>
                     <ul>
                         <% articles.slice(0, 5).map(article => { %>
-                        <li style=" margin-bottom: 3px; opacity: 0.9; "><a href="/<%- article.slug %>.html"><%- article.title %></a></li>
+                        <li style=" margin-bottom: 3px; opacity: 0.9; "><a href="<%- article.path ? '/' + article.path : '' %>/<%- article.slug %>.html"><%- article.title %></a></li>
                         <% }) %>
                     </ul>
                 </div>

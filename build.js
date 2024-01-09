@@ -6,7 +6,6 @@ const ejs = require('ejs')
 const moment = require('moment')
 const Markdown = require('markdown-it'), md = new Markdown();
 
-// dang it, Moment.
 moment.suppressDeprecationWarnings = true;
 
 // enviroment settings
@@ -31,7 +30,7 @@ const website = config.website
 const iconSize = config.iconSize
 const cover = config.cover || '../img/cover.png'
 const favicon = config.favicon || '../img/favicon.png'
-const verified = config.verified // wow so easy.
+const verified = config.verified
 
 var articles = []
 var exlcude = ['.DS_Store']
@@ -62,6 +61,7 @@ fs.readdirSync(source).forEach(file => {
 	var body = parse[1].replace('\n', '')
 	var clean = domain.replace('http://', '').replace('https://', '').split('/').join('')
 	article.id = hash(title)
+	article.path = blog_path
 	article.slug = slug
 	article.timestamp = date.unix()
 	article.date = date.format('LL')
@@ -93,6 +93,7 @@ copyFolderSync(`./themes/${theme}/css`, `${dest}/css`)
 copyFolderSync(`./themes/${theme}/img`, `${dest}/img`)
 copyFolderSync(`./themes/${theme}/js`, `${dest}/js`)
 copyFolderSync(`./images`, `${dest}/images`)
+copyFolderSync(`./img`, `${dest}/img`)
 
 // homepage
 var index_html = fs.readFileSync(`./themes/${theme}/index.html`, { encoding: "utf8" })

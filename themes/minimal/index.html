@@ -71,7 +71,7 @@
                 <% chunk.map(article => { %>
                     <div class="col">
                             <div class="card">
-                                <a href="/<%- article.slug %>.html">
+                                <a href="<%- article.path ? '/' + article.path : '' %>/<%- article.slug %>.html">
                                     <div class="card-image">
                                         <img alt="" src="<%- article.image || 'https://assets.codepen.io/772926/card-img-one.png' %>">
                                     </div>
@@ -81,7 +81,7 @@
                                              · <span style=" color: var(--color); "><span style="font-style: normal;"><%- article.author %></span></span>
                                         </p>
                                         <!-- <p class="kicker"><a href="/tags/<%- article.tags ? article.tags.split(', ')[0].toLowerCase() : '' %>"><%- article.tags ? article.tags.split(', ')[0] : '' %></a><% if (article.price) { %> · <span style=" color: #3498db; ">Premium</span> <% } %> </p> -->
-                                        <a href="/<%- article.slug %>.html">
+                                        <a href="<%- article.path ? '/' + article.path : '' %>/<%- article.slug %>.html">
                                         <h2>
                                             <%- article.title %>
                                         </h2>
