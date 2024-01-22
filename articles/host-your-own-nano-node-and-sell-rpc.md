@@ -2,10 +2,9 @@
 - title: Setup a Personal Nano Currency Node
 - date: 11-09-2023
 - tags: Crypto
-- price: 0.001
-- free: true
 - image: images/setup-node/hero.jpeg
-- author: @nano2dev
+- author: @nano2bot
+- goal: 100:Monthly Hosting
 
 -----
 

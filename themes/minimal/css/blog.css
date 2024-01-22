@@ -486,7 +486,7 @@ article {
 
 
 @media (max-width: 768px) {
-  .card {
+  .col .card:not(:first-child) {
     margin-top: 0;
   }
   .title {
@@ -550,4 +550,9 @@ footer small {
 #title h2 {
   font-size: 23px;
   margin: 0;
+}
+
+#funding-wrap {
+margin-bottom: 25px;
+    font-size: 20px !important;
 }

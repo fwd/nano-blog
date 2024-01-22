@@ -2,150 +2,110 @@
 - title: Your Own Crypto Blog in Minutes
 - date: 1-1-2023
 - tags: Crypto
-- price: 0.001
-- free: true
 - author: @nano2dev
 
 -----
 
-Free, non-custodial Checkout UI hosted on Github. It works by checking ```pending``` and ```history``` of any given address. Customizable with URL params. Optional, POST API available for secure checkouts.
+## Start Your Own Blog
 
-#### Any Address:
+- Free hosting and deployment by Cloudflare Pages
+- Bring your own Nano Address
+- No domain purchased required
 
-```python
-https://nano.to/:ADDRESS
+![line](https://github.com/fwd/n2/raw/master/.github/line.png)
+
+## Step 1. [Fork This Template](https://github.com/new?template_name=nano-blog&template_owner=fwd)
+
+Your Repo can be private, and named anything you like.
+
+## Step 2. Setup Cloudflare Pages
+
+**Sign Up for [Cloudflare](https://dash.cloudflare.com/sign-up)**
+![line](https://github.com/fwd/nano-blog/raw/master/guide/0.png)
+
+**Go to Workers & Pages**
+
+![line](https://github.com/fwd/nano-blog/raw/master/guide/1-new.png)
+
+**Create New Application**
+
+![line](https://github.com/fwd/nano-blog/raw/master/guide/2-new.png)
+
+**Go to Pages**
+
+![line](https://github.com/fwd/nano-blog/raw/master/guide/3.png)
+
+**Connect to Git**
+
+![line](https://github.com/fwd/nano-blog/raw/master/guide/4.png)
+
+**Add Github Account**
+
+![line](https://github.com/fwd/nano-blog/raw/master/guide/5-new.png)
+
+**Select Nano/Blog fork**
+
+![line](https://github.com/fwd/nano-blog/raw/master/guide/6.png)
+
+**Select Repo and Begin Setup**
+
+![line](https://github.com/fwd/nano-blog/raw/master/guide/7.png)
+
+**Configure Blog**
+- **Build command:** node build
+- **Build output:** docs
+
+![line](https://github.com/fwd/nano-blog/raw/master/guide/8.png)
+
+**Optional: Setup Custom Domain**
+![line](https://github.com/fwd/nano-blog/raw/master/guide/9.png)
+
+## Step 3. Edit Your Blog
+
+Now that Cloudflare is setup. It auto deploys. Meaning any changes done on Github are deployed. 
+
+- **Configure:** ```/config.json```
+- **Write:** ```/source/*```
+- **Language:** ```Markdown```
+- **File Structure:** ```source/my-premium-article-title-in-kebab-case.md```
+- **Put Images In:** ```/images```
+
+**Pro Tip: Press the '<' key while on Github to open Visual Studio in the browser.**
+
+**Markdown Structure:**
+```
+- title: My Premium Article Title
+- date: 01-01-2023
+- tags: Opinion
+- price: 0.01
+- free: true
+- author: @your_twitter
+- website: twitter.com/your_twitter
+- address: YOUR_NANO_ADDRESS
+-----
+Your story in Markdown..
 ```
 
-**Nano.to Username:**
-```python
-https://nano.to/@Keeri
-```
-
-### Single Panel
-
-```python
-https://nano.to/@Fosse?amount=50&random=true
-```
-
-
-### Double Panel
-
-```python
-https://nano.to/@Moon?plans=Tip:0.133,Small:1,Medium:10,Large:20,Gigantic:100
-```
-
-
-## Customize Colors
-
-```python
-https://nano.to/@Keeri
-?background=$0057b7:$ffd700
-&color=$FFF:$000
-&highlight=white
-&vanity=$0057b7
-&qrcode=white:$0057b7
-&logo=https://nano.to/dist/logo/cyber.png
-```
-
-### Available Options
-
-- **amount** (*number*) : Single panel with price. No plans.
-- **plans** (*string*) : Plans separated by commas. Ex. Tip:30,Small:5
-- **selected** (*string*) : Title of Plan to select by default.
-- **goal** (*string*) : Show a funding meter based off balance.
-- **image** (*image/url*) : Display Image. Image URL.
-- **random** (*boolean*) : Add random decimal to amount. Ex + 0.00XXXX
-- **color** (*string*) : Text color. Ex red:blue
-- **background** (*string*) : Background color. Ex white:gray
-- **highlight** (*string*) : Box backgrounds value. Ex blue:red
-- **qrcode** (*string*) : Replace QR Code color. Ex white:black
-- **logo** (*image/url*) : Replace QR Code logo. Image URL.
-- **cancel** (*string*) : Redirect URL when pressed 'Cancel'
-- **redirect** (*string*) : Redirect URL on success.
-
-**Coming Soon:**
-- **currency** (string) : ISO Currency Symbol. Ex JPY
-
-### Checkout Funding UI
-
-Easily show a meter of progress for any Nano fundraiser. 
-
-```python
-https://nano.to/@Basedlemahieu?goal=100:Funding Goal
-```
-
-### Checkout via POST
-
-**Nano.to Checkout UI** is hosted on Github, and does not require a server. 
-
-However, when you want to create more complex Checkouts, Nano.to has a secure API for this case.
-
-**Base URL:**
+## Offline Writing
 
 ```
-https://api.nano.to
+git clone git@github.com:[name]/[your-nano-blog-fork].git
+npm install
+npm run watch
 ```
 
-**POST Example:**
+![line](https://github.com/fwd/nano-blog/raw/master/guide/watch.png)
 
-```js
-const http = require('axios')
+Local Version: http://localhost:8080
 
-http.post('https://api.nano.to', {
-  address: '@moon', // or address
-  webhook_url: 'https://example.com/secret/endpoint',
-  success_url: 'https://example.com/success?hash={{hash}}',
-  metadata: { userId: 'joe-mama', password: "Slava Ukraini" },
-}).then((res) => {
-  console.log( res.data )
-})
-```
+> When changes in ```./articles/*.md```, ```./images``` and ```./themes``` it auto builds.
 
-**Parameters:**
+## Build Your Own Theme
 
-- **webhook_url** (string) : URL to receive succesful payment metadata.
-- **metadata** (object) : Object with any kind of JSON data.
+This project is designed for Theming. Duplicate ```/themes/minimal``` and change ```config.json```.
 
+### Powered by [Nano/Wall.JS](https://github.com/fwd/nano-wall)
 
-**Response:**
+## ❯ Stargazers
 
-```json
-{
-  "id": "f745ffa3",
-  "browser": "https://nano.to/id_f745ffa3",
-  "json": "https://api.nano.to/checkout/f745ffa3",
-  "check": "https://api.nano.to/checkout/f745ffa3/check"
-}
-```
-
-> Perform a GET request on ```check``` URL to confirm payment, or redirect user to ```browser``` for included UI.
- 
-**Webhook POST Body:**
-
-```json
-{
-  "id": "CHECKOUT_ID",
-  "block": {
-    "hash": "PAYMENT_BLOCK_HASH",
-    "account": "SENDER_ADDRESS",
-    "amount": "0.0109913",
-    "amount_raw": "10991300000000000000000000000"
-  },
-  "plan": {
-    "title": "Default",
-    "value": "0.0109913",
-    "value_raw": "10991300000000000000000000000"
-  },
-  "metadata": {
-    "userId": "joe-mama",
-    "password": "Slava Ukraini"
-  },
-  "checkout": "https://api.nano.to/checkout/CHECKOUT_ID"
-}
-```
-
-## Support
-
-- Email: support@nano.to
-- Twitter: [@nano2dev](https://twitter.com/nano2dev)
-- @nano2dev on [Nano's Discord](https://discord.com/invite/RNAE2R9) 
+[![Stargazers over time](https://starchart.cc/fwd/nano-blog.svg)](https://starchart.cc/fwd/nano-blog)

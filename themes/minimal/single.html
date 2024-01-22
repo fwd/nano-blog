@@ -11,7 +11,7 @@
         <style>
             :root { --color: <%- color || '#3498db' %>; }
         </style>
-        <link rel="stylesheet" href="../css/blog.css?v=2">
+        <link rel="stylesheet" href="../css/blog.css?v=3">
         <meta property="og:title" content="<%- article.title %>" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://<%- domain %>" />
@@ -48,7 +48,14 @@
             </time>
             <div class="<%- article.price ? 'premium' : '' %>" data-id="<%- article.id %>">
                 <% if (article.image !== false) { %>
-                <img class="hero-img" src="<%- article.path ? ('../../' + article.image || '../img/card-img-one.png'): (article.image || '../img/card-img-one.png') %>" alt="">
+                <%
+                    var image = article.image
+                    if (image && !image.includes('//')) image = '../../' + image
+                %>
+                <img class="hero-img" src="<%- image %>" alt="">
+                <% } %>
+                <% if (article.goal) { %>
+                <div class="goal" data-title="<%- article.goal.split('|')[1] %>" data-address="<%- article.address ? article.address : nano_address %>" data-amount="<%- article.goal.split('|')[0] %>"></div>
                 <% } %>
                 <%- article.html %>
                 <% if (articles.length > 1) { %> 
@@ -79,11 +86,12 @@
         <% if (article.goal) { %>
         <script src="https://goal.nano.to/latest.js"></script>
         <script>
-        nano.goal({ 
-            element: '.goal', // required, all with class .premium
-            address: '<%- article.address ? article.address : nano_address %>', // required
-            amount: '<%- article.goal %>', // required
-        })
+        nano.goal({ element: '.goal' })
+        // nano.goal({ 
+        //     element: '.goal', // required, all with class .premium
+        //     address: '<%- article.address ? article.address : nano_address %>', // required
+        //     amount: '<%- article.goal %>', // required
+        // })
         </script>
         <% } %>
         <% if (article.price && nano_address) { %>
