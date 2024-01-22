@@ -5,7 +5,7 @@
 	"theme": "minimal",
 	"source": "./articles",
 	"dest": "./docs",
-	"path": "articles",
+	"path": "",
 	"github": "",
 	"color": "#3498db",
 	"footer": "<a href='../'>Nano.to Blog</a>",
