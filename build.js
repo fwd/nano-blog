@@ -153,7 +153,8 @@ for (var tag of _.uniq(tags)) {
 	for (var article of tag_articles) {
 
 		var article_html = ejs.render(single_html, { 
-			footer, nav,
+			footer, 
+			nav,
 			color,
 			articles : tag_articles.filter(a => a.slug !== article.slug), 
 			article, 
@@ -225,13 +226,43 @@ if (domain) {
 // optinal blog path 
 if (blog_path && !fs.existsSync(dest + '/' + blog_path)) {
 	fs.mkdirSync(dest + '/' + blog_path)
-	fs.writeFileSync(`${dest + '/' + blog_path}/index.html`, ejs.render(index_html, { footer, nav, color, articles: articles.filter(a => !a.hidden), cover, favicon, title, metrics, github, website, iconSize, verified }), { encoding: "utf8" } )
+	fs.writeFileSync(`${dest + '/' + blog_path}/index.html`, ejs.render(index_html, { 
+		site_title, 
+		footer, 
+		nav, 
+		color, 
+		articles: articles.filter(a => !a.hidden), 
+		cover, 
+		favicon, 
+		title, 
+		metrics, 
+		github, 
+		website, 
+		iconSize, 
+		verified 
+	}), { encoding: "utf8" } )
 }
 
 // all articles
 var single_html = fs.readFileSync(`./themes/${theme}/single.html`, { encoding: "utf8" })
 for (var article of articles) {
-	var article_html = ejs.render(single_html, { footer, nav, color, site_title, articles : articles.filter(a => a.slug !== article.slug), article, domain, cover, favicon, title, nano_address: article.address || nano_address, metrics, verified, github, website, iconSize })
+	var article_html = ejs.render(single_html, { 
+		footer, 
+		nav, 
+		color, 
+		site_title, 
+		articles : articles.filter(a => a.slug !== article.slug), 
+		article, 
+		domain, 
+		cover, 
+		favicon, 
+		title, 
+		nano_address: article.address || nano_address, 
+		metrics, 
+		verified, 
+		github, 
+		website, 
+		iconSize })
 	fs.writeFileSync(`${dest}${blog_path ? '/' + blog_path : '' }/${article.slug}.html`, article_html, { encoding: "utf8" } )
 }
 
