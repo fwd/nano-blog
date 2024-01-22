@@ -138,8 +138,7 @@ for (var tag of _.uniq(tags)) {
 		cover, 
 		favicon, 
 		title: config.title, 
-		site_title: 
-		tag + ' - ' + title, 
+		site_title: tag + ' - ' + title, 
 		metrics, 
 		website, 
 		iconSize, 
