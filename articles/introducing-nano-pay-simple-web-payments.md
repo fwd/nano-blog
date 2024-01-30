@@ -19,6 +19,10 @@
 - [eCommerce Intergration](#e-commerce-intergration)
 - [Nano.to Support](#support)
 
+## View Demo
+
+https://pay.nano.to
+
 ## Introduction
 
 Inspired by ApplePay, NanoPay is an [open source](https://github.com/fwd/nano-pay) browser library for the Nano blockchain. 
