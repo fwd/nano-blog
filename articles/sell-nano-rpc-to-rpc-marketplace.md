@@ -1,5 +1,5 @@
 
-- title: Inotroducing Rpc.Nano.to - A Nano RPC Marketplace 
+- title: Setup a Nano PoW Server
 - date: 11-09-2023
 - tags: Crypto
 - image: images/sell-rpc/hero.png

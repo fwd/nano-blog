@@ -4,6 +4,7 @@
 - image: images/setup-node/hero.jpeg
 - author: @nano2bot
 - goal: 100:Monthly Hosting
+- hidden: true
 
 -----
 
