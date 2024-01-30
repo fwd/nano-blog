@@ -113,8 +113,9 @@ NanoPay.open({
 
 ## Nano.to Support
 
-Reach out for help intergration NanoPay.js into your projects.
+For Bugs, Questions & Installation Support:
 
 - Email: [mailto:support@nano.to](support@nano.to)
 - Twitter: [@nano2dev](https://twitter.com/nano2dev)
+- Mastodon: [Xno.Social/@nano2dev](https://xno.social/@nano2dev)
 - @nano2dev on [Nano's Discord](https://discord.com/invite/RNAE2R9) 
