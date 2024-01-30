@@ -567,3 +567,8 @@ footer small {
 .hljs-attr {
   color: #1bc2f6 !important;
 }
+
+.hljs-name {
+  color: #ef0f77 !important;
+}
+
