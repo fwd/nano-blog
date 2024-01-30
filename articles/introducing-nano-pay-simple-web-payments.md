@@ -115,6 +115,8 @@ NanoPay.open({
 
 For Bugs, Questions & Installation Support:
 
+- Github: [Source Code](https://github.com/fwd/nano-pay)
+- Bugs: [Issues](https://github.com/fwd/nano-pay/issues)
 - Email: [mailto:support@nano.to](support@nano.to)
 - Twitter: [@nano2dev](https://twitter.com/nano2dev)
 - Mastodon: [Xno.Social/@nano2dev](https://xno.social/@nano2dev)
