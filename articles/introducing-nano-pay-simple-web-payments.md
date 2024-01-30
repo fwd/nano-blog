@@ -27,7 +27,7 @@ Easily add Crypto to your websites with this package.
 
 ## Installation
 
-Download [latest](https://raw.githubusercontent.com/fwd/nano-pay/master/latest.js) version and add to your project's *index.html*.
+Add [latest](https://raw.githubusercontent.com/fwd/nano-pay/master/latest.js) version to your project's *index.html*.
 
 **Local:**
 ```html
