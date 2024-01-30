@@ -563,3 +563,7 @@ footer small {
   font-size: 18px !important;
   padding: 7px !important;
 }
+
+.hljs-attr {
+    color: #1bc2f6 !important;
+}
