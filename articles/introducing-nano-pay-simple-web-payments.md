@@ -58,17 +58,17 @@ Open NanoPay programmatically with *NanoPay.open()* method.
 
 ```javascript
 NanoPay.open({ 
-  address: '@development', // Nano.to Username or Nano Address
-  notify: 'support@nano.to',
-  contact: true,
   title: "Demo",
-  // amount: 30, // optional
+  address: '@development', // Nano.to Username or Nano Address
+  notify: 'support@nano.to', // sends admin email receipt
+  contact: true, // collects user's email
+  shipping: 10, // collects shipping address, use 'true' for free shipping
+  currency: 'EUR', // converts Prices & Shipping to EUR, Default USD
+  // amount: 30, // used if no line_items
   line_items: [
     { name: "Shirt (X-Small)", price: 50 }, 
     { name: "Mens Shoes (9.5)", price: 20 }
   ],
-  shipping: 10,
-  currency: 'EUR', // Converts Prices & Shipping to EUR
   success: (block) => {
       console.log(block)
       // {
