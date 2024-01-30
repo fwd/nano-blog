@@ -53,7 +53,7 @@ Simple payments can be achieved with basic HTML. No javascript required.
 <a 
 data-title="Tip @Nano2Dev" 
 data-amount="0.133" 
-data-address="@developemtn" 
+data-address="@development" 
 data-button="Open Natrium" 
 data-position="bottom">
 Tip 0.133 NANO</a>
