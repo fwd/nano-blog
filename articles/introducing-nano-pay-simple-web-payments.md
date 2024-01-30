@@ -2,7 +2,7 @@
 - date: 01-30-2024
 - tags: Crypto
 - image: images/nano-pay/hero.png
-- author: @nano2bot
+- author: @nano2dev
 - single: true
 - address: @development
 - goal: 500|Support Shopify
