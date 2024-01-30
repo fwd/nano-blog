@@ -27,7 +27,7 @@ Easily add Crypto to your websites with this package.
 
 ## Installation
 
-Add [latest](https://raw.githubusercontent.com/fwd/nano-pay/master/latest.js) version to your project's *index.html*.
+First, add NanoPay to your project's *index.html*.
 
 **Local:**
 ```html
@@ -45,17 +45,17 @@ Simple payments can be achieved with basic HTML. No javascript required.
 
 ```html
 <a 
- data-title="Tip @Nano2Dev" 
- data-amount="0.4" 
- data-address="@faucet" 
- data-button="Open Natrium" 
- data-position="bottom">
- Pay 0.4 NANO</a>
+data-title="Tip @Nano2Dev" 
+data-amount="0.4" 
+data-address="@faucet" 
+data-button="Open Natrium" 
+data-position="bottom">
+Pay 0.4 NANO</a>
 ```
 
 ## Javascript API
 
-Configure and open NanoPay programmatically with *NanoPay.open()* method.
+Configure and open popup programmatically with *NanoPay.open()* method.
 
 ```javascript
 NanoPay.open({ 
@@ -82,7 +82,7 @@ NanoPay.open({
       // }
   },
   cancel: () => {
-      console.log("User hit canclled")
+      console.log("User cancelled")
   },
 })
 ```
