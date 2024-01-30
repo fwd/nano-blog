@@ -70,12 +70,12 @@ Configure and open popup programmatically with *NanoPay.open()* method.
 ```javascript
 NanoPay.open({ 
   title: "Demo",
-  address: '@development', // Nano.to Username or Nano Address
-  notify: 'support@nano.to', // sends admin email receipt
-  contact: true, // collects user's email
-  shipping: 10, // collects shipping address, use 'true' for free shipping
-  currency: 'EUR', // converts Prices & Shipping to EUR, Default USD
-  // amount: 30, // used if no line_items
+  address: '@development', // Username or Nano Address
+  notify: 'support@nano.to', // get an email receipt
+  contact: true, // user's email
+  shipping: 10, // user's shipping address, use 'true' for free shipping
+  currency: 'EUR', // converts prices EUR, default USD
+  // amount: 30, // not used if using line_items
   line_items: [
     { name: "Shirt (X-Small)", price: 50 }, 
     { name: "Mens Shoes (9.5)", price: 20 }
@@ -103,11 +103,11 @@ NanoPay offers email notifications for your convenience.
 
 ```javascript
 NanoPay.open({ 
-  address: '@bank', // Nano.to Username or Nano Address
+  address: '@bank', // Username or Nano Address
   notify: 'support@nano.to',
   contact: true,
   shipping: true,
-  amount: 0.133, // optional
+  amount: 0.133
 })
 ```
 
