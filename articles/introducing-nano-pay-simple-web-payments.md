@@ -49,12 +49,13 @@ Simple payments can be achieved with basic HTML. No javascript required.
  data-amount="0.4" 
  data-address="@faucet" 
  data-button="Open Natrium" 
- data-position="bottom">Pay 0.4 NANO</a>
+ data-position="bottom">
+ Pay 0.4 NANO</a>
 ```
 
 ## Javascript API
 
-Open NanoPay programmatically with *NanoPay.open()* method.
+Configure and open NanoPay programmatically with *NanoPay.open()* method.
 
 ```javascript
 NanoPay.open({ 
@@ -113,7 +114,7 @@ NanoPay.open({
 
 ## Nano.to Support
 
-For Bugs, Questions & Installation Support:
+Bugs, Questions & Installation Support:
 
 - Github: [Source Code](https://github.com/fwd/nano-pay)
 - Bugs: [Issues](https://github.com/fwd/nano-pay/issues)
