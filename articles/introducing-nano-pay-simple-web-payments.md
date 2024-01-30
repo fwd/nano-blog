@@ -13,7 +13,7 @@
 
 - [Introduction](#introduction)
 - [Installation](#installation)
-- [Simple Usage](#simple-started)
+- [Simple Usage](#simple-usage)
 - [Javascript API](#javascript-api)
 - [Notifications](#notifications)
 - [eCommerce Intergration](#e-commerce-intergration)
