@@ -1,4 +1,4 @@
-- title: Introducing NanoPay.js - Crypto Web Payments Made Easy
+- title: Introducing NanoPay.js - Easy Crypto Web Payments
 - date: 01-30-2024
 - tags: Crypto
 - image: images/nano-pay/hero.png
