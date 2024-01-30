@@ -23,6 +23,10 @@
 
 [https://pay.nano.to](https://pay.nano.to)
 
+## Edit on CodePen
+
+[https://codepen.io/nano2dev/pen/VwRQypE](https://codepen.io/nano2dev/pen/VwRQypE)
+
 ## Introduction
 
 Inspired by ApplePay, NanoPay is an [open source](https://github.com/fwd/nano-pay), non-custodial browser library for the Nano blockchain. 
