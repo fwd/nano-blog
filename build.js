@@ -4,7 +4,8 @@ const fs = require("fs")
 const path = require("path")
 const ejs = require('ejs')
 const moment = require('moment')
-const Markdown = require('markdown-it'), md = new Markdown();
+const Markdown = require('markdown-it'), 
+	  md = new Markdown().use(require('markdown-it-named-headings'))
 
 moment.suppressDeprecationWarnings = true;
 
@@ -25,6 +26,7 @@ const rss_api = config.rss_api
 const metrics = config.metrics || false
 const language = config.language || 'en-us'
 const github = config.github
+const twitter = config.twitter
 const footer = config.footer
 const website = config.website
 const iconSize = config.iconSize
@@ -69,6 +71,11 @@ fs.readdirSync(source).forEach(file => {
 	article.html = md.render(body)
 	article.url = `https://${clean}${blog_path ? '/' + blog_path : '' }/${slug}.html` // who needs fancy req objects.
 	article.preview = article.preview || article.snippet
+	if (article.goal) article.html = article.html
+		.split('[funding]')
+		.join(`<div class="goal" data-title="${article.goal.split('|')[1]}" data-address="${article.address ? article.address : nano_address}" data-amount="${article.goal.split('|')[0]}"></div>`)
+		.split('[goal]')
+		.join(`<div class="goal" data-title="${article.goal.split('|')[1]}" data-address="${article.address ? article.address : nano_address}" data-amount="${article.goal.split('|')[0]}"></div>`)
 	articles.push(article)
 	articles = _.orderBy(articles, 'timestamp').reverse()
 })
@@ -97,7 +104,7 @@ copyFolderSync(`./img`, `${dest}/img`)
 
 // homepage
 var index_html = fs.readFileSync(`./themes/${theme}/index.html`, { encoding: "utf8" })
-fs.writeFileSync(`${dest}/index.html`, ejs.render(index_html, { footer, footer, nav, color, articles: articles.filter(a => !a.hidden), cover, favicon, title, site_title, metrics, github, website, iconSize, verified }), { encoding: "utf8" } )
+fs.writeFileSync(`${dest}/index.html`, ejs.render(index_html, { footer, footer, nav, color, articles: articles.filter(a => !a.hidden), cover, favicon, title, site_title, metrics, twitter, github, website, iconSize, verified }), { encoding: "utf8" } )
 
 // json_api
 if (json_api) {
@@ -132,7 +139,8 @@ for (var tag of _.uniq(tags)) {
 	var tag_articles = articles.filter(a => !a.hidden && a.tags.includes(tag))
 
 	fs.writeFileSync(`${dest}/tag/${tag.toLowerCase()}/index.html`, ejs.render(index_html, { 
-		footer, nav,
+		footer, 
+		nav,
 		color,
 		articles: tag_articles, 
 		cover, 
@@ -141,6 +149,7 @@ for (var tag of _.uniq(tags)) {
 		site_title: tag + ' - ' + title, 
 		metrics, 
 		website, 
+		twitter, 
 		iconSize, 
 		github: tag, 
 		verified: tag_articles.find(a => a.verified) }), 
@@ -166,6 +175,7 @@ for (var tag of _.uniq(tags)) {
 			domain, 
 			metrics, 
 			verified, 
+			twitter,
 			github,
 			website, 
 			iconSize
@@ -236,6 +246,7 @@ if (blog_path && !fs.existsSync(dest + '/' + blog_path)) {
 		favicon, 
 		title, 
 		metrics, 
+		twitter, 
 		github, 
 		website, 
 		iconSize, 
@@ -260,6 +271,7 @@ for (var article of articles) {
 		nano_address: article.address || nano_address, 
 		metrics, 
 		verified, 
+		twitter, 
 		github, 
 		website, 
 		iconSize })
@@ -277,7 +289,7 @@ for (var author of authors) {
 	
 	var author_articles = articles.filter(a => !a.hidden).filter(a => a.author === author)
 
-	fs.writeFileSync(`${dest}/@${name}/index.html`, ejs.render(index_html, { footer, nav, color, articles: author_articles, cover, favicon, title: author, site_title: author + ' - ' + title, metrics, website, iconSize, github: author, verified: author_articles.find(a => a.verified) }), { encoding: "utf8" } )
+	fs.writeFileSync(`${dest}/@${name}/index.html`, ejs.render(index_html, { footer, nav, color, articles: author_articles, cover, favicon, title: author, site_title: author + ' - ' + title, metrics, website, iconSize, twitter, github: author, verified: author_articles.find(a => a.verified) }), { encoding: "utf8" } )
 	
 	var single_html = fs.readFileSync(`./themes/${theme}/single.html`, { encoding: "utf8" })
 
@@ -295,6 +307,7 @@ for (var author of authors) {
 			domain, 
 			metrics, 
 			verified, 
+			twitter,
 			github,
 			website, 
 			iconSize

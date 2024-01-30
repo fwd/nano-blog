@@ -54,13 +54,10 @@
                 %>
                 <img class="hero-img" src="<%- image %>" alt="">
                 <% } %>
-                <% if (article.goal) { %>
-                <div class="goal" data-title="<%- article.goal.split('|')[1] %>" data-address="<%- article.address ? article.address : nano_address %>" data-amount="<%- article.goal.split('|')[0] %>"></div>
-                <% } %>
                 <%- article.html %>
-                <% if (articles.length > 1) { %> 
+                <% if (!article.single && articles.length > 1) { %> 
                 <div style="margin-top: 40px;">
-                    <h2>Further Reading</h2>
+                    <h2>More Articles</h2>
                     <ul>
                         <% articles.slice(0, 5).map(article => { %>
                         <li style=" margin-bottom: 3px; opacity: 0.9; "><a href="<%- article.path ? '/' + article.path : '' %>/<%- article.slug %>.html"><%- article.title %></a></li>
@@ -114,7 +111,17 @@
         })
         </script>
         <% } else { %>
-        <script>hljs.highlightAll();</script>
+        <script>
+            hljs.highlightAll();
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        </script>
         <% } %>
     </body>
 </html>

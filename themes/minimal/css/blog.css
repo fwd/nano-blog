@@ -41,7 +41,7 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 30px 0 30px;
+    padding: 20px;
     max-width: 1240px;
     margin: 0 auto;
 }
@@ -540,7 +540,8 @@ footer small {
 
 .hero-img {
   margin: 30px 0;
-    border-radius: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
 }
 
 #title a {
@@ -548,11 +549,15 @@ footer small {
     text-decoration: none;
 }
 #title h2 {
-  font-size: 23px;
+  font-size: 22px;
   margin: 0;
 }
 
+#funding-wrap .goal-stat span {
+  font-size: 100% !important;
+}
 #funding-wrap {
-margin-bottom: 25px;
-    font-size: 20px !important;
+  margin-bottom: 25px;
+  font-size: 18px !important;
+  padding: 7px !important;
 }
