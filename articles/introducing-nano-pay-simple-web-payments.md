@@ -19,9 +19,9 @@
 - [eCommerce Intergration](#e-commerce-intergration)
 - [Nano.to Support](#support)
 
-## View Demo
+## Live Demo
 
-https://pay.nano.to
+[https://pay.nano.to](https://pay.nano.to)
 
 ## Introduction
 
