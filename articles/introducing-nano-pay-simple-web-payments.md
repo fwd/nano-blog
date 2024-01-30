@@ -5,7 +5,7 @@
 - author: @nano2dev
 - single: true
 - address: @development
-- goal: 500|Finish NanoPay
+- goal: 500|Add eCommerce
 
 -----
 
