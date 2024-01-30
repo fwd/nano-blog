@@ -4,6 +4,7 @@
 - tags: Crypto
 - image: images/sell-rpc/hero.png
 - author: @nano2dev
+- hidden: true
 
 -----
 

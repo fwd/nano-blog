@@ -6,6 +6,7 @@
 - single: true
 - address: @development
 - goal: 500|Support Shopify
+- hidden: true
 
 -----
 

@@ -7,6 +7,7 @@
 - goal: 40000|US-Obelisk-1
 - address: @moon
 - single: true
+- hidden: true
 
 -----
 
