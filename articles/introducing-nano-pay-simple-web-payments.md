@@ -52,11 +52,11 @@ Simple payments can be achieved with basic HTML. No javascript required.
 ```html
 <a 
 data-title="Tip @Nano2Dev" 
-data-amount="0.4" 
-data-address="@faucet" 
+data-amount="0.133" 
+data-address="@developemtn" 
 data-button="Open Natrium" 
 data-position="bottom">
-Pay 0.4 NANO</a>
+Tip 0.133 NANO</a>
 ```
 
 ## Javascript API
