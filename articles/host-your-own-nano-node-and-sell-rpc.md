@@ -1,4 +1,3 @@
-
 - title: Setup a Personal Nano Currency Node
 - date: 11-09-2023
 - tags: Crypto
