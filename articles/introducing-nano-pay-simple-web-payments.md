@@ -38,6 +38,8 @@ First, add NanoPay to your project's *index.html*.
 <script src="/NanoPay.js"></script>
 ```
 
+Download [latest](https://pay.nano.to/latest.js) version.
+
 **CDN:**
 ```html
 <script src="https://pay.nano.to/latest.js"></script>
