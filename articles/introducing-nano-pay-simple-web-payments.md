@@ -102,8 +102,8 @@ NanoPay.open({
 
 - **title**: (*string*) Show custom title shown in popup.
 - **address**: (*string*) Nano address or Nano.to @Username.
-- **contact**: (*string*) Request user's email address.
-- **shipping**: (*number, bool*) Request user's mailing address. 'true' for free shipping.
+- **contact**: (*string*) User's email address.
+- **shipping**: (*number or bool*) User's mailing address. 'true' for free shipping.
 - **position**: (*string*) Control popup position (top, center, bottom).
 - **button**: (*string*) Custom button text, default "Open Natrium".
 - **symbol**: (*string*) Custom NANO symbol, default "NANO".
