@@ -117,8 +117,8 @@ NanoPay.open({
 - **success**: (*function*) Called when payment is successful.
 - **cancel**: (*function*) Called when popup is cancelled.
 - **checkout**: (*string*) Use custom Nano.to Checkout. [Read More](https://rpc.nano.to/#checkout).
-- **email**: (*string*) Pre-configure user's email, default false.
-- **mailing_address**: (*string*) Pre-configure user's shipping address, default false.
+- **email**: (*string*) Pre-configure user's email
+- **mailing_address**: (*string*) Pre-configure user's shipping address
 
 ## Notifications
 
