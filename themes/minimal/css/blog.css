@@ -37,6 +37,10 @@ header {
   border-bottom: 1px solid #0000000a;
 }
 
+.dark-mode header {
+    border-bottom: 1px solid #ffffff0a;
+}
+
 header .container {
     display: flex;
     justify-content: space-between;
