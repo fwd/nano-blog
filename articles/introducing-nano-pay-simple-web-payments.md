@@ -99,24 +99,26 @@ NanoPay.open({
 
 ## All Options
 
-- **title**: (*string*) Custom title shown in Popup
-- **address**: (*string*) Nano address or Nano.to @Username
-- **contact**: (*string*) Request user email address
-- **shipping**: (*number, bool*) Request user mailing address. use 'true' for free shipping
-- **position**: (*string*) Control popup position (top, center, bottom)
-- **button**: (*string*) Custom button text, default "Open Natrium"
-- **symbol**: (*string*) Custom NANO symbol, default "NANO"
-- **random**: (*bool*) Use unique payment amounts, default true
-- **notify**: (*string*) Send email notification to admin, default false
+- **title**: (*string*) Custom title shown in Popup.
+- **address**: (*string*) Nano address or Nano.to @Username.
+- **contact**: (*string*) Request user email address.
+- **shipping**: (*number, bool*) Request user mailing address. use 'true' for free shipping.
+- **position**: (*string*) Control popup position (top, center, bottom).
+- **button**: (*string*) Custom button text, default "Open Natrium".
+- **symbol**: (*string*) Custom NANO symbol, default "NANO".
+- **random**: (*bool*) Use unique payment amounts, default true.
+- **notify**: (*string*) Send email notification to admin, default false.
 - **amount**: (*string*) Custom popup amount, used for simple payments.
-- **line_items**: (*array*) List of products user it buying, replaces amount
-- **currency**: (*string*) Fiat currency to show Nano price in, default "USD"
-- **note**: (*string*) Custom note shown in admin email, default false
-- **qrcode**: (*string*) Always show QR Code, default desktop only
+- **line_items**: (*array*) List of products user it buying, replaces amount.
+- **currency**: (*string*) Fiat currency to show Nano price in, default "USD".
+- **note**: (*string*) Custom note shown in admin email, default false.
+- **qrcode**: (*string*) Always show QR Code, default desktop only.
 - **success**: (*function*) Called when payment is successful.
 - **cancel**: (*function*) Called when popup is cancelled.
 - **node**: (*string*) Use custom Nano Node RPC for payment checking
 - **checkout**: (*string*) Use custom Nano.to Checkout [Read More](https://rpc.nano.to/#checkout).
+- **email**: (*string*) Pre-configure user's email, default false.
+- **mailing_address**: (*string*) Pre-configure user's shipping address, default false.
 
 ## Notifications
 
