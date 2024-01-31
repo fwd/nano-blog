@@ -136,15 +136,6 @@ NanoPay.open({
 
 ![Email Notification](../../images/nano-pay/email.png)
 
-## eCommerce Intergration
-
-- **Shopify: In Development**
-- **Wordpress: TBD**
-
-**I work on Nano part-time. Please consider helping fund this kind of work. Anything helps.**
-
-[funding]
-
 ## Login with Nano
 
 NanoPay allows for easy Login with Nano. 
@@ -165,6 +156,15 @@ NanoPay.open({
   }
 })
 ```
+
+## eCommerce Intergration
+
+- **Shopify: In Development**
+- **Wordpress: TBD**
+
+**I work on Nano part-time. Please consider helping fund this kind of work. Anything helps.**
+
+[funding]
 
 ## Nano.to Support
 
