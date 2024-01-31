@@ -116,7 +116,7 @@ NanoPay.open({
 - **success**: (*function*) Called when payment is successful.
 - **cancel**: (*function*) Called when popup is cancelled.
 - **node**: (*string*) Use custom Nano Node RPC for payment checking
-- **public_key**: (*string*) Nano.to API key for using Secrets client-side [**TBD**]
+- **checkout**: (*string*) Use custom Nano.to Checkout [Read More](https://rpc.nano.to/#checkout).
 
 ## Notifications
 
