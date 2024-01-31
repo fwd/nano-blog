@@ -17,6 +17,7 @@
 - [Javascript API](#javascript-api)
 - [Notifications](#notifications)
 - [Login with Nano](#login-with-nano)
+- [Nano HTML Paywall](#html-content-paywall)
 - [eCommerce Intergration](#e-commerce-intergration)
 - [Nano.to Support](#support)
 
@@ -154,6 +155,33 @@ NanoPay.open({
       // }
       console.log("Hello:", block.username || block.address)
   }
+})
+```
+
+## HTML Content Paywall
+
+NanoPay includes a method for easily monetizing any HTML element. 
+
+> Please note, this method is not for keeping secrets from public. Google bots can still crawl content.
+
+```html
+<style>
+/* This css prevents flash of content on page load */
+.premium { display: none; } 
+</style>
+<article class="premium">
+  Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Amet tenetur ab reprehenderit temporibus, illum recusandae nostrum iusto omnis repellendus id quae ullam reiciendis dolorem aliquam fuga, tempora iste animi.
+</article>
+```
+
+```js
+NanoPay.wall({ 
+    element: '.premium',
+    title: 'Read Story',
+    button: 'Unlock Story', 
+    free: true, // Allow free reading
+    amount: 0.001, // Cost of Article
+    address: '@development' // Your Nano Address or Username
 })
 ```
 
