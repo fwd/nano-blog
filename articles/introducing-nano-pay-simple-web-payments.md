@@ -16,6 +16,7 @@
 - [Simple Usage](#simple-usage)
 - [Javascript API](#javascript-api)
 - [Notifications](#notifications)
+- [Login with Nano](#login-with-nano)
 - [eCommerce Intergration](#e-commerce-intergration)
 - [Nano.to Support](#support)
 
@@ -83,10 +84,10 @@ NanoPay.open({
   success: (block) => {
       console.log(block)
       // {
-      //     "success": true,
-      //     "email": "provided_email",
-      //     "shipping": "provided_shipping_address",
       //     "hash": "D16FF348B634CDB3DF8...9D6F5B180CCD3B93F99A4D15203",
+      //     "address": "PAYEE_NANO_ADDRESS",
+      //     "username": "PAYEE_USERNAME",
+      //     "height": "PAYEE_BLOCK_HEIGHT",
       //     "nanolooker": "https://nanolooker.com/block/D16FF348B634CDB3DF8...9D6F5B180CCD3B93F99A4D15203"
       //     "checkout": "https://api.nano.to/checkout/93be1ab9",
       // }
@@ -99,24 +100,23 @@ NanoPay.open({
 
 ## All Options
 
-- **title**: (*string*) Custom title shown in Popup.
+- **title**: (*string*) Show custom title shown in popup.
 - **address**: (*string*) Nano address or Nano.to @Username.
-- **contact**: (*string*) Request user email address.
-- **shipping**: (*number, bool*) Request user mailing address. use 'true' for free shipping.
+- **contact**: (*string*) Request user's email address.
+- **shipping**: (*number, bool*) Request user's mailing address. 'true' for free shipping.
 - **position**: (*string*) Control popup position (top, center, bottom).
 - **button**: (*string*) Custom button text, default "Open Natrium".
 - **symbol**: (*string*) Custom NANO symbol, default "NANO".
 - **random**: (*bool*) Use unique payment amounts, default true.
 - **notify**: (*string*) Send email notification to admin, default false.
 - **amount**: (*string*) Custom popup amount, used for simple payments.
-- **line_items**: (*array*) List of products user it buying, replaces amount.
-- **currency**: (*string*) Fiat currency to show Nano price in, default "USD".
+- **line_items**: (*array*) List of products user is buying, replaces amount.
+- **currency**: (*string*) Fiat currency for Nano price conversion, default "USD".
 - **note**: (*string*) Custom note shown in admin email, default false.
 - **qrcode**: (*string*) Always show QR Code, default desktop only.
 - **success**: (*function*) Called when payment is successful.
 - **cancel**: (*function*) Called when popup is cancelled.
-- **node**: (*string*) Use custom Nano Node RPC for payment checking
-- **checkout**: (*string*) Use custom Nano.to Checkout [Read More](https://rpc.nano.to/#checkout).
+- **checkout**: (*string*) Use custom Nano.to Checkout. [Read More](https://rpc.nano.to/#checkout).
 - **email**: (*string*) Pre-configure user's email, default false.
 - **mailing_address**: (*string*) Pre-configure user's shipping address, default false.
 
@@ -144,6 +144,27 @@ NanoPay.open({
 **I work on Nano part-time. Please consider helping fund this kind of work. Anything helps.**
 
 [funding]
+
+## Login with Nano
+
+NanoPay allows for easy Login with Nano. 
+
+```js
+NanoPay.open({ 
+  title: "Login",
+  address: '@bank', // Your App's Address
+  amount: 0.0001, // Small Amount
+  success: (block) => {
+      // {
+      //     "hash": "D16FF348B634CDB3DF8...9D6F5B180CCD3B93F99A4D15203",
+      //     "address": "PAYEE_NANO_ADDRESS",
+      //     "username": "PAYEE_USERNAME",
+      //      ...
+      // }
+      console.log("Hello:", block.username || block.address)
+  }
+})
+```
 
 ## Nano.to Support
 
