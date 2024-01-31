@@ -106,7 +106,7 @@ NanoPay.open({
 - **position**: (*string*) Control popup position (top, center, bottom)
 - **button**: (*string*) Custom button text, default "Open Natrium"
 - **symbol**: (*string*) Custom NANO symbol, default "NANO"
-- **random**: (*bool string*) Use unique payment amounts, default true
+- **random**: (*bool*) Use unique payment amounts, default true
 - **notify**: (*string*) Send email notification to admin, default false
 - **amount**: (*string*) Custom popup amount, used for simple payments.
 - **line_items**: (*array*) List of products user it buying, replaces amount
