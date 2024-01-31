@@ -97,6 +97,27 @@ NanoPay.open({
 })
 ```
 
+## All Options
+
+- **title**: (*string*) Custom title shown in Popup
+- **address**: (*string*) Nano address or Nano.to @Username
+- **contact**: (*string*) Request user email address
+- **shipping**: (*Number or Boolean*) Request user mailing address
+- **position**: (*string*) Control popup position (top, center, bottom)
+- **button**: (*string*) Custom button text, default "Open Natrium"
+- **symbol**: (*string*) Custom NANO symbol, default "NANO"
+- **random**: (*bool string*) Use unique payment amounts, default true
+- **notify**: (*string*) Send email notification to admin, default false
+- **amount**: (*string*) Custom popup amount, used for simple payments.
+- **line_items**: (*array*) List of products user it buying, replaces amount
+- **currency**: (*string*) Fiat currency to show Nano price in, default "USD"
+- **note**: (*string*) Custom note shown in admin email, default false
+- **qrcode**: (*string*) Always show QR Code, default desktop only
+- **success**: (*function*) Called when payment is successful.
+- **cancel**: (*function*) Called when popup is cancelled.
+- **node**: (*string*) Use custom Nano Node RPC for payment checking
+- **public_key**: (*string*) Nano.to public key for using Secrets in client-side code [**Coming Soon**]
+
 ## Notifications
 
 NanoPay offers email notifications for your convenience. 
