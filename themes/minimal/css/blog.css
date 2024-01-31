@@ -572,3 +572,6 @@ footer small {
   color: #ef0f77 !important;
 }
 
+.dark-mode .dark-invert {
+  filter: invert(1);
+}
