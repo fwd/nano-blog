@@ -59,7 +59,7 @@
                 <div style="margin-top: 40px;">
                     <h2>More Articles</h2>
                     <ul>
-                        <% articles.slice(0, 5).map(article => { %>
+                        <% articles.filter(a => !a.hidden).slice(0, 5).map(article => { %>
                         <li style=" margin-bottom: 3px; opacity: 0.9; "><a href="<%- article.path ? '/' + article.path : '' %>/<%- article.slug %>.html"><%- article.title %></a></li>
                         <% }) %>
                     </ul>
@@ -86,7 +86,7 @@
         nano.goal({ element: '.goal' })
         </script>
         <% } %>
-        <% if (article.price && nano_address) { %>
+        <% if ((article.price || article.cost) && nano_address) { %>
         <script src="https://pay.nano.to/latest.js"></script>
         <script>
         NanoPay.wall({ 
@@ -96,9 +96,11 @@
             free: false, // // optional, allow free access
             <% } %>
             element: '.premium',
-            amount: '<%- article.price %>', // Cost of article
-            address: '<%- nano_address %>'
-            success: () => hljs.highlightAll();
+            amount: '<%- article.price || article.cost %>', // Cost of article
+            address: '<%- nano_address %>',
+            success: () => {
+                hljs.highlightAll();
+            }
         })
         </script>
         <% } else { %>

@@ -4,6 +4,8 @@
 - tags: Crypto
 - image: images/pow-server/hero.png
 - author: @nano2dev
+- price: 0.0001
+- address: @development
 
 -----
 
