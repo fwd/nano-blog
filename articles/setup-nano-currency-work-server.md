@@ -6,7 +6,6 @@
 - author: @nano2dev
 - price: 0.0133
 - address: @development
-- preview: This demo guide should work on most virtual servers and home GPUs.
 -----
 
 This guide should work on virtual servers and home GPUs. 
