@@ -181,7 +181,7 @@ NanoPay.wall({
     button: 'Unlock Story', 
     free: true, // Allow free reading
     amount: 0.001, // Cost of Article
-    address: '@development' // Your Nano Address or Username
+    address: '@development', // Your Nano Address or Username
     success: (block) => {
       // do stuff like render highlight.js
       console.log("Thanks for reading:", block.username || block.address)
