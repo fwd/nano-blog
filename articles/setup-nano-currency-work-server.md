@@ -66,7 +66,7 @@ OPTIONS:
 ```
 
 - CPU: **--cpu-threads NUMBER**
-- GPU: **--cpu-threads 0:0**
+- GPU: **--gpu 0:0**
 
 ```json
 {
