@@ -106,6 +106,7 @@ NanoPay.open({
 - **contact**: (*string*) User's email address.
 - **shipping**: (*number or bool*) User's mailing address. 'true' for free shipping.
 - **position**: (*string*) Control popup position (top, center, bottom).
+- **wallet**: (*string*) Custom wallet icon: natrium, nault, nautilus, cake
 - **button**: (*string*) Custom button text, default "Open Natrium".
 - **symbol**: (*string*) Custom NANO symbol, default "NANO".
 - **random**: (*bool*) Use unique payment amounts, default true.
