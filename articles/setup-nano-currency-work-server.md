@@ -9,7 +9,7 @@
 
 -----
 
-This guide should work for on virtual servers and home GPUs. 
+This guide should work on virtual servers and home GPUs. 
 
 ## Install OpenCL
 
