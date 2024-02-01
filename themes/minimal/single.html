@@ -47,7 +47,9 @@
                 <% if (false && article.tags) { %> · <span style=" font-size: 95%; font-weight: bold"><%- capitalizeFirstLetter(article.tags.split(', ')[0]) %></span> <% } %>
             </time>
             <% if (article.excerpt || article.preview) { %>
-                <%- article.excerpt || article.preview %>
+                <div id="preview">
+                    <%- article.excerpt || article.preview %>
+                </div>
             <% } %>
             <div class="<%- article.price ? 'premium' : '' %>" data-id="<%- article.id %>">
                 <% if (article.image !== false) { %>
@@ -93,8 +95,8 @@
         <script src="https://pay.nano.to/latest.js?v=9"></script>
         <script>
         NanoPay.wall({ 
-            title: 'Unlock',
-            button: `<%- article.button || 'Unlock Article' %>`,
+            title: `<%- article.label || 'Read Article' %>`,
+            button: `<%- article.button || 'Unlock Story' %>`,
             <% if (article.free) { %>
             free: false, // // optional, allow free access
             <% } %>
@@ -102,6 +104,7 @@
             amount: '<%- article.price || article.cost %>', // Cost of article
             address: '<%- nano_address %>',
             success: () => {
+                document.getElementById('preview').style.display = 'none'
                 hljs.highlightAll();
             }
         })

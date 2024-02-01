@@ -57,7 +57,10 @@ fs.readdirSync(source).forEach(file => {
 	if (content.includes('----')) parse = content.split('----')
 	if (content.includes('-----')) parse = content.split('-----')
 	var article = {}
-	parse[0].split('\n').filter(a => a).map(line => article[line.split(':')[0].replace('- ', '')] = line.split(':')[1].trim()) // old 'reliable
+	parse[0]
+		.split('\n')
+		.filter(a => a)
+		.map(line => article[line.split(':')[0].replace('- ', '')] = line.split(':')[1].trim()) // old 'reliable
 	var title = article.title
 	var date = moment(article.date)
 	var body = parse[1].replace('\n', '')
