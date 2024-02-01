@@ -84,30 +84,21 @@
         <script src="https://goal.nano.to/latest.js"></script>
         <script>
         nano.goal({ element: '.goal' })
-        // nano.goal({ 
-        //     element: '.goal', // required, all with class .premium
-        //     address: '<%- article.address ? article.address : nano_address %>', // required
-        //     amount: '<%- article.goal %>', // required
-        // })
         </script>
         <% } %>
         <% if (article.price && nano_address) { %>
-        <script src="https://wall.nano.to/latest.js"></script>
-        <!-- <script src="https://wall.nano.to/latest.js"></script> -->
+        <script src="https://pay.nano.to/latest.js"></script>
         <script>
-        nano.sell({ 
-            element: '.premium', // required, all with class .premium
-            address: '<%- nano_address %>', // required
-            amount: '<%- article.price %>', // required
-            // debug: false, // optional
+        NanoPay.wall({ 
+            title: 'Read Story',
+            button: 'Unlock Story',
             <% if (article.free) { %>
             free: false, // // optional, allow free access
             <% } %>
-            text: 'Read',
-            button: 'Purchase', // optional
-            success: (block) => {
-                hljs.highlightAll();
-            }
+            element: '.premium',
+            amount: '<%- article.price %>', // Cost of article
+            address: '<%- nano_address %>'
+            success: () => hljs.highlightAll();
         })
         </script>
         <% } else { %>
