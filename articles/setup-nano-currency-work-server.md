@@ -5,7 +5,7 @@
 - image: images/pow-server/hero.png
 - author: @nano2dev
 - price: 0.0133
-- address: @development
+- address: @bank
 -----
 
 This guide should work on virtual servers and home GPUs. 
