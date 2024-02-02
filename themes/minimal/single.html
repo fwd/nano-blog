@@ -108,7 +108,7 @@
             <% } %>
             success: (block) => {
                 if (document.getElementById('preview')) document.getElementById('preview').style.display = 'none'
-                if (block) window.event({ name: `<%- article.button || 'Unlock Article' %>`, revenue: '<%- article.price || article.cost %>' })
+                if (block) window.event({ event: `<%- article.button || 'Unlock Article' %>`, revenue: '<%- article.price || article.cost %>' })
                 setTimeout(() => {
                     window.hljs.highlightAll();
                 }, 100)
