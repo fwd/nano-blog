@@ -92,7 +92,7 @@
         </script>
         <% } %>
         <% if ((article.price || article.cost) && nano_address) { %>
-        <script src="https://pay.nano.to/latest.js?v=12"></script>
+        <script src="https://pay.nano.to/latest.js?v=13"></script>
         <script>
         NanoPay.wall({ 
             title: `<%- article.label || 'Read Story' %>`,
@@ -107,7 +107,7 @@
             seriesId: '<%- article.seriesId %>',
             <% } %>
             success: () => {
-                document.getElementById('preview').style.display = 'none'
+                if (document.getElementById('preview')) document.getElementById('preview').style.display = 'none'
                 hljs.highlightAll();
             }
         })
