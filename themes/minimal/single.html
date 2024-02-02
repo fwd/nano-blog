@@ -108,7 +108,9 @@
             <% } %>
             success: () => {
                 if (document.getElementById('preview')) document.getElementById('preview').style.display = 'none'
-                hljs.highlightAll();
+                setTimeout(() => {
+                    hljs.highlightAll();
+                }, 300)
             }
         })
         </script>
