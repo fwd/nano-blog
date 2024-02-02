@@ -39,17 +39,17 @@ Easily accept crypto payments on your website(s) with this package.
 
 First, add NanoPay to your project's *index.html*.
 
+**CDN:**
+```html
+<script src="https://pay.nano.to/latest.js"></script>
+```
+
 **Local:**
 ```html
 <script src="/NanoPay.js"></script>
 ```
 
 Download [latest](https://pay.nano.to/latest.js) version.
-
-**CDN:**
-```html
-<script src="https://pay.nano.to/latest.js"></script>
-```
 
 ## Simple Usage
 
