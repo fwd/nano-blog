@@ -109,14 +109,14 @@
             success: () => {
                 if (document.getElementById('preview')) document.getElementById('preview').style.display = 'none'
                 setTimeout(() => {
-                    hljs.highlightAll();
-                }, 1000)
+                    window.hljs.highlightAll();
+                }, 300)
             }
         })
         </script>
         <% } else { %>
         <script>
-            hljs.highlightAll();
+            window.hljs.highlightAll();
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
