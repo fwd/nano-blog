@@ -103,6 +103,9 @@
             element: '.premium',
             amount: '<%- article.price || article.cost %>', // Cost of article
             address: '<%- nano_address %>',
+            <% if (article.seriesId) { %>
+            seriesId: '<%- article.seriesId %>',
+            <% } %>
             success: () => {
                 document.getElementById('preview').style.display = 'none'
                 hljs.highlightAll();
