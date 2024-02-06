@@ -97,12 +97,8 @@
         NanoPay.wall({ 
             title: `<%- article.label || 'Read Story' %>`,
             button: `<%- article.button || 'Unlock Article' %>`,
-            <% if (article.free) { %>
-            free: false, // // optional, allow free access
-            <% } %>
-            <% if (article.encode || article.encrypt) { %>
-            decode: true,
-            <% } %>
+            <% if (article.free) { %>free: false,<% } %>
+            <% if (article.encode || article.encrypt) { %>decode: true,<% } %>
             element: '.premium',
             amount: '<%- article.price || article.cost %>', // Cost of article
             address: '<%- nano_address %>',
