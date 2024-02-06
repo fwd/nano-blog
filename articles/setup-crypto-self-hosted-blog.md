@@ -7,7 +7,7 @@
 - button: Unlock Article (0.133)
 - encode: true
 -----
-This blog that you're reading right now can be forked on Github and self-hosted in minutes. Stored on Github and Hosted by Cloudflare means you never pay for hosting. Monetized with Nano.
+This blog you're reading can be forked on Github and self-hosted in minutes. Stored on Github and Hosted by Cloudflare means you never pay for hosting. Monetized with Nano currency.
 
 ## Step 1. [Fork This Template](https://github.com/new?template_name=nano-blog&template_owner=fwd)
 
