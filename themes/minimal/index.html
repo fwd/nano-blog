@@ -90,14 +90,13 @@
                                         <p class="kicker"><a href="/tags/<%- article.tags ? article.tags.split(', ')[0].toLowerCase() : '' %>"><%- article.tags ? article.tags.split(', ')[0] : '' %></a><% if (article.price) { %><% } %> 
                                              · <a href="<%- article.website ? ('https://' + article.website) : ('/' + article.author) %>" target="<%- article.website ? '_blank' : '_self' %>" style="border-bottom: 0"><span style=" color: var(--color); font-weight: bold "><%- article.author %></span></a></span>
                                         </p>
-                                        <!-- <p class="kicker"><a href="/tags/<%- article.tags ? article.tags.split(', ')[0].toLowerCase() : '' %>"><%- article.tags ? article.tags.split(', ')[0] : '' %></a><% if (article.price) { %> · <span style=" color: #3498db; ">Premium</span> <% } %> </p> -->
                                         <a href="<%- article.path ? '/' + article.path : '' %>/<%- article.slug %>.html">
                                         <h2>
                                             <%- article.title %>
                                         </h2>
                                         </a>
                                         <time style="margin: 0;font-size: 16px;">
-                                            <%- article.fromNow %>
+                                            <%- article.fromNow %> <% if (article.price) { %> · <span style=" color: #3498db; ">Premium</span> <% } %>
                                         </time>
                                 </div>
                         </div>
