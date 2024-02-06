@@ -98,9 +98,9 @@
             title: `<%- article.label || 'Read Story' %>`,
             button: `<%- article.button || 'Unlock Article' %>`,
             <% if (article.free) { %>free: false,<% } %>
-            <% if (article.encode || article.encrypt) { %>decode: true,<% } %>
-            element: '.premium',
+            decode: true,
             amount: '<%- article.price || article.cost %>', // Cost of article
+            element: '.premium',
             address: '<%- nano_address %>',
             <% if (article.seriesId) { %>
             seriesId: '<%- article.seriesId %>',
