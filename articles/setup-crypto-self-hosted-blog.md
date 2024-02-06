@@ -6,8 +6,9 @@
 - price: 0.133
 - button: Unlock Article (0.133)
 - encode: true
-- preview: This blog that you're reading right now can be forked on Github and self-hosted in minutes. Stored on Github and Hosted by Cloudflare means you never pay for hosting. Monetized with Nano.
 -----
+This blog that you're reading right now can be forked on Github and self-hosted in minutes. Stored on Github and Hosted by Cloudflare means you never pay for hosting. Monetized with Nano.
+
 ## Step 1. [Fork This Template](https://github.com/new?template_name=nano-blog&template_owner=fwd)
 
 Your Repo can be private, and named anything you like.

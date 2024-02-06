@@ -74,7 +74,7 @@ fs.readdirSync(source).forEach(file => {
 	article.html = md.render(body)
 	if (article.encode || article.encrypt) article.html = 'PREMIUM-ARTICLE-A' + Buffer.from(article.html).toString('base64') + '+HRT'
 	article.url = `https://${clean}${blog_path ? '/' + blog_path : '' }/${slug}.html` // who needs fancy req objects.
-	article.preview = article.preview || article.snippet
+	article.preview = article.preview || article.snippet || body.split('\n')[0]
 	if (article.goal) article.html = article.html
 		.split('[funding]')
 		.join(`<div class="goal" data-title="${article.goal.split('|')[1]}" data-address="${article.address ? article.address : nano_address}" data-amount="${article.goal.split('|')[0]}"></div>`)
