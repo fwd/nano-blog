@@ -6,9 +6,7 @@
 - single: true
 - address: @development
 - goal: 500|NanoPay + eCommerce
-
 -----
-
 ## Quick Links
 
 - [Introduction](#introduction)
@@ -86,9 +84,12 @@ NanoPay.open({
       console.log(block)
       // {
       //     "hash": "D16FF348B634CDB3DF8...9D6F5B180CCD3B93F99A4D15203",
+      //     "amount": "NANO_AMOUNT_PAID",
       //     "address": "PAYEE_NANO_ADDRESS",
       //     "username": "PAYEE_USERNAME",
       //     "height": "PAYEE_BLOCK_HEIGHT",
+      //     "shipping": "PAYEE_SHIPPING_ADDRESS",
+      //     "email": "PAYEE_EMAIL_ADDRESS",
       //     "nanolooker": "https://nanolooker.com/block/D16FF348B634CDB3DF8...9D6F5B180CCD3B93F99A4D15203"
       //     "checkout": "https://api.nano.to/checkout/93be1ab9",
       // }
