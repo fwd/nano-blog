@@ -141,7 +141,7 @@ NanoPay.open({
 
 ## Login with Nano
 
-NanoPay allows for Login with Nano. 
+NanoPay makes Login with Nano easy. 
 
 ```js
 NanoPay.open({ 
