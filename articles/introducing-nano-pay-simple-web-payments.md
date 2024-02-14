@@ -30,7 +30,7 @@
 
 ## Introduction
 
-Inspired by ApplePay, NanoPay is an [open source](https://github.com/fwd/nano-pay), non-custodial browser library for the Nano blockchain. 
+Inspired by Apple Pay ™, NanoPay is a [open source](https://github.com/fwd/nano-pay), non-custodial javascript library for the Nano blockchain. 
 
 Easily accept crypto payments on your website(s) with this package. 
 
