@@ -7,6 +7,7 @@
 - address: @development
 - goal: 500|NanoPay + eCommerce
 -----
+
 ## Quick Links
 
 - [Introduction](#introduction)
