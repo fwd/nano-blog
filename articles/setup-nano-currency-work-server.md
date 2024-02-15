@@ -1,4 +1,3 @@
-
 - title: Setup a Nano PoW Work Server
 - date: 11-09-2023
 - tags: Crypto

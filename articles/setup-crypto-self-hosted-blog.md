@@ -1,4 +1,4 @@
-- image: images/nano-blog/hero.png
+- image: images/nano-blog/hero-small.jpg
 - title: Self-host Your Own Crypto Blog in Minutes
 - date: 1-1-2023
 - tags: Crypto
