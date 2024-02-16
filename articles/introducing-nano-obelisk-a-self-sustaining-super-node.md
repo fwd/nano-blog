@@ -1,5 +1,5 @@
 - title: Introducing US-Obelisk-1 - The First Nano SuperNode
-- date: 01-20-2024
+- date: 02-15-2024
 - tags: Crypto
 - image: images/super-node/hero.jpeg
 - author: @nano2dev
