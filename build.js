@@ -88,8 +88,8 @@ if (!fs.existsSync(dest)) fs.mkdirSync(dest)
 
 // why is this not a nodejs method, tf.
 function copyFolderSync(from, to) {
-    if (!fs.existsSync(from)) fs.mkdirSync(from);
-    if (!fs.existsSync(to)) fs.mkdirSync(to);
+    if (!fs.existsSync(from)) try { fs.mkdirSync(from); } catch(e) {} 
+    if (!fs.existsSync(to)) try { fs.mkdirSync(to); } catch(e) {} 
     fs.readdirSync(from).forEach(element => {
         if (fs.lstatSync(path.join(from, element)).isFile()) {
             fs.copyFileSync(path.join(from, element), path.join(to, element));
@@ -199,12 +199,12 @@ for (var tag of _.uniq(tags)) {
 try {
 	var sitemap = fs.readFileSync(`./themes/${theme}/sitemap.xml`, { encoding: "utf8" })
 	var parsed = domain.replace('https://', '').split('/').join('').replace('http://', '')
-	var pages = [
-		{ url: 'https://' + parsed + '/', timestamp: moment().format('YYYY-MM-DD') }
-	]
+	var pages = [ { url: 'https://' + parsed + '/', timestamp: moment().format('YYYY-MM-DD') } ]
 	articles.filter(a => !a.hidden).map(a => pages.push({ url: 'https://' + parsed + `${blog_path ? '/' + blog_path : '' }` + '/' + a.slug, timestamp: moment(a.date).format('YYYY-MM-DD') }))
-	var authors = articles.filter(a => !a.hidden).filter(a => a.author).map(a => a.author)
-	articles.filter(a => !a.hidden).map(a => pages.push({ url: 'https://' + parsed + `${blog_path ? '/' + blog_path : '' }` + '/' + a.slug, timestamp: moment(a.date).format('YYYY-MM-DD') }))
+	var authors = articles.filter(a => a.author && !a.hidden).map(a => a.author)
+	authors.filter(a => !a.hidden).map(a => {
+		if (!pages.find(b => b.url === 'https://' + parsed + '/' + a)) pages.push({ url: 'https://' + parsed + '/' + a, timestamp: moment(a.date).format('YYYY-MM-DD') })
+	})
 	var tags = []
 	articles.filter(a => !a.hidden).filter(a => a.tags).map(a => a.tags.split(', ').map(b => tags.push({ name: b, articles: articles.filter(c => c.tags.includes(b)) })))
 	tags.map(_tag => {
@@ -212,7 +212,6 @@ try {
 		if (!pages.find(a => a.url === url)) pages.push({ url, timestamp: moment(_tag.articles[0] ? _tag.articles[0].date : '').format('YYYY-MM-DD') })
 	})
 	fs.writeFileSync(`${dest}/sitemap.xml`, ejs.render(sitemap, { pages }), { encoding: "utf8" } )
-  // }
 } catch(err) {
 	console.error(err)
 }
@@ -299,7 +298,8 @@ for (var author of authors) {
 
 	for (var article of author_articles) {
 		var article_html = ejs.render(single_html, { 
-			footer, nav,
+			footer, 
+			nav,
 			color,
 			articles : author_articles.filter(a => a.slug !== article.slug), 
 			article, 

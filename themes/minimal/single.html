@@ -92,7 +92,7 @@
         </script>
         <% } %>
         <% if ((article.price || article.cost) && nano_address) { %>
-        <script src="https://pay.nano.to/latest.js?v=1.0.2"></script>
+        <script src="https://pay.nano.to/latest.js"></script>
         <script>
         NanoPay.wall({ 
             button: `<%- article.button || 'Unlock Article' %>`,
