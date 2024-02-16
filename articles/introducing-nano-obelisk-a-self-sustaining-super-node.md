@@ -5,6 +5,7 @@
 - author: @nano2dev
 - goal: 45000|US-Obelisk-1
 - address: @moon
+- hidden: true
 -----
 
 [funding]
