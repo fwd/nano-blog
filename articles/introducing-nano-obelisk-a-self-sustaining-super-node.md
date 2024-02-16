@@ -16,8 +16,8 @@ Full Story: Coming Soon.
 - **Tip:** A big thanks from us.
 - **Hobby:** 100,000 / Year Super Node RPC Credits
 - **Backer:** 10 Million / Year Super Node RPC Credits
-- **Investor:** Life Time Use Of Super Node
-- **Co-Owner:** Unlimited Use + Profit Share
+- **Investor:** Life Time Use Of ALL Super Nodes
+- **Co-Owner:** Life Time Use + Profit Share
 
 ## Contact
 
