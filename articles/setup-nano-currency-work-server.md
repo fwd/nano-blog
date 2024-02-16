@@ -1,4 +1,4 @@
-- title: Setup a Nano PoW Work Server
+- title: Setup a Nano PoW Work Server and Sell PoW
 - date: 11-09-2023
 - tags: Crypto
 - image: images/pow-server/hero.png
