@@ -1,6 +1,6 @@
 - title: Setup a Personal Nano Currency Node
 - date: 11-09-2023
-- tags: Crypto
+- tags: Guide
 - image: images/setup-node/hero.jpeg
 - author: @nano2bot
 - goal: 100:Monthly Hosting
@@ -143,6 +143,10 @@ http.post('https://api.nano.to', {
   "checkout": "https://api.nano.to/checkout/CHECKOUT_ID"
 }
 ```
+
+## Sponsor (DigitalOcean)
+
+[![A mushroom-head robot](https://github.com/fwd/fwd/raw/master/ads/digitalocean_new.png 'Codey the Codecademy mascot')](https://m.do.co/c/f139acf4ddcb)
 
 ## Support
 

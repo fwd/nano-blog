@@ -1,7 +1,7 @@
 - image: images/nano-blog/hero-small.jpg
 - title: Self-host Your Own Crypto Blog in Minutes
 - date: 1-1-2023
-- tags: Crypto
+- tags: Guide
 - author: @nano2dev
 - price: 0.133
 - button: Unlock Article (0.133)

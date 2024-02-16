@@ -1,6 +1,6 @@
 - title: Setup a Nano PoW Work Server and Sell PoW
 - date: 11-09-2023
-- tags: Crypto
+- tags: Guide
 - image: images/pow-server/hero.png
 - author: @nano2dev
 - price: 0.0133

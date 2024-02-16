@@ -64,8 +64,11 @@
                 <div style="margin-top: 40px;">
                     <h2>More Articles</h2>
                     <ul>
-                        <% articles.filter(a => !a.hidden).slice(0, 5).map(article => { %>
-                        <li style=" margin-bottom: 3px; opacity: 0.9; "><a href="<%- article.path ? '/' + article.path : '' %>/<%- article.slug %>.html"><%- article.title %></a></li>
+                        <% articles.filter(a => !a.hidden && a.tags === article.tags).slice(0, 10).map(article => { %>
+                            <li style=" margin-bottom: 3px; opacity: 0.9; "><a href="<%- article.path ? '/' + article.path : '' %>/<%- article.slug %>.html"><%- article.title %></a></li>
+                        <% }) %>
+                        <% articles.filter(a => !a.hidden && a.tags !== article.tags).slice(0, 10).map(article => { %>
+                            <li style=" margin-bottom: 3px; opacity: 0.9; "><a href="<%- article.path ? '/' + article.path : '' %>/<%- article.slug %>.html"><%- article.title %></a></li>
                         <% }) %>
                     </ul>
                 </div>

@@ -1,6 +1,6 @@
-- title: Introducing US-Obelisk-1 - The First Nano Super Node
+- title: US-Obelisk-1 - The First Nano Super Node
 - date: 02-15-2024
-- tags: Crypto
+- tags: Funding
 - image: images/super-node/hero.jpeg
 - author: @nano2dev
 - goal: 45000|US-Obelisk-1
@@ -13,11 +13,11 @@ Full Story: Coming Soon.
 
 ### Funding Levels:
 
-- **Tip:** A big thanks from us.
-- **Hobby:** 100,000 / Year Super Node RPC Credits
-- **Backer:** 10 Million / Year Super Node RPC Credits
-- **Investor:** Life Time Use Of ALL Super Nodes
-- **Co-Owner:** Life Time Use + Profit Share
+- **Tip (5+):** A big thanks from me.
+- **Hobby (100+):** 100,000 / Year Super Node RPC Credits
+- **Backer (1K+):** 10 Million / Year Super Node RPC Credits
+- **Investor (15K+):** Life Time Use Of ALL Super Nodes
+- **Co-Owner (45K+):** Life Time Use + Profit Share
 
 ## Contact
 

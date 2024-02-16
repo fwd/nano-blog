@@ -1,6 +1,6 @@
 - title: Introducing NanoPay.js - Web Payments Made Easy
 - date: 01-30-2024
-- tags: Crypto
+- tags: Release
 - image: images/nano-pay/hero.png
 - author: @nano2dev
 - single: true
@@ -163,9 +163,11 @@ NanoPay.open({
 
 ## HTML Content Paywall
 
-NanoPay includes a method for easily monetizing any HTML element. 
+![](http://localhost:8080/images/nano-blog/hero-small.jpg)
 
-> Please note, this method is not for keeping secrets from public. Google bots can still crawl content.
+NanoPay includes an easy way to monetize any website client-side. 
+
+> Please note, this method does not require a back-end, as such it's not for keeping secrets from public. Google bots can still crawl content.
 
 ```html
 <style>
