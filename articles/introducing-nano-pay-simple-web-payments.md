@@ -163,7 +163,7 @@ NanoPay.open({
 
 ## HTML Content Paywall
 
-![](http://localhost:8080/images/nano-blog/hero-small.jpg)
+![](../images/nano-blog/hero-small.jpg)
 
 NanoPay includes an easy way to monetize any website client-side. 
 
