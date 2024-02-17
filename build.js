@@ -129,7 +129,7 @@ if (rss_api) {
 // dedicated category apges
 var tags = []
 
-articles.filter(a => !a.hidden).filter(a => a.tags).map(a => a.tags.split(', ').map(b => tags.push(b)))
+articles.filter(a => !a.hidden).filter(a => a.tags).map(a => a.tags.split(',').map(b => tags.push(b.trim())))
 
 for (var tag of _.uniq(tags)) {
 
@@ -138,18 +138,18 @@ for (var tag of _.uniq(tags)) {
 	if (!tag) continue
 
 	if (!fs.existsSync(`${dest}/tag`)) fs.mkdirSync(`${dest}/tag`)
-	if (!fs.existsSync(`${dest}/tag/${tag.toLowerCase()}`)) fs.mkdirSync(`${dest}/tag/${tag.toLowerCase()}`)
+	if (!fs.existsSync(`${dest}/tag/${tag.split(' ').join('-').toLowerCase()}`)) fs.mkdirSync(`${dest}/tag/${tag.split(' ').join('-').toLowerCase()}`)
 	
 	var tag_articles = articles.filter(a => !a.hidden && a.tags.includes(tag))
 
-	fs.writeFileSync(`${dest}/tag/${tag.toLowerCase()}/index.html`, ejs.render(index_html, { 
+	fs.writeFileSync(`${dest}/tag/${tag.split(' ').join('-').toLowerCase()}/index.html`, ejs.render(index_html, { 
 		footer, 
 		nav,
 		color,
 		articles: tag_articles, 
 		cover, 
 		favicon, 
-		title: config.title, 
+		title: 'Tag: ' + tag, 
 		site_title: tag + ' - ' + title, 
 		metrics, 
 		website, 
@@ -185,7 +185,7 @@ for (var tag of _.uniq(tags)) {
 			iconSize
 		})
 
-		fs.writeFileSync(`${dest}/tag/${tag.toLowerCase()}/${article.slug}.html`, article_html, { encoding: "utf8" } )
+		fs.writeFileSync(`${dest}/tag/${tag.split(' ').join('-').toLowerCase()}/${article.slug}.html`, article_html, { encoding: "utf8" } )
 
 		article.articles = tag_articles.filter(a => a.slug !== article.slug)
 		
@@ -208,7 +208,7 @@ try {
 	var tags = []
 	articles.filter(a => !a.hidden).filter(a => a.tags).map(a => a.tags.split(', ').map(b => tags.push({ name: b, articles: articles.filter(c => c.tags.includes(b)) })))
 	tags.map(_tag => {
-		var url = 'https://' + parsed + `${blog_path ? '/' + blog_path : '' }` + '/tag/' + _tag.name.toLowerCase()
+		var url = 'https://' + parsed + `${blog_path ? '/' + blog_path : '' }` + '/tag/' + _tag.name.toLowerCase().split(' ').join('-')
 		if (!pages.find(a => a.url === url)) pages.push({ url, timestamp: moment(_tag.articles[0] ? _tag.articles[0].date : '').format('YYYY-MM-DD') })
 	})
 	fs.writeFileSync(`${dest}/sitemap.xml`, ejs.render(sitemap, { pages }), { encoding: "utf8" } )

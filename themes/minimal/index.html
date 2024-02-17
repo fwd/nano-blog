@@ -87,7 +87,7 @@
                                     </div>
                                 </a>
                                 <div class="card-content">
-                                        <p class="kicker"><a href="/tags/<%- article.tags ? article.tags.split(', ')[0].toLowerCase() : '' %>"><%- article.tags ? article.tags.split(', ')[0] : '' %></a><% if (article.price) { %><% } %> 
+                                        <p class="kicker"><a style=" color: var(--color); font-weight: bold " href="/tag/<%- article.tags ? article.tags.split(', ')[0].toLowerCase().split(' ').join('-') : '' %>"><%- article.tags ? article.tags.split(', ')[0] : '' %></a><% if (article.price) { %><% } %> 
                                              · <a href="<%- article.website ? ('https://' + article.website) : ('/' + article.author) %>" target="<%- article.website ? '_blank' : '_self' %>" style="border-bottom: 0"><span style=" color: var(--color); font-weight: bold "><%- article.author %></span></a></span>
                                         </p>
                                         <a href="<%- article.path ? '/' + article.path : '' %>/<%- article.slug %>.html">

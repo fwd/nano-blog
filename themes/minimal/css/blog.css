@@ -603,8 +603,41 @@ li > ul {
   margin-top: 5px;
 }
 
+p code,
 li code {
-  color: #1bc2f6 !important;
+  color: #e6db74 !important;
 /*  background: white;*/
   border-radius: 5px;
 }
+
+#nav {
+  display: none;
+  position: fixed;
+  background: #fafafa;
+  padding: 30px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-left: 20px;
+  top: 20vh;
+}
+
+#nav .active:before {
+  content: "❯ ";
+/*  color: red;*/
+}
+
+.dark-mode #nav {
+  background: #1f1f1f;
+}
+
+@media (max-width: 1280px) {
+  #nav {
+    max-width: 215px;
+  }
+}
+
+@media (max-width: 1014px) {
+  #nav { 
+    display: none !important; 
+  }
+} 

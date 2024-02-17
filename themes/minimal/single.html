@@ -34,6 +34,7 @@
                 </div>
             </div>
         </header>
+        <div id="nav"></div>
         <article>
             <h1 class="title"><%- article.title %></h1>
             <time>
@@ -44,7 +45,7 @@
                 %>
                 <% if (article.author) { %> <a href="<%- article.website ? ('https://' + article.website) : ('/' + article.author) %>" target="<%- article.website ? '_blank' : '_self' %>" style="border-bottom: 0"><span style=" color: var(--color); font-weight: bold "><%- article.author %></span></a> · <% } %>
                 <%- article.date %>  
-                <% if (false && article.tags) { %> · <span style=" font-size: 95%; font-weight: bold"><%- capitalizeFirstLetter(article.tags.split(', ')[0]) %></span> <% } %>
+                <% if (article.tags) { %> · <a style="text-decoration: none; border-bottom: 0;" href="../tag/<%- article.tags.split(', ')[0].split(' ').join('-').toLowerCase() %>"><span style="color: var(--color);font-weight: bold;font-style: normal;"><%- capitalizeFirstLetter(article.tags.split(', ')[0]) %></span></a> <% } %>
             </time>
             <% if (article.excerpt || article.preview) { %>
                 <div id="preview">
@@ -86,6 +87,47 @@
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('lightMode')) {
             document.documentElement.className += 'dark-mode'
         }
+        window.createQuickLinks = function() {
+
+            var nav = document.getElementById("nav")
+            var items = document.querySelectorAll("h2")
+
+            if (items.length <= 2) return
+
+            items.forEach((el) => {
+                if (el.id && !el.innerText.includes('Sponsor')) nav.innerHTML += `<li><a href="#${el.id}">${el.innerText.replace('❯', '').trim()}</a></li>`
+            })
+
+            nav.style.display = 'block'
+            // document.addEventListener("DOMContentLoaded", function() {
+            const navLinks = document.querySelectorAll("#nav a");
+
+            function onScroll() {
+                const scrollPosition = window.scrollY;
+
+                navLinks.forEach(link => {
+                    const sectionId = link.getAttribute("href").substring(1);
+                    const section = document.getElementById(sectionId);
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+
+                    // Add a buffer zone of 100 pixels above and below each section
+                    const buffer = 100;
+
+                    if (
+                        scrollPosition >= sectionTop - buffer &&
+                        scrollPosition < sectionTop + sectionHeight + buffer
+                    ) {
+                        link.classList.add("active");
+                    } else {
+                        link.classList.remove("active");
+                    }
+                });
+            }
+
+            window.addEventListener("scroll", onScroll);
+            // });
+        }
         </script>
         <script src="../js/highlight.min.js"></script>
         <% if (article.goal) { %>
@@ -97,28 +139,30 @@
         <% if ((article.price || article.cost) && nano_address) { %>
         <script src="https://pay.nano.to/latest.js"></script>
         <script>
-        NanoPay.wall({ 
-            button: `<%- article.button || 'Unlock Article' %>`,
-            memo: `<%- article.label || 'Read Story' %>`,
-            <% if (article.free) { %>free: false,<% } %>
-            decode: true,
-            amount: '<%- article.price || article.cost %>', // Cost of article
-            element: '.premium',
-            address: '<%- nano_address %>',
-            <% if (article.seriesId) { %>
-            seriesId: '<%- article.seriesId %>',
-            <% } %>
-            success: (block) => {
-                if (document.getElementById('preview')) document.getElementById('preview').style.display = 'none'
-                if (block) window.event({ event: `<%- article.button || 'Unlock Article' %>`, revenue: '<%- article.price || article.cost %>' })
-                setTimeout(() => {
-                    window.hljs.highlightAll();
-                }, 100)
-            }
-        })
+            NanoPay.wall({ 
+                button: `<%- article.button || 'Unlock Article' %>`,
+                memo: `<%- article.label || 'Read Story' %>`,
+                <% if (article.free) { %>free: false,<% } %>
+                decode: true,
+                amount: '<%- article.price || article.cost %>', // Cost of article
+                element: '.premium',
+                address: '<%- nano_address %>',
+                <% if (article.seriesId) { %>
+                seriesId: '<%- article.seriesId %>',
+                <% } %>
+                success: (block) => {
+                    if (document.getElementById('preview')) document.getElementById('preview').style.display = 'none'
+                    if (block) window.event({ event: `<%- article.button || 'Unlock Article' %>`, revenue: '<%- article.price || article.cost %>' })
+                    setTimeout(() => {
+                        window.hljs.highlightAll();
+                        createQuickLinks()
+                    }, 100)
+                }
+            })
         </script>
         <% } else { %>
         <script>
+            createQuickLinks()
             window.hljs.highlightAll();
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
@@ -127,7 +171,7 @@
                         behavior: 'smooth'
                     });
                 });
-            });
+            })
         </script>
         <% } %>
     </body>

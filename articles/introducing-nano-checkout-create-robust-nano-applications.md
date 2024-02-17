@@ -1,21 +1,9 @@
 - title: Nano Checkout API - Build Elaborate Nano Currency Applications with Ease
 - date: 02-17-2024
-- tags: Release
+- tags: Press Release
 - image: images/nano-checkout/hero.png
 - author: @nano2dev
 -----
-
-## Quick Links
-
-- [Get Started](#basic-usage)
-- [Advanced Usage](#advanced-usage)
-- [Webhook JSON](#webhook-json)
-- [Unique Payment Amount](#unique-amount)
-- [Unique Payment Address](#unique-address)
-- [Profit Sharing API](#profit-sharing-api)
-- [NanoPay.js Integration](#nano-pay-js-integration)
-- [Payment Alerts](#payment-alerts)
-- [Nano.to Support](#nano-to-support)
 
 ## Basic Usage
 

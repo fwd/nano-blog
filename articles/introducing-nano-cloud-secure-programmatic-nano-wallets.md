@@ -1,6 +1,6 @@
 - title: Nano Cloud Wallets - Secure Programmatic Nano Wallets
 - date: 02-17-2024
-- tags: Release
+- tags: Press Release
 - image: images/nano-cloud/hero.png
 - author: @nano2dev
 -----
@@ -10,8 +10,6 @@ Secure programmatic wallets for the Nano blockchain.
 Build demanding applications with ease.
 
 ## Get Started
-
-
 
 ```bash
 curl -d '{

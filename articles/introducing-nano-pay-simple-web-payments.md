@@ -1,24 +1,12 @@
 - title: Introducing NanoPay.js - Web Payments Made Easy
 - date: 01-30-2024
-- tags: Release
+- tags: Press Release
 - image: images/nano-pay/hero.png
 - author: @nano2dev
 - single: true
 - address: @development
 - goal: 500|NanoPay + eCommerce
 -----
-
-## Quick Links
-
-- [Introduction](#introduction)
-- [Installation](#installation)
-- [Simple Usage](#simple-usage)
-- [Javascript API](#javascript-api)
-- [Notifications](#notifications)
-- [Login with Nano](#login-with-nano)
-- [Nano HTML Paywall](#html-content-paywall)
-- [eCommerce Intergration](#e-commerce-intergration)
-- [Nano.to Support](#support)
 
 ## Live Demo
 

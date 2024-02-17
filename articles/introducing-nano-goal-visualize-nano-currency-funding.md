@@ -1,6 +1,6 @@
 - title: Introducing NanoGoal.js - Easily Visualize Nano Currency Funding
 - date: 02-16-2024
-- tags: Release
+- tags: Press Release
 - image: //github.com/fwd/nano-goal/raw/master/.github/banner.png
 - author: @nano2dev
 - address: @development
