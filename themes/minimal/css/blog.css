@@ -598,3 +598,13 @@ footer small {
 .premium {
   display: none;
 }
+
+li > ul {
+  margin-top: 5px;
+}
+
+li code {
+  color: #1bc2f6 !important;
+/*  background: white;*/
+  border-radius: 5px;
+}

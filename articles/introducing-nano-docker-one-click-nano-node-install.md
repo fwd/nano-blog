@@ -1,5 +1,5 @@
 - title: Introducing Nano Docker - One-Click Nano Currency Node Installation
-- date: 02-16-2024
+- date: 12-16-2023
 - tags: Release
 - image: //repository-images.githubusercontent.com/501828214/eb7fe2ec-792e-415c-9eaf-365cdfc87aac
 - author: @nano2dev
