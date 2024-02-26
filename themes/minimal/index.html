@@ -12,7 +12,12 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <link rel="stylesheet" href="../css/highlight.min.css">
         <style>:root { --color: <%- color || '#3498db' %>; }</style>
-        <link rel="stylesheet" href="../css/blog.css?v=10">
+        <link rel="stylesheet" href="../css/blog.css?v=11">
+       <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('lightMode')) {
+            document.documentElement.className += 'dark-mode'
+        }
+        </script>
          <% if (metrics) { %><script src="https://metrics.bar/js/script.js" id="metrics" async defer></script><% } %>
     </head>
     <body>
@@ -87,8 +92,10 @@
                                     </div>
                                 </a>
                                 <div class="card-content">
-                                        <p class="kicker"><a style=" color: var(--color); font-weight: bold " href="/tag/<%- article.tags ? article.tags.split(', ')[0].toLowerCase().split(' ').join('-') : '' %>"><%- article.tags ? article.tags.split(', ')[0] : '' %></a><% if (article.price) { %><% } %> 
-                                             · <a href="<%- article.website ? ('https://' + article.website) : ('/' + article.author) %>" target="<%- article.website ? '_blank' : '_self' %>" style="border-bottom: 0"><span style=" color: var(--color); font-weight: bold "><%- article.author %></span></a></span>
+                                        <p class="kicker">
+                                            <% if (article.price) { %> <span style=" color: #3498db; ">Premium</span> · <% } %>
+                                            <% if (article.price) { %><% } %> 
+                                            <a href="<%- article.website ? ('https://' + article.website) : ('/' + article.author) %>" target="<%- article.website ? '_blank' : '_self' %>" style="border-bottom: 0"><span style=" color: var(--color); font-weight: bold "><%- article.author %></span></a></span>
                                         </p>
                                         <a href="<%- article.path ? '/' + article.path : '' %>/<%- article.slug %>.html">
                                         <h2>
@@ -96,7 +103,8 @@
                                         </h2>
                                         </a>
                                         <time style="margin: 0;font-size: 16px;">
-                                            <%- article.fromNow %> <% if (article.price) { %> · <span style=" color: #3498db; ">Premium</span> <% } %>
+                                            <a style=" color: var(--color); font-weight: bold " href="/tag/<%- article.tags ? article.tags.split(', ')[0].toLowerCase().split(' ').join('-') : '' %>"><%- article.tags ? article.tags.split(', ')[0] : '' %> </a> ·
+                                            <%- article.fromNow %>
                                         </time>
                                 </div>
                         </div>
@@ -112,10 +120,5 @@
             <a href="../"><div class="logo"><%- title %></div></a>
             <% } %>
         </footer>
-        <script>
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('lightMode')) {
-            document.documentElement.className += 'dark-mode'
-        }
-        </script>
     </body>
 </html>

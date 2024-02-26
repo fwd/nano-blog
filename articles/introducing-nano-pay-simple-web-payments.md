@@ -1,6 +1,6 @@
 - title: Introducing NanoPay.js - Web Payments Made Easy
 - date: 01-30-2024
-- tags: Press Release
+- tags: Release
 - image: images/nano-pay/hero.png
 - author: @nano2dev
 - single: true

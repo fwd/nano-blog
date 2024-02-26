@@ -1,6 +1,6 @@
 - title: US-Obelisk-1 - The First Nano Super Node
 - date: 02-15-2024
-- tags: Funding Goal
+- tags: Funding
 - image: images/super-node/hero.jpeg
 - author: @nano2dev
 - goal: 45000|US-Obelisk-1

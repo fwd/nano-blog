@@ -11,7 +11,7 @@
         <style>
             :root { --color: <%- color || '#3498db' %>; }
         </style>
-        <link rel="stylesheet" href="../css/blog.css?v=10">
+        <link rel="stylesheet" href="../css/blog.css?v=11">
         <meta property="og:title" content="<%- article.title %>" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://<%- domain %>" />
@@ -36,6 +36,7 @@
         </header>
         <div id="nav"></div>
         <article>
+            <!-- <% if (article.tags) { %> <a style="text-decoration: none; border-bottom: 0; margin-bottom: 10px; display: block" href="../tag/<%- article.tags.split(', ')[0].split(' ').join('-').toLowerCase() %>"><span style="color: var(--color);font-weight: bold;font-style: normal;"><%- capitalizeFirstLetter(article.tags.split(', ')[0]) %></span></a> <% } %> -->
             <h1 class="title"><%- article.title %></h1>
             <time>
                 <%
@@ -43,9 +44,8 @@
                       return string.charAt(0).toUpperCase() + string.slice(1);
                     }
                 %>
-                <% if (article.author) { %> <a href="<%- article.website ? ('https://' + article.website) : ('/' + article.author) %>" target="<%- article.website ? '_blank' : '_self' %>" style="border-bottom: 0"><span style=" color: var(--color); font-weight: bold "><%- article.author %></span></a> · <% } %>
-                <%- article.date %>  
-                <% if (article.tags) { %> · <a style="text-decoration: none; border-bottom: 0;" href="../tag/<%- article.tags.split(', ')[0].split(' ').join('-').toLowerCase() %>"><span style="color: var(--color);font-weight: bold;font-style: normal;"><%- capitalizeFirstLetter(article.tags.split(', ')[0]) %></span></a> <% } %>
+                <% if (article.author) { %> <a href="<%- article.website ? ('https://' + article.website) : ('/' + article.author) %>" target="<%- article.website ? '_blank' : '_self' %>" style="border-bottom: 0"><span style=" color: var(--color); font-weight: bold; opacity: 1 "><%- article.author %></span></a> · <% } %>
+                <%- article.fromNow %>  
             </time>
             <% if (article.excerpt || article.preview) { %>
                 <div id="preview">
@@ -137,12 +137,13 @@
         </script>
         <% } %>
         <% if ((article.price || article.cost) && nano_address) { %>
-        <script src="https://pay.nano.to/latest.js"></script>
+        <script src="../../js/latest.js"></script>
+        <!-- <script src="https://pay.nano.to/latest.js"></script> -->
         <script>
             NanoPay.wall({ 
                 button: `<%- article.button || 'Unlock Article' %>`,
-                memo: `<%- article.label || 'Read Story' %>`,
-                <% if (article.free) { %>free: false,<% } %>
+                description: `<%- article.label || '' %>`,
+                <% if (article.free) { %> free: false, <% } %>
                 decode: true,
                 amount: '<%- article.price || article.cost %>', // Cost of article
                 element: '.premium',

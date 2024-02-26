@@ -1,6 +1,6 @@
 - title: Nano Checkout API - Create Elaborate Nano Currency Applications with Ease
 - date: 02-17-2024
-- tags: Press Release
+- tags: Release
 - image: images/nano-checkout/hero.png
 - author: @nano2dev
 -----

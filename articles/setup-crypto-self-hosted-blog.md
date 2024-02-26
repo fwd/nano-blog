@@ -1,13 +1,14 @@
 - image: images/nano-blog/hero-small.jpg
-- title: Self-host Your Own Crypto Blog in Minutes
+- title: Host Your Own Crypto Blog in Minutes
 - date: 1-1-2023
 - tags: Guide
 - author: @nano2dev
-- price: 0.133
-- button: Unlock Article (0.133)
+- price: 1
+- button: Unlock Guide (Ӿ1)
+- label: Read Guide
 - encode: true
 -----
-This blog you're reading can be forked on Github and self-hosted in minutes. Stored on Github and Hosted by Cloudflare means you never pay for hosting. Monetized with Nano currency.
+This blog can be self-hosted. Stored on Github, hosted by Cloudflare and monetized with Nano currency. Follow this step-by-step guide on how to do it in minutes.
 
 ## Step 1. [Fork This Template](https://github.com/new?template_name=nano-blog&template_owner=fwd)
 

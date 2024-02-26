@@ -277,12 +277,12 @@ button:hover {
 }
 
 time {
-    margin-bottom: 24px;
     display: block;
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 19px;
+    margin-bottom: 14px;
     font-style: italic;
-    opacity: 0.8;
+/*    opacity: 0.8;*/
     word-break: break-word;
 }
 
@@ -331,15 +331,16 @@ h6 {
 }
 
 .home .card h2 {
-    font-size: 27px;
+    font-size: 25px;
     margin: 0;
     line-height: 1.1;
     font-weight: 100;
     letter-spacing: 0;
     word-break: break-word;
-    margin-top: 10px;
+    margin-top: 8px;
     margin-bottom: 6px;
 }
+
 .card .card-content {
   padding: 20px;
   padding-bottom: 25px !important;
@@ -496,6 +497,9 @@ article {
 
 
 @media (max-width: 768px) {
+  .home .card h2 {
+    font-size: 24px;
+  }
   .col .card:not(:first-child) {
     margin-top: 0;
   }
@@ -507,7 +511,7 @@ article {
 /*    margin-bottom: 10px;*/
   }
   article h1 {
-    font-size: 36px;
+    font-size: 32px;
   }
 }
 
