@@ -84,7 +84,8 @@ fs.readdirSync(source).forEach(file => {
 	articles = _.orderBy(articles, 'timestamp').reverse()
 })
 
-if (!fs.existsSync(dest)) fs.mkdirSync(dest)
+if (fs.existsSync(dest)) fs.rmSync(dest, { recursive: true, force: true })
+fs.mkdirSync(dest, { recursive: true })
 
 // why is this not a nodejs method, tf.
 function copyFolderSync(from, to) {
