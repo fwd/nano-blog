@@ -168,7 +168,7 @@ NanoPay includes an easy way to monetize any website client-side.
 .premium { display: none; } 
 </style>
 <article class="premium">
-  Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Amet tenetur ab reprehenderit temporibus, illum recusandae nostrum iusto omnis repellendus id quae ullam reiciendis dolorem aliquam fuga, tempora iste animi.
+  Premium content is hidden until the payment is completed.
 </article>
 ```
 
@@ -188,7 +188,7 @@ NanoPay.wall({
 ```
 
 <button class="nano-pay-button" type="button" onclick="window.NanoPay.wall({ element: '#nano-pay-example-wall', title: 'Read Story', button: 'Unlock Story', free: true, amount: 0.0001, address: '@development', success: function (block) { console.log('Paywall unlocked:', block) }})"><img src="https://cdn.nano.to/img/xno.svg" alt="">Enable the paywall demo</button>
-<div id="nano-pay-example-wall" class="nano-pay-example-wall">This is sample content that the paywall demo can lock.</div>
+<div id="nano-pay-example-wall" class="nano-pay-example-wall">Premium content protected by the paywall.</div>
 
 **I work on Nano part-time. Please consider helping fund this kind of work. Anything helps.**
 

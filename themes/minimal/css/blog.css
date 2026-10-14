@@ -35,11 +35,11 @@ img { display: block; max-width: 100%; }
 .card-meta span { color: var(--color); }
 .card-meta time::before { content: ""; }
 
-.article-lead { margin: 0 auto; max-width: 1060px; padding: 8.5rem 2.5rem 5.5rem; text-align: center; }
+.article-lead { margin: 0 auto; max-width: 1060px; padding: 5.95rem 2.5rem 4.4rem; text-align: center; }
 .article-meta { color: var(--muted); display: flex; font-size: 17px; font-weight: 500; gap: 1.5rem; justify-content: center; margin-bottom: 3.5rem; }
 .article-lead h1 { font-size: clamp(42px, 5.3vw, 76px); font-weight: 500; letter-spacing: -.055em; line-height: 1.02; margin: 0 auto; max-width: 1020px; }
 .article-summary { font-size: clamp(20px, 2vw, 26px); letter-spacing: -.025em; line-height: 1.45; margin: 2.5rem auto 0; max-width: 720px; }
-.byline { font-size: 17px; margin: 3.25rem 0 0; }
+.byline { font-size: 17px; margin: 2.6rem 0 0; }
 .byline a { font-weight: 500; }
 .article-rule { border-top: 1px solid var(--line); margin: 0 auto; max-width: 930px; }
 .article-layout { display: grid; gap: 4.5rem; grid-template-columns: 170px minmax(0, 700px); justify-content: center; margin: 3.5rem auto 8rem; max-width: 1120px; padding: 0 2.5rem; }
@@ -104,5 +104,5 @@ footer p:last-child { margin-bottom: 0; }
     #article-body pre { background: #090b0e; }
 }
 
-@media (max-width: 900px) { .site-header { grid-template-columns: 1fr auto; height: 72px; padding: 0 1.25rem; } .site-header nav { display: none; } .home { padding: 4rem 1.25rem 5rem; } .article-grid { gap: 3.5rem 1.25rem; } .article-lead { padding: 5rem 1.25rem 3.5rem; } .article-rule { margin: 0 1.25rem; } .article-layout { gap: 0; grid-template-columns: minmax(0, 700px); margin: 3rem auto 5rem; padding: 0 1.25rem; } #nav { display: none; } footer { margin: 0 1.25rem; } }
+@media (max-width: 900px) { .site-header { grid-template-columns: 1fr auto; height: 72px; padding: 0 1.25rem; } .site-header nav { display: none; } .home { padding: 4rem 1.25rem 5rem; } .article-grid { gap: 3.5rem 1.25rem; } .article-lead { padding: 3.5rem 1.25rem 2.8rem; } .article-rule { margin: 0 1.25rem; } .article-layout { gap: 0; grid-template-columns: minmax(0, 700px); margin: 3rem auto 5rem; padding: 0 1.25rem; } #nav { display: none; } footer { margin: 0 1.25rem; } }
 @media (max-width: 640px) { body { font-size: 17px; } .article-grid { grid-template-columns: 1fr; } .listing-heading { margin-bottom: 2rem; } .topic-row { gap: 1.25rem; margin-bottom: 2rem; } .card-image { aspect-ratio: 1.25; } .article-meta { font-size: 15px; margin-bottom: 2rem; } .article-summary { font-size: 20px; } #article-body { font-size: 18px; } }
