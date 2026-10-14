@@ -43,6 +43,7 @@ img { display: block; max-width: 100%; }
 .byline a { font-weight: 500; }
 .article-rule { border-top: 1px solid var(--line); margin: 0 auto; max-width: 930px; }
 .article-layout { display: grid; gap: 4.5rem; grid-template-columns: 170px minmax(0, 700px); justify-content: center; margin: 3.5rem auto 8rem; max-width: 1120px; padding: 0 2.5rem; }
+.premium-article-layout { display: block; max-width: 700px; }
 #nav { align-self: start; color: var(--muted); font-size: 14px; line-height: 1.45; position: sticky; top: 2rem; }
 #nav p { color: var(--ink); font-weight: 500; margin: 0 0 1.25rem; }
 #nav a { display: block; margin-bottom: .8rem; }
